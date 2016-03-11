@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D62E3DC8B810CAAEC2BBD5C610C87284E41FED14",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897" : 0,
+    "D62E3DC8B810CAAEC2BBD5C610C87284E41FED14" : 0,
+    "FD29E35D1DA35FF732391D60F451527322FE4F10" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B005D000-0B53-4E8D-AC8D-25118606DE69",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897" : "MyProject2.1.1\/JinZhiTou\/Camera\/UIImage-Extensions\/",
+    "D62E3DC8B810CAAEC2BBD5C610C87284E41FED14" : "",
+    "FD29E35D1DA35FF732391D60F451527322FE4F10" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "JinZhiTou",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "JinZhiTou.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn.duapp.com\/appid9kgedf0yca",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1a0beb16-39a9-491a-8432-0dfbb1476d54++7897"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zanqging\/MyProject2.1.1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D62E3DC8B810CAAEC2BBD5C610C87284E41FED14"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zanqging\/MyProject2.1.1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D62E3DC8B810CAAEC2BBD5C610C87284E41FED14"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zanqging\/MyProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD29E35D1DA35FF732391D60F451527322FE4F10"
+    }
+  ]
+}
