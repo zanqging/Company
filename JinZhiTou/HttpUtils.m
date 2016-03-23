@@ -157,6 +157,34 @@
     
 }
 
+- (void)getDataFromYeePayAPIWithOps:(NSString*)urlStr
+                    postParam:(NSDictionary*)postDic
+                         type:(NSInteger)type
+                     delegate:(id)delegate
+                          sel:(SEL)sel
+{
+    
+    NSURL* url = [NSURL URLWithString:[BUINESE_SERVERD stringByAppendingString:urlStr]];
+    NSLog(@"请求地址:%@",url);
+    
+    self.requestInstance=[ASIFormDataRequest requestWithURL:url];
+    [self.requestInstance setTimeOutSeconds:5];
+    if (!postDic) {
+        [self.requestInstance setRequestMethod:@"GET"];
+    }
+    if (postDic!=nil) {
+        for (int i=0; i<postDic.count; i++) {
+            NSString* key=[[postDic allKeys] objectAtIndex:i];
+            NSString* value=[postDic valueForKey:key];
+            [self.requestInstance setPostValue:value forKey:key];
+        }
+    }
+    
+    //设置请求模式
+    [self setupWithType:type delegate:delegate sel:sel];
+    
+}
+
 
 - (void)getDataFromAPI:(NSString*)urlStr
              postParam:(NSDictionary*)postDic

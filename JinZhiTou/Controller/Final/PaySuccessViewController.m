@@ -126,11 +126,11 @@
 
 -(void)btnAction:(id)sender
 {
-    
+    [self back:nil];
 }
 
 -(void)back:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

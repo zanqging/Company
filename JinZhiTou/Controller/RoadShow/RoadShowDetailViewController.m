@@ -27,6 +27,8 @@
 #import "FinialSuccessViewController.h"
 #import <TencentOpenAPI/TencentOAuth.h>
 #import "FinialPersonTableViewController.h"
+#import "YeePayViewController.h"
+#import "GDataXMLNode.h"
 
 #define LIMIT_FONT_NUMBER 16
 @interface RoadShowDetailViewController ()<RoadShowHeaderDelegate>
@@ -611,11 +613,11 @@
             
             
             if (![TDUtil isValideTime:header.industry]) {
-//                bottomView.btnFunction.enabled = NO;
+                bottomView.btnFunction.enabled = NO;
                 bottomView.dic = [NSDictionary dictionaryWithObjectsAndKeys:AppColorTheme,@"leftBackColor",ColorTheme,@"rightBackColor",IMAGENAMED(@"contact"),@"leftImage",IMAGENAMED(@"goroadshow"),@"rightImage",nil];
                 [bottomView.btnFunction setTitle:@"尚未开始" forState:UIControlStateNormal];
                 
-                [bottomView.btnFunction addTarget:self action:@selector(goInvest:) forControlEvents:UIControlEventTouchUpInside];
+//                [bottomView.btnFunction addTarget:self action:@selector(goInvest:) forControlEvents:UIControlEventTouchUpInside];
                 
             }else{
                 [bottomView.btnFunction addTarget:self action:@selector(goRoadShow:) forControlEvents:UIControlEventTouchUpInside];
@@ -715,11 +717,13 @@
     
 }
 
--(void)goInvest:(id)sender
+-(void)isTendered
 {
-    InvestViewController * controller = [[InvestViewController alloc]init];
-    [self.navigationController pushViewController:controller animated:YES];
+    NSString * serverUrl = [NSString stringWithFormat:@"%@%@/",IsTendered,DICVFK(self.dic, @"id")];
+    [self.httpUtil getDataFromAPIWithOps:serverUrl postParam:nil type:0 delegate:self sel:@selector(requestIsTenered:)];
 }
+
+
 -(void)updateLayout
 {
     if (footer) {
@@ -857,11 +861,8 @@
                                     NSString* url = [JOIN_ROADSHOW stringByAppendingFormat:@"%ld/", [DICVFK(self.dic, @"id") integerValue]];
                                     [self.httpUtil getDataFromAPIWithOps:url postParam:nil type:0 delegate:self sel:@selector(requestJoinroadShow:)];
                                 }else{
-                                    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                                    FinialApplyViewController* controller = (FinialApplyViewController*)[storyBoard instantiateViewControllerWithIdentifier:@"FinialApply"];
-                                    controller.titleStr = self.navView.title;
-                                    controller.projectId = [DICVFK(self.dic, @"id") integerValue];
-                                    [self.navigationController pushViewController:controller animated:YES];
+                                    //检测是否已经投资
+                                    [self isTendered];
                                 }
                             }else if(![auth boolValue]){
                                 [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"您的投资人身份认证未审核通过，请先联系客服",@"msg",@"",@"cancel",@"确定",@"sure",@"4",@"type",self,@"vController", nil]];
@@ -893,6 +894,31 @@
         [[DialogUtil sharedInstance] showDlg:self.view textOnly:[jsonDic valueForKey:@"msg"]];
     }
     self.startLoading=NO;
+}
+
+-(void)requestIsTenered:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            bool isInvest = [[DICVFK(jsonDic, @"data") valueForKey:@"isInvest"] boolValue];
+            if (!isInvest) {
+                UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                FinialApplyViewController* controller = (FinialApplyViewController*)[storyBoard instantiateViewControllerWithIdentifier:@"FinialApply"];
+                controller.dic = self.dic;
+                controller.titleStr = self.navView.title;
+                controller.projectId = [DICVFK(self.dic, @"id") integerValue];
+                [self.navigationController pushViewController:controller animated:YES];
+            }else{
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[jsonDic valueForKey:@"msg"],@"msg",@"",@"cancel",@"确认",@"sure",@"4",@"type",self,@"vController", nil]];
+            }
+        }
+    }
+
 }
 
 //获取身份认证信息

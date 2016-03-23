@@ -1800,6 +1800,11 @@
 		95372A331C8D67E400243ABD /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95372A311C8D67E400243ABD /* PaySuccessViewController.m */; };
 		95372A341C8D67E400243ABD /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95372A311C8D67E400243ABD /* PaySuccessViewController.m */; };
 		95372A351C8D67E400243ABD /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95372A311C8D67E400243ABD /* PaySuccessViewController.m */; };
+		9537FF9A1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; };
+		9537FF9B1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; };
+		9537FF9C1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9537FF9D1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; };
+		9537FFA11C93C7EF00D043F5 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
 		9548E3BD1C8E7E580076DC4E /* TradePasswdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3BC1C8E7E580076DC4E /* TradePasswdView.m */; };
 		9548E3BE1C8E7E580076DC4E /* TradePasswdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3BC1C8E7E580076DC4E /* TradePasswdView.m */; };
 		9548E3BF1C8E7E580076DC4E /* TradePasswdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3BC1C8E7E580076DC4E /* TradePasswdView.m */; };
@@ -1812,6 +1817,14 @@
 		9548E3CE1C8EC5960076DC4E /* TradePasswdEnterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3CC1C8EC5960076DC4E /* TradePasswdEnterView.m */; };
 		9548E3CF1C8EC5960076DC4E /* TradePasswdEnterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3CC1C8EC5960076DC4E /* TradePasswdEnterView.m */; };
 		9548E3D01C8EC5960076DC4E /* TradePasswdEnterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3CC1C8EC5960076DC4E /* TradePasswdEnterView.m */; };
+		9568B5471C965A3600760D24 /* YeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9568B5461C965A3600760D24 /* YeePayViewController.m */; };
+		9568B5481C965A3600760D24 /* YeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9568B5461C965A3600760D24 /* YeePayViewController.m */; };
+		9568B5491C965A3600760D24 /* YeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9568B5461C965A3600760D24 /* YeePayViewController.m */; };
+		9568B54A1C965A3600760D24 /* YeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9568B5461C965A3600760D24 /* YeePayViewController.m */; };
+		958B4A471CA0DAC3002D0DB8 /* PurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */; };
+		958B4A481CA0DAC3002D0DB8 /* PurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */; };
+		958B4A491CA0DAC3002D0DB8 /* PurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */; };
+		958B4A4A1CA0DAC3002D0DB8 /* PurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */; };
 		9595950C1C83E170000FF9FA /* libPods-ASIHTTPRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959595081C83E170000FF9FA /* libPods-ASIHTTPRequest.a */; };
 		9595950D1C83E170000FF9FA /* libPods-Reachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959595091C83E170000FF9FA /* libPods-Reachability.a */; };
 		959595361C83F995000FF9FA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 959595161C83F994000FF9FA /* MKAnnotationView+WebCache.m */; };
@@ -1908,8 +1921,8 @@
 		95A9105F1C925ED600B707EB /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A9105B1C925ED600B707EB /* libMobClickLibrary.a */; };
 		95A910611C92607100B707EB /* 金指投发布 copy2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A910601C92607100B707EB /* 金指投发布 copy2-Info.plist */; };
 		95A910621C92607100B707EB /* 金指投发布 copy2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A910601C92607100B707EB /* 金指投发布 copy2-Info.plist */; };
-		95A910631C92607100B707EB /* 金指投发布 copy2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A910601C92607100B707EB /* 金指投发布 copy2-Info.plist */; };
 		95A910641C92607100B707EB /* 金指投发布 copy2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A910601C92607100B707EB /* 金指投发布 copy2-Info.plist */; };
+		95BB7DFF1C940DE40044FD5D /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95BB7DFE1C940DE40044FD5D /* test.xml */; };
 		95D791251C8AA5BD00323FCD /* InvestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D791241C8AA5BD00323FCD /* InvestViewController.m */; };
 		95D791261C8AA5BD00323FCD /* InvestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D791241C8AA5BD00323FCD /* InvestViewController.m */; };
 		95D791271C8AA5BD00323FCD /* InvestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D791241C8AA5BD00323FCD /* InvestViewController.m */; };
@@ -1934,6 +1947,10 @@
 		95E59D121C8D1E4F008C10AA /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E59D0C1C8D1E4F008C10AA /* UIView+SDAutoLayout.m */; };
 		95E59D131C8D1E4F008C10AA /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E59D0C1C8D1E4F008C10AA /* UIView+SDAutoLayout.m */; };
 		95E59D141C8D1E4F008C10AA /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E59D0C1C8D1E4F008C10AA /* UIView+SDAutoLayout.m */; };
+		95E5DF8B1C92A0D200D12E15 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 95E5DF8A1C92A0D200D12E15 /* test.html */; };
+		95E5DF8C1C92A0D200D12E15 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 95E5DF8A1C92A0D200D12E15 /* test.html */; };
+		95E5DF8D1C92A0D200D12E15 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 95E5DF8A1C92A0D200D12E15 /* test.html */; };
+		95E5DF8E1C92A0D200D12E15 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 95E5DF8A1C92A0D200D12E15 /* test.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2748,12 +2765,20 @@
 		7A45FA4E60B8C6F5A8696004 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		95372A301C8D67E400243ABD /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaySuccessViewController.h; path = Controller/Final/PaySuccessViewController.h; sourceTree = "<group>"; };
 		95372A311C8D67E400243ABD /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaySuccessViewController.m; path = Controller/Final/PaySuccessViewController.m; sourceTree = "<group>"; };
+		9537FF981C93C69900D043F5 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		9537FF991C93C69900D043F5 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		9537FF9E1C93C6BA00D043F5 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		9548E3BB1C8E7E580076DC4E /* TradePasswdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TradePasswdView.h; path = Controller/Final/TradePasswdView.h; sourceTree = "<group>"; };
 		9548E3BC1C8E7E580076DC4E /* TradePasswdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TradePasswdView.m; path = Controller/Final/TradePasswdView.m; sourceTree = "<group>"; };
 		9548E3C51C8EBD4E0076DC4E /* TradeInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeInfoView.h; sourceTree = "<group>"; };
 		9548E3C61C8EBD4E0076DC4E /* TradeInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeInfoView.m; sourceTree = "<group>"; };
 		9548E3CB1C8EC5960076DC4E /* TradePasswdEnterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradePasswdEnterView.h; sourceTree = "<group>"; };
 		9548E3CC1C8EC5960076DC4E /* TradePasswdEnterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradePasswdEnterView.m; sourceTree = "<group>"; };
+		9568B5451C965A3600760D24 /* YeePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YeePayViewController.h; path = Controller/RoadShow/YeePayViewController.h; sourceTree = "<group>"; };
+		9568B5461C965A3600760D24 /* YeePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YeePayViewController.m; path = Controller/RoadShow/YeePayViewController.m; sourceTree = "<group>"; };
+		958B4A451CA0DAC3002D0DB8 /* PurseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PurseViewController.h; path = Controller/UserInfo/PurseViewController.h; sourceTree = "<group>"; };
+		958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PurseViewController.m; path = Controller/UserInfo/PurseViewController.m; sourceTree = "<group>"; };
 		959595081C83E170000FF9FA /* libPods-ASIHTTPRequest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ASIHTTPRequest.a"; path = "Pods/build/Debug-iphoneos/libPods-ASIHTTPRequest.a"; sourceTree = "<group>"; };
 		959595091C83E170000FF9FA /* libPods-Reachability.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reachability.a"; path = "Pods/build/Debug-iphoneos/libPods-Reachability.a"; sourceTree = "<group>"; };
 		959595151C83F994000FF9FA /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -2802,6 +2827,7 @@
 		95A910561C925ECC00B707EB /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		95A9105B1C925ED600B707EB /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		95A910601C92607100B707EB /* 金指投发布 copy2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "金指投发布 copy2-Info.plist"; sourceTree = "<group>"; };
+		95BB7DFE1C940DE40044FD5D /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
 		95D791231C8AA5BD00323FCD /* InvestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvestViewController.h; path = Controller/Final/InvestViewController.h; sourceTree = "<group>"; };
 		95D791241C8AA5BD00323FCD /* InvestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvestViewController.m; path = Controller/Final/InvestViewController.m; sourceTree = "<group>"; };
 		95D791291C8AA87300323FCD /* InvestHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvestHeaderView.h; path = View/Final/InvestHeaderView.h; sourceTree = "<group>"; };
@@ -2814,7 +2840,7 @@
 		95E59D0A1C8D1E4F008C10AA /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		95E59D0B1C8D1E4F008C10AA /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
 		95E59D0C1C8D1E4F008C10AA /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
-		95E59D151C8D3599008C10AA /* BankChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BankChooseViewController.h; path = Controller/Final/BankChooseViewController.h; sourceTree = "<group>"; };
+		95E5DF8A1C92A0D200D12E15 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		FA2DD7B96FC8E303F0A259D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -2882,6 +2908,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9537FFA11C93C7EF00D043F5 /* libxml2.2.tbd in Frameworks */,
 				9595950C1C83E170000FF9FA /* libPods-ASIHTTPRequest.a in Frameworks */,
 				95A910541C925EBE00B707EB /* libPushSDK-1.8.5.a in Frameworks */,
 				9595950D1C83E170000FF9FA /* libPods-Reachability.a in Frameworks */,
@@ -3100,6 +3127,7 @@
 				4565C2F11C0D964F00BF80D0 /* auth.png */,
 				451ED5971C488BD400A135D7 /* tel.png */,
 				4565C2E51C0D8A3B00BF80D0 /* QQ.png */,
+				95E5DF8A1C92A0D200D12E15 /* test.html */,
 				4565C2F41C0D96C300BF80D0 /* failed.png */,
 				4565C2DF1C0D881A00BF80D0 /* error.png */,
 				451ED58B1C48874500A135D7 /* credit.png */,
@@ -3122,6 +3150,7 @@
 				45954D051C4F659700137D7D /* introduce.png */,
 				45E8639F1C48E8FA00051C3A /* shangchuan.png */,
 				45DD73A91C575E5F00CAA976 /* loadingempty.jpg */,
+				95BB7DFE1C940DE40044FD5D /* test.xml */,
 				45E863991C48DDE600051C3A /* upload_emial.png */,
 				451ED58C1C48874500A135D7 /* platform_notice.png */,
 				45FAE7441C50704F00ED6516 /* goroadshow@3x.png */,
@@ -3135,8 +3164,6 @@
 		451F489F1B53641D00C91B4A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				95A9103E1C925BE900B707EB /* BankChooseViewController.h */,
-				95A9103F1C925BE900B707EB /* BankChooseViewController.m */,
 				45495C521B60EBA1007A17FD /* Final */,
 				459AC93E1B6F38D90050E817 /* Login */,
 				45495C541B60EBB8007A17FD /* Cycle */,
@@ -3307,6 +3334,8 @@
 				45984A431BE8C159003D5F50 /* ModifyCompanyViewController.m */,
 				453271981B751C740044F8C1 /* UserCollecteViewController.h */,
 				453271991B751C740044F8C1 /* UserCollecteViewController.m */,
+				958B4A451CA0DAC3002D0DB8 /* PurseViewController.h */,
+				958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */,
 			);
 			name = UserInfo;
 			sourceTree = "<group>";
@@ -3656,6 +3685,8 @@
 				458631F21B65C6C500F06688 /* FinalViewController.m */,
 				95D791231C8AA5BD00323FCD /* InvestViewController.h */,
 				95D791241C8AA5BD00323FCD /* InvestViewController.m */,
+				9568B5451C965A3600760D24 /* YeePayViewController.h */,
+				9568B5461C965A3600760D24 /* YeePayViewController.m */,
 				4545D08D1BEB45D400D21FB0 /* WMPageController_bak.h */,
 				4545D08E1BEB45D400D21FB0 /* WMPageController_bak.m */,
 				4545D0A01BEB492900D21FB0 /* WMTableViewController.h */,
@@ -3668,7 +3699,8 @@
 				4581155B1B80150C006EEBBC /* ThinkTankViewController.m */,
 				45A2ADA51B71FEEB00751F78 /* FinialApplyViewController.h */,
 				45A2ADA61B71FEEB00751F78 /* FinialApplyViewController.m */,
-				95E59D151C8D3599008C10AA /* BankChooseViewController.h */,
+				95A9103E1C925BE900B707EB /* BankChooseViewController.h */,
+				95A9103F1C925BE900B707EB /* BankChooseViewController.m */,
 				45F829451B6B62470044F6F0 /* FinialPersonTableViewController.h */,
 				45F829461B6B62470044F6F0 /* FinialPersonTableViewController.m */,
 				45F8294E1B6D38730044F6F0 /* FinialSubmmitViewController.h */,
@@ -3776,6 +3808,7 @@
 		45631F831B5A4B7B009FA35D /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				9537FF971C93C66A00D043F5 /* GDataXML */,
 				458115511B7FA4E5006EEBBC /* Push */,
 				959595121C83EEF8000FF9FA /* Pinyin */,
 				453E23E71B7ED0A30023BB00 /* WeiXin */,
@@ -4474,6 +4507,15 @@
 			name = Final;
 			sourceTree = "<group>";
 		};
+		9537FF971C93C66A00D043F5 /* GDataXML */ = {
+			isa = PBXGroup;
+			children = (
+				9537FF981C93C69900D043F5 /* GDataXMLNode.h */,
+				9537FF991C93C69900D043F5 /* GDataXMLNode.m */,
+			);
+			name = GDataXML;
+			sourceTree = "<group>";
+		};
 		959595111C83EDD5000FF9FA /* SBJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -4580,6 +4622,8 @@
 		9B6D51C1E60D07C310DA1D02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */,
+				9537FF9E1C93C6BA00D043F5 /* libxml2.tbd */,
 				FA2DD7B96FC8E303F0A259D5 /* libPods.a */,
 				959595081C83E170000FF9FA /* libPods-ASIHTTPRequest.a */,
 				959595091C83E170000FF9FA /* libPods-Reachability.a */,
@@ -4666,7 +4710,7 @@
 		45DEACE01B437879001EDA5D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "金指投";
 				TargetAttributes = {
 					4542881D1C448FE000513DC0 = {
@@ -4753,6 +4797,7 @@
 				45E863A11C48E8FA00051C3A /* shangchuan.png in Resources */,
 				451ED5901C48874500A135D7 /* platform_notice.png in Resources */,
 				45954D081C4F659700137D7D /* case.png in Resources */,
+				95E5DF8C1C92A0D200D12E15 /* test.html in Resources */,
 				45E863A41C48ECEB00051C3A /* touxiangshangchuan.png in Resources */,
 				454289AA1C448FE000513DC0 /* movieForward@2x.png in Resources */,
 				454289AB1C448FE000513DC0 /* UIBarButtonItemArrowRight.png in Resources */,
@@ -4858,6 +4903,7 @@
 				45E863A01C48E8FA00051C3A /* shangchuan.png in Resources */,
 				451ED58F1C48874500A135D7 /* platform_notice.png in Resources */,
 				45954D071C4F659700137D7D /* case.png in Resources */,
+				95E5DF8B1C92A0D200D12E15 /* test.html in Resources */,
 				45E863A31C48ECEB00051C3A /* touxiangshangchuan.png in Resources */,
 				4511CC271BA2B6E300A9D00A /* movieForward@2x.png in Resources */,
 				4543EB991BD0ABB80041DCBD /* UIBarButtonItemArrowRight.png in Resources */,
@@ -4873,6 +4919,7 @@
 				45F93B611B637311004526F5 /* MJRefresh.bundle in Resources */,
 				451B52BF1BA66E3500388E5C /* NavBarIconSearchBar_blue@2x.png in Resources */,
 				4543EB941BD0ABB80041DCBD /* PlayButtonOverlayLargeTap@2x.png in Resources */,
+				95BB7DFF1C940DE40044FD5D /* test.xml in Resources */,
 				4565C2F51C0D96C300BF80D0 /* failed.png in Resources */,
 				4543EB841BD0ABB80041DCBD /* ImageSelectedOff.png in Resources */,
 				451B52C41BA66F5500388E5C /* NavBarIconSearchCircle_blue.png in Resources */,
@@ -4933,7 +4980,6 @@
 				45EE83A51C5F341400EA3F0D /* plan.png in Resources */,
 				45EE83A61C5F341400EA3F0D /* contact.png in Resources */,
 				45EE83A71C5F341400EA3F0D /* ImageSelectedOn@3x.png in Resources */,
-				95A910631C92607100B707EB /* 金指投发布 copy2-Info.plist in Resources */,
 				45EE83A81C5F341400EA3F0D /* movieFullscreen@2x.png in Resources */,
 				45EE83A91C5F341400EA3F0D /* annocumment@2x.png in Resources */,
 				45EE83AA1C5F341400EA3F0D /* moviePause@2x.png in Resources */,
@@ -4963,6 +5009,7 @@
 				45EE83C21C5F341400EA3F0D /* shangchuan.png in Resources */,
 				45EE83C31C5F341400EA3F0D /* platform_notice.png in Resources */,
 				45EE83C41C5F341400EA3F0D /* case.png in Resources */,
+				95E5DF8D1C92A0D200D12E15 /* test.html in Resources */,
 				45EE83C51C5F341400EA3F0D /* touxiangshangchuan.png in Resources */,
 				45EE83C61C5F341400EA3F0D /* movieForward@2x.png in Resources */,
 				45EE83C71C5F341400EA3F0D /* UIBarButtonItemArrowRight.png in Resources */,
@@ -5068,6 +5115,7 @@
 				45EE85B21C5F36B900EA3F0D /* shangchuan.png in Resources */,
 				45EE85B31C5F36B900EA3F0D /* platform_notice.png in Resources */,
 				45EE85B41C5F36B900EA3F0D /* case.png in Resources */,
+				95E5DF8E1C92A0D200D12E15 /* test.html in Resources */,
 				45EE85B51C5F36B900EA3F0D /* touxiangshangchuan.png in Resources */,
 				45EE85B61C5F36B900EA3F0D /* movieForward@2x.png in Resources */,
 				45EE85B71C5F36B900EA3F0D /* UIBarButtonItemArrowRight.png in Resources */,
@@ -5240,6 +5288,7 @@
 				4542885F1C448FE000513DC0 /* UserInfoViewController.m in Sources */,
 				454288601C448FE000513DC0 /* FinialApplyViewController.m in Sources */,
 				959595631C83F995000FF9FA /* UIImage+MultiFormat.m in Sources */,
+				958B4A481CA0DAC3002D0DB8 /* PurseViewController.m in Sources */,
 				454288611C448FE000513DC0 /* PECropRectView.m in Sources */,
 				45161DE61C461F1400AC115A /* PersonalFinanceViewController.m in Sources */,
 				454288621C448FE000513DC0 /* MMDrawerBarButtonItem.m in Sources */,
@@ -5326,6 +5375,7 @@
 				454288A91C448FE000513DC0 /* PrivacyViewController.m in Sources */,
 				454288AA1C448FE000513DC0 /* UserSettingTableViewCell.m in Sources */,
 				454288AB1C448FE000513DC0 /* ModifyPositionViewController.m in Sources */,
+				9568B5481C965A3600760D24 /* YeePayViewController.m in Sources */,
 				454288AD1C448FE000513DC0 /* QNResumeUpload.m in Sources */,
 				454288AE1C448FE000513DC0 /* Likers.m in Sources */,
 				454288AF1C448FE000513DC0 /* UploadingView.m in Sources */,
@@ -5513,6 +5563,7 @@
 				454289621C448FE000513DC0 /* AlertView.m in Sources */,
 				45888B891C511B2900A35476 /* NewFinance.m in Sources */,
 				454289651C448FE000513DC0 /* Announcement+CoreDataProperties.m in Sources */,
+				9537FF9B1C93C69900D043F5 /* GDataXMLNode.m in Sources */,
 				454289671C448FE000513DC0 /* UIView+MJExtension.m in Sources */,
 				95E59D0E1C8D1E4F008C10AA /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				454289681C448FE000513DC0 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -5608,6 +5659,7 @@
 				45326EF41B7326110044F8C1 /* UserInfoViewController.m in Sources */,
 				45A2ADA71B71FEEB00751F78 /* FinialApplyViewController.m in Sources */,
 				959595621C83F995000FF9FA /* UIImage+MultiFormat.m in Sources */,
+				958B4A471CA0DAC3002D0DB8 /* PurseViewController.m in Sources */,
 				45495BCB1B60DA02007A17FD /* PECropRectView.m in Sources */,
 				45161DE51C461F1400AC115A /* PersonalFinanceViewController.m in Sources */,
 				450140081B943024000F8A97 /* MMDrawerBarButtonItem.m in Sources */,
@@ -5694,6 +5746,7 @@
 				4589D8A81B96D44E004D7A37 /* PrivacyViewController.m in Sources */,
 				453271911B74AF3D0044F8C1 /* UserSettingTableViewCell.m in Sources */,
 				45984A471BE8C6E3003D5F50 /* ModifyPositionViewController.m in Sources */,
+				9568B5471C965A3600760D24 /* YeePayViewController.m in Sources */,
 				452609B51BDF0963006776B2 /* QNResumeUpload.m in Sources */,
 				45778FB01C3B620000FF8691 /* Likers.m in Sources */,
 				458115421B7F1A15006EEBBC /* UploadingView.m in Sources */,
@@ -5881,6 +5934,7 @@
 				45271D021B959B4E000544F2 /* AlertView.m in Sources */,
 				45888B881C511B2900A35476 /* NewFinance.m in Sources */,
 				454400921C3906C00094696A /* Announcement+CoreDataProperties.m in Sources */,
+				9537FF9A1C93C69900D043F5 /* GDataXMLNode.m in Sources */,
 				45F93B651B637311004526F5 /* UIView+MJExtension.m in Sources */,
 				95E59D0D1C8D1E4F008C10AA /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				4517CDBA1B78C7ED00EFBB6A /* AFHTTPRequestOperationManager.m in Sources */,
@@ -5976,6 +6030,7 @@
 				45EE825E1C5F341400EA3F0D /* UserInfoViewController.m in Sources */,
 				45EE825F1C5F341400EA3F0D /* FinialApplyViewController.m in Sources */,
 				959595641C83F995000FF9FA /* UIImage+MultiFormat.m in Sources */,
+				958B4A491CA0DAC3002D0DB8 /* PurseViewController.m in Sources */,
 				45EE82601C5F341400EA3F0D /* PECropRectView.m in Sources */,
 				45EE82611C5F341400EA3F0D /* PersonalFinanceViewController.m in Sources */,
 				45EE82621C5F341400EA3F0D /* MMDrawerBarButtonItem.m in Sources */,
@@ -6062,6 +6117,7 @@
 				45EE82AD1C5F341400EA3F0D /* PrivacyViewController.m in Sources */,
 				45EE82AE1C5F341400EA3F0D /* UserSettingTableViewCell.m in Sources */,
 				45EE82AF1C5F341400EA3F0D /* ModifyPositionViewController.m in Sources */,
+				9568B5491C965A3600760D24 /* YeePayViewController.m in Sources */,
 				45EE82B11C5F341400EA3F0D /* QNResumeUpload.m in Sources */,
 				45EE82B21C5F341400EA3F0D /* Likers.m in Sources */,
 				45EE82B31C5F341400EA3F0D /* UploadingView.m in Sources */,
@@ -6249,6 +6305,7 @@
 				45EE83741C5F341400EA3F0D /* AlertView.m in Sources */,
 				45EE83761C5F341400EA3F0D /* NewFinance.m in Sources */,
 				45EE83771C5F341400EA3F0D /* Announcement+CoreDataProperties.m in Sources */,
+				9537FF9C1C93C69900D043F5 /* GDataXMLNode.m in Sources */,
 				45EE83791C5F341400EA3F0D /* UIView+MJExtension.m in Sources */,
 				95E59D0F1C8D1E4F008C10AA /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				45EE837A1C5F341400EA3F0D /* AFHTTPRequestOperationManager.m in Sources */,
@@ -6344,6 +6401,7 @@
 				45EE844E1C5F36B900EA3F0D /* UserInfoViewController.m in Sources */,
 				45EE844F1C5F36B900EA3F0D /* FinialApplyViewController.m in Sources */,
 				959595651C83F995000FF9FA /* UIImage+MultiFormat.m in Sources */,
+				958B4A4A1CA0DAC3002D0DB8 /* PurseViewController.m in Sources */,
 				45EE84501C5F36B900EA3F0D /* PECropRectView.m in Sources */,
 				45EE84511C5F36B900EA3F0D /* PersonalFinanceViewController.m in Sources */,
 				45EE84521C5F36B900EA3F0D /* MMDrawerBarButtonItem.m in Sources */,
@@ -6430,6 +6488,7 @@
 				45EE849D1C5F36B900EA3F0D /* PrivacyViewController.m in Sources */,
 				45EE849E1C5F36B900EA3F0D /* UserSettingTableViewCell.m in Sources */,
 				45EE849F1C5F36B900EA3F0D /* ModifyPositionViewController.m in Sources */,
+				9568B54A1C965A3600760D24 /* YeePayViewController.m in Sources */,
 				45EE84A11C5F36B900EA3F0D /* QNResumeUpload.m in Sources */,
 				45EE84A21C5F36B900EA3F0D /* Likers.m in Sources */,
 				45EE84A31C5F36B900EA3F0D /* UploadingView.m in Sources */,
@@ -6617,6 +6676,7 @@
 				45EE85641C5F36B900EA3F0D /* AlertView.m in Sources */,
 				45EE85661C5F36B900EA3F0D /* NewFinance.m in Sources */,
 				45EE85671C5F36B900EA3F0D /* Announcement+CoreDataProperties.m in Sources */,
+				9537FF9D1C93C69900D043F5 /* GDataXMLNode.m in Sources */,
 				45EE85691C5F36B900EA3F0D /* UIView+MJExtension.m in Sources */,
 				95E59D101C8D1E4F008C10AA /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				45EE856A1C5F36B900EA3F0D /* AFHTTPRequestOperationManager.m in Sources */,
@@ -6857,6 +6917,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "金指投发布 copy2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6886,6 +6947,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "金指投发布 copy2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

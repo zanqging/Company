@@ -9,8 +9,9 @@
 #import "TDUtil.h"
 
 #import "NSString+MD5.h"
-#import "UConstants.h"
 #import "MJRefresh.h"
+#import "UConstants.h"
+#import "GDataXMLNode.h"
 #import "Reachability.h"
 @implementation TDUtil
 + (UIImage *)createImageWithColor:(UIColor *)color rect:(CGRect)rect
@@ -293,23 +294,6 @@
             return @"周一";
             break;
     }
-}
-
-
-+(int)BoxModelDaytime
-{
-    NSMutableArray* weekNumArray=[TDUtil weekWithOneWeek];
-    NSInteger weekIndex;
-    int num=0;
-    for (int i=0; i<7; i++) {
-        weekIndex=[[weekNumArray objectAtIndex:i] integerValue];
-        if (weekIndex==7 &&i<2) {
-            num++;
-        }else if(weekIndex==1 &&i<2){
-            num++;
-        }
-    }
-    return num;
 }
 
 
@@ -1310,5 +1294,125 @@
     for (UIView * v in views) {
         [view addSubview:v];
     }
+}
+
+
++ (NSDictionary *)convertXMLStringElementToDictory:(NSString *)xmlString
+{
+    NSMutableDictionary * dic;
+    GDataXMLDocument *xmlDoc = [[GDataXMLDocument alloc] initWithXMLString:xmlString options:0 error:nil];
+    GDataXMLElement *xmlEle = [xmlDoc rootElement];
+    NSArray *array = [xmlEle children];
+    NSLog(@"count : %lu", (unsigned long)[array count]);
+    if (array && [array count] > 0) {
+        dic = [[NSMutableDictionary alloc]init];
+    }
+    
+    for (int i = 0; i < [array count]; i++) {
+        GDataXMLElement *ele = [array objectAtIndex:i];
+        
+        // 根据标签名判断
+        if ([[ele name] isEqualToString:@"name"]) {
+            // 读标签里面的属性
+            NSLog(@"name --> %@", [[ele attributeForName:@"value"] stringValue]);
+        } else {
+            // 直接读标签间的String
+            NSLog(@"age --> %@", [ele stringValue]);
+        }
+        [dic setObject:[ele stringValue] forKey:[ele name]];
+    }
+    
+    NSLog(@"%@",dic);
+    return dic;
+}
+
+
++ (NSString *)convertDictoryToYeePayXMLString:(NSDictionary *)dic
+{
+    NSString * xmlString = @"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>";
+    if (!dic) {
+        return nil;
+    }
+    
+    xmlString = [xmlString stringByAppendingFormat:@"<request platformNo=\"%@\">",YeePayPlatformID];
+    xmlString = [xmlString stringByAppendingString:[self forDictoryToXml:dic]];
+    xmlString = [xmlString stringByAppendingString:@"</request>"];
+    NSLog(@"%@",xmlString);
+    return xmlString;
+}
+
++ (NSString *)forDictoryToXml:(NSDictionary*)dic
+{
+    NSString * xmlString = @"";
+    NSArray * keys = [dic allKeys];
+    for (id key in keys) {
+        if ([key isEqualToString:@"extend"]) {
+            xmlString = [xmlString stringByAppendingFormat:@"<%@>",key];
+            NSDictionary * dicTemp = (NSDictionary*)[dic valueForKey:key];
+            NSArray * keysTemp = [dicTemp allKeys];
+            for (id k in keysTemp) {
+                xmlString = [xmlString stringByAppendingFormat:@"<property name=\"%@\" value=\"%@\" />",k,[dicTemp valueForKey:k]];
+            }
+            
+            xmlString = [xmlString stringByAppendingFormat:@"</%@>",key];
+        }else{
+            if ([[dic valueForKey:key] isKindOfClass:NSDictionary.class]) {
+                NSDictionary * dicTemp = (NSDictionary*)[dic valueForKey:key];
+                NSString * subXmlString = [self forDictoryToXml:dicTemp];
+                xmlString = [xmlString stringByAppendingFormat:@"<%@>%@</%@>",key,subXmlString,key];
+            }else if([[dic valueForKey:key] isKindOfClass:NSArray.class]){
+                NSArray * arrayTemp = (NSArray*)[dic valueForKey:key];
+                xmlString = [xmlString stringByAppendingFormat:@"<%@>",key];
+                for (NSDictionary * d in arrayTemp) {
+                    xmlString = [xmlString stringByAppendingFormat:@"<%@>",[((NSString*)key) substringToIndex:((NSString*)key).length-1]];
+                    NSString * subXmlString = [self forDictoryToXml:d];
+                    xmlString = [xmlString stringByAppendingString:subXmlString];
+                    xmlString = [xmlString stringByAppendingFormat:@"</%@>",[((NSString*)key) substringToIndex:((NSString*)key).length-1]];
+                }
+                xmlString = [xmlString stringByAppendingFormat:@"</%@>",key];
+            }else{
+                xmlString = [xmlString stringByAppendingFormat:@"<%@>%@</%@>",key,[dic valueForKey:key],key];
+            }
+        }
+    }
+    
+    return xmlString;
+}
+
++ (NSString*)convertDictoryToFormat:(NSString *)format dicData:(NSDictionary *)dic
+{
+    NSString * xmlString = @"";
+    NSArray * keys = [dic allKeys];
+    for (id key in keys) {
+        xmlString = [xmlString stringByAppendingFormat:format,key,[dic valueForKey:key]];
+    }
+    return xmlString;
+}
+
++ (NSString *)generateTradeNo
+{
+    NSString * dataTime  = [self CurrentDate];
+    dataTime = [dataTime stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    dataTime = [dataTime stringByReplacingOccurrencesOfString:@" " withString:@""];
+    dataTime = [dataTime stringByReplacingOccurrencesOfString:@":" withString:@""];
+    
+    NSUserDefaults * data = [NSUserDefaults standardUserDefaults];
+    NSString * userId = [data valueForKey:USER_STATIC_USER_ID];
+    
+    return [NSString stringWithFormat:@"%@%@",dataTime,userId];
+    
+}
+
++ (NSString *)generateUserPlatformNo
+{
+    NSUserDefaults * data = [NSUserDefaults standardUserDefaults];
+    NSString * userId = [data valueForKey:USER_STATIC_USER_ID];
+    
+    return [NSString stringWithFormat:UserPlatFormNo, userId];
+}
+
++ (NSString *)generateTenderNo:(NSString *)projectId
+{
+    return [NSString stringWithFormat:ProjectTenderNo, projectId];
 }
 @end

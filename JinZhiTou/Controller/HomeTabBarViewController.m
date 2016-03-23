@@ -21,6 +21,7 @@
 #import "GlobalDefine.h"
 #import "NSString+SBJSON.h"
 #import <MessageUI/MessageUI.h>
+#import "PurseViewController.h"
 #import "SlidePageController.h"
 #import "PECropViewController.h"
 #import "AboutUsViewController.h"
@@ -386,16 +387,16 @@
         case 1:
             name = @"aboutMe";
             break;
-        case 2:
+        case 3:
             name = @"MyCollecte";
             break;
-        case 3:
+        case 4:
             name = @"Myfinial";
             break;
-        case 4:
+        case 5:
             name = @"AuthConfig";
             break;
-        case 5:
+        case 6:
             name = @"aboutUs";
             break;
         default:
@@ -406,6 +407,8 @@
 //        UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 //        controller = [storyBoard instantiateViewControllerWithIdentifier:@"SystemMessage"];
         controller = [self p_defaultController];
+    }else if (index ==2){
+        controller = [[PurseViewController alloc]init];
     }else if (index ==5){
         controller = [[AboutUsViewController alloc]init];
     }else{

@@ -152,6 +152,8 @@
 #define SERVICE_URL @"http://www.jinzht.com/phone5/"//服务器域名地址
 //#define SERVICE_URL @"http://www.jinzht.com:8000/phone/"//服务器域名地址
 #define BUINESS_SERVER @"http://220.181.25.233:8081/member/bhawireless/" //易宝支付测试环境
+#define BUINESE_SERVERD @"http://220.181.25.233:8081/member/bhaexter/bhaController" //直连接口
+
 //服务器域名地址
 //#define SERVICE_URL @"http://www.jinzht.com/phone/"//服务器域名地址
 //#define SERVICE_URL @"http://192.168.31.236:8080/weini/"
@@ -471,6 +473,23 @@
 #define USER_STATIC_USER_ID @"user_static_user_id"
 //==============================第三期App研发接口==============================//
 
+//==============================2016年3月份易宝支付App研发接口==============================//
+//易宝支付签名
+#define YeePayMent @"toRecharge"
+#define toBindBankCard @"toBindBankCard"
+#define YeePayToRegister @"toRegister"
+#define YeePayPlatformID @"10013200657"
+#define YeePaySignVerify @"signVerify/"
+#define YeePayToCpTransaction @"toCpTransaction"
+#define ACCOUNT_INFO @"ACCOUNT_INFO"
+#define UserAccountFormat @"jinzht_1100000"
+#define UserPlatFormNo @"jinzht_0_%@"
+#define ProjectTenderNo @"jinzht_project_%@"
+#define IsTendered   @"IsTendered/"
+
+#define BANK_LIST [NSMutableDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"交通银行",@"中国光大银行",@"上海浦发发展银行",@"中国农业银行",@"中信银行",@"中国建设银行",@"中国民生银行",@"中国平安银行",@"中国邮政储蓄",@"招商银行",@"兴业银行",@"中国工商银行",@"中国银行",@"北京银行",@"广发银行",@"华夏银行",@"西安市商业银行",@"上海银行",@"天津市商业银行",@"深圳农村商业银行",@"北京农商银行",@"杭州市商业银行",@"昆仑银行",@"郑州银行",@"温州银行",@"汉口银行",@"南京银行",@"厦门银行",@"南昌银行",@"江苏银行",@"东亚银行",@"成都银行",@"宁波银行",@"长沙银行",@"河北银行",@"广州银行", nil] forKeys:[NSArray arrayWithObjects:@"BOCO",@"CEB",@"SPDB",@"ABC",@"ECITIC",@"CCB",@"CMBC",@"SDB",@"PSBC",@"CMBCHINA",@"CIB",@"ICBC",@"BOC",@"BCCB",@"GDB",@"HX",@"XAYH",@"SHYH",@"TJYH",@"SZNCSYYH",@"BJNCSYYH",@"HZYH",@"KLYH",@"ZHENGZYH",@"WZYH",@"HKYH",@"NJYH",@"XMYH",@"NCYH",@"JISYH",@"HKBEA",@"CDYH",@"NBYH",@"CSYH",@"HBYH",@"GUAZYH",nil]]
+//==============================2016年3月份易宝支付App研发接口==============================//
+
 //支持区域
 #define ROMATE_MSG_TYPE [NSDictionary dictionaryWithObjectsAndKeys:@"projectdetail",@"0",@"msg",@"1",@"system",@"2",@"web",@"3",@"news",@"4",@"knowledge",@"5",@"roadshow",@"6",@"participate",@"7",@"investor",@"8",@"feeling",@"9",nil]
 
@@ -551,4 +570,10 @@ typedef NS_ENUM(NSInteger, NetStatus) {
     NetStatusNone,    /// 无网络状态
 };
 
+typedef NS_ENUM(NSInteger, PayStatus) {
+    PayStatusConfirm, /// 实名认证
+    PayStatusBindCard, /// 绑定银行卡
+    PayStatusPayfor,    /// 充值
+    PayStatusTransfer,  ///转账确认
+};
 #endif

@@ -8,8 +8,10 @@
 
 #import "FinialApplyViewController.h"
 #import "FinialKind.h"
+#import "YeePayViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UserFinialViewController.h"
+#import "PaySuccessViewController.h"
 #import "FinialSuccessViewController.h"
 @interface FinialApplyViewController ()<UIScrollViewDelegate,UITextFieldDelegate,ASIHTTPRequestDelegate>
 {
@@ -40,10 +42,13 @@
     
     [self addView];
     
+    [self loadData];
+    
     //数据初始化
     currentSelect=1;
     currentTag=20002;
 }
+
 -(void)addView
 {
     scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, POS_Y(self.navView), WIDTH(self.view), HEIGHT(self.view)-POS_Y(self.navView))];
@@ -122,6 +127,79 @@
     [scrollView addSubview:btnAction];
 }
 
+-(void)loadData
+{
+    self.startLoading  =YES;
+    [self.httpUtil getDataFromAPIWithOps:[NSString stringWithFormat:@"%@?projectId=%ld",USERINFO,self.projectId] postParam:nil type:0 delegate:self sel:@selector(requestFinished:)];
+}
+
+-(void)isCheckUserConfirmed
+{
+    NSString * str = [TDUtil generateUserPlatformNo];
+    
+    NSMutableDictionary * dic = [NSMutableDictionary new];
+    [dic setObject:str forKey:@"platformUserNo"];
+    
+    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+    
+    [self sign:signString sel:@selector(requestCheckUserSign:)];
+}
+
+-(void)goConfirm
+{
+    NSUserDefaults * data = [NSUserDefaults standardUserDefaults];
+    NSString * str = [TDUtil generateUserPlatformNo];
+    
+    NSMutableDictionary * dic = [NSMutableDictionary new];
+    [dic setObject:str forKey:@"platformUserNo"];
+    [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
+    [dic setObject:@"G2_IDCARD" forKey:@"idCardType"];
+    [dic setObject:@"ios://verify:" forKey:@"callbackUrl"];
+    [dic setObject:DICVFK(self.dataDic, @"tel") forKey:@"mobile"];
+    [dic setObject:DICVFK(self.dataDic, @"name") forKey:@"realName"];
+    [dic setObject:DICVFK(self.dataDic, @"idno") forKey:@"idCardNo"];
+    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+    [dic setObject:[data valueForKey:USER_STATIC_NICKNAME] forKey:@"nickName"];
+    
+    
+    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+    
+    [self sign:signString sel:@selector(requestSign:)];
+    
+}
+
+-(void)goInvest
+{
+    NSString * str = [TDUtil generateUserPlatformNo];
+    
+    NSMutableDictionary * dic = [NSMutableDictionary new];
+    
+    
+    UIView* view = [scrollView viewWithTag:30001];
+    UITextField* textField = (UITextField*)[view viewWithTag:500001];
+    NSString* mount =textField.text;
+    mount = [mount stringByReplacingOccurrencesOfString:@"万元" withString:@"0000"];
+    
+    [dic setObject:mount forKey:@"amount"];
+    [dic setObject:str forKey:@"platformUserNo"];
+    [dic setObject:@"PLATFORM" forKey:@"feeMode"];
+    [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
+    [dic setObject:@"ios://finialConfirm" forKey:@"callbackUrl"];
+    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+    
+    
+    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+    
+    [self sign:signString sel:@selector(requestSignFinial:)];
+}
+
+
+-(void)sign:(NSString*)signString sel:(SEL)sel
+{
+    [self.httpUtil getDataFromAPIWithOps:YeePaySignVerify postParam:[NSDictionary dictionaryWithObjectsAndKeys:signString,@"req",@"sign",@"method",nil] type:0 delegate:self sel:sel];
+}
+
+
 -(void)finialSubmmit:(id)sender
 {
     UIView* view = [scrollView viewWithTag:30001];
@@ -133,14 +211,26 @@
     }else{
         [self resignKeyboard];
         
-        NSString* url = [INVEST stringByAppendingFormat:@"%ld/%d/",(long)self.projectId,currentSelect];
-        NSMutableDictionary* dic = [[NSMutableDictionary alloc]init];
+        BOOL isActive = [DICVFK(self.dataDic, @"is_actived") boolValue];
+        if (isActive) {
+            double virtual_currency = [DICVFK(self.dataDic, @"virtual_currency") doubleValue];
+            if (virtual_currency > 0.0) {
+                NSString* url = [INVEST stringByAppendingFormat:@"%ld/%d/",(long)self.projectId,currentSelect];
+                NSMutableDictionary* dic = [[NSMutableDictionary alloc]init];
+                
+                
+                [dic setValue:mount forKey:@"amount"];
+                [dic setValue:[TDUtil generateTradeNo] forKey:@"investCode"];
+                [dic setValue:[NSString stringWithFormat:@"%d",currentSelect] forKey:@"flag"];
+                [self.httpUtil getDataFromAPIWithOps:url postParam:dic type:0 delegate:self sel:@selector(requestFinialSubmmmit:)];
+                self.startLoading  =YES;
+                self.isTransparent  =YES;
+                return;
+            }
+        }
         
-        [dic setValue:mount forKey:@"amount"];
-        [dic setValue:[NSString stringWithFormat:@"%d",currentSelect] forKey:@"flag"];
-        [self.httpUtil getDataFromAPIWithOps:url postParam:dic type:0 delegate:self sel:@selector(requestFinialSubmmmit:)];
-        self.startLoading  =YES;
-        self.isTransparent  =YES;
+        [self isCheckUserConfirmed];
+        
     }
 }
 
@@ -179,6 +269,7 @@
         }
     }
 }
+
 
 -(void)back:(id)sender
 {
@@ -220,7 +311,22 @@
     
 }
 
-
+//*********************************************************网络请求开始*****************************************************//
+-(void)requestFinished:(ASIHTTPRequest*)request
+{
+    NSString* jsonString =[TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    
+    NSMutableDictionary* dic = [jsonString JSONValue];
+    
+    if (dic!=nil) {
+        int code =[[dic valueForKey:@"code"] intValue];
+        if (code == 0) {
+            self.dataDic = DICVFK(dic, @"data");
+        }
+        self.startLoading = NO;
+    }
+}
 
 -(void)requestFinialSubmmmit:(ASIHTTPRequest *)request
 {
@@ -232,15 +338,18 @@
     {
         NSString* code = [jsonDic valueForKey:@"code"];
         if ([code intValue] == 0) {
-//            [[DialogUtil sharedInstance] showDlg:self.view textOnly:@"信息提交成功!"];
-//            
-//            FinialSuccessViewController* controller =[[FinialSuccessViewController alloc]init];
-//            controller.type=1;
-//            controller.titleStr= @"投资结果";
-//            controller.content =@"    尊敬的用户，您的投资申请已提交，48小时内会有工作人员与您联系，您也可以在“个人中心”－－“进度查看”中查看到审核进度。";
-//            [self.navigationController pushViewController:controller animated:YES];
-            
-             [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[jsonDic valueForKey:@"msg"],@"msg",@"",@"cancel",@"确认",@"sure",@"4",@"type",self,@"vController", nil]];
+            BOOL isActive = [DICVFK(self.dataDic, @"is_actived") boolValue];
+            if (isActive) {
+                double virtual_currency = [DICVFK(self.dataDic, @"virtual_currency") doubleValue];
+                if (virtual_currency > 0.0) {
+//                    [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[jsonDic valueForKey:@"msg"],@"msg",@"",@"cancel",@"确认",@"sure",@"4",@"type",self,@"vController", nil]];
+                    self.startLoading = NO;
+                    
+                    PaySuccessViewController * controller = [[PaySuccessViewController alloc]init];
+                    [self.navigationController pushViewController:controller animated:YES];
+                    return;
+                }
+            }
             
         }else{
 //            if ([code intValue] == 1) {
@@ -261,6 +370,107 @@
         self.startLoading = NO;
     }
 }
+
+-(void)requestSignFinial:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            NSDictionary * data = [jsonDic valueForKey:@"data"];
+            NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
+            YeePayViewController * controller = [[YeePayViewController alloc]init];
+            controller.title = @"确认投资";
+            controller.titleStr = @"易宝支付";
+            controller.PostPramDic = dic;
+            controller.dic = self.dic;
+            
+            
+            UIView* view = [scrollView viewWithTag:30001];
+            UITextField* textField = (UITextField*)[view viewWithTag:500001];
+            
+            NSString* mount =textField.text;
+            mount = [mount stringByReplacingOccurrencesOfString:@"万元" withString:@"0000"];
+            
+            [controller.dic setValue:mount forKey:@"mount"];
+            [controller.dic setValue:STRING(@"%d", currentSelect) forKey:@"currentSelect"];
+            controller.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,YeePayMent,nil)];
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if([code intValue] == 1){
+            
+        }
+        self.startLoading  =NO;
+    }
+}
+
+-(void)requestCheckUserSign:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            NSDictionary * data = [jsonDic valueForKey:@"data"];
+            NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign",ACCOUNT_INFO,@"service", nil];
+            [self.httpUtil getDataFromYeePayAPIWithOps:@"" postParam:dic type:0 delegate:self sel:@selector(requestCheckUser:)];
+        }else if([code intValue] == 1){
+            
+        }
+        self.startLoading  =NO;
+    }
+}
+
+-(void)requestCheckUser:(ASIHTTPRequest *)request{
+    NSString *xmlString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",xmlString);
+    NSDictionary * xmlDic = [TDUtil convertXMLStringElementToDictory:xmlString];
+    
+    NSLog(@"%@",xmlDic);
+    
+    if ([DICVFK(xmlDic, @"code") intValue]==101) {
+        [self goConfirm];
+    }else if([DICVFK(xmlDic, @"code") intValue]==1)
+    {
+        [self goInvest];
+    }else{
+        
+    }
+    
+
+}
+
+-(void)requestSign:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            NSDictionary * data = [jsonDic valueForKey:@"data"];
+            NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
+            YeePayViewController * controller = [[YeePayViewController alloc]init];
+            controller.title = @"项目详情";
+            controller.titleStr = @"实名认证";
+            controller.PostPramDic = dic;
+            controller.dic = self.dic;
+            [controller.dic setValue:STRING(@"%d", currentSelect) forKey:@"currentSelect"];
+            controller.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,YeePayToRegister,nil)];
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if([code intValue] == 1){
+            
+        }
+        self.startLoading  =NO;
+    }
+}
+
+
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
     NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];

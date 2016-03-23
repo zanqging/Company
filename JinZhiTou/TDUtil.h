@@ -150,10 +150,6 @@
 +(NSInteger)currentMonth;
 //返回自定义时间
 +(NSInteger)dayWithNextNum:(int)num;
-//返回一周日期
-+(NSMutableArray*)dayWithOneWeek;
-//返回周
-+(NSMutableArray*)weekWithOneWeek;
 //返回个性化日
 +(NSString*)dateTimeWithOps:(int)dayAdd;
 /**
@@ -265,7 +261,6 @@
  */
 +(NSMutableArray*)soreAsc:(NSMutableDictionary*)arr;
 //=====================================================================================================//
-+(int)BoxModelDaytime;
 //是否到达指定时间: 参数compareTimeStr 格式:@" 14:00:00"
 +(BOOL)isArrivedTime:(NSString*)compareTimeStr;
 +(void)setTextFieldLeftPadding:(UITextField *)textField forWidth:(CGFloat)leftWidth;
@@ -286,26 +281,6 @@
 
 
 #pragma mark - AES加密
-
-/**
- *  AES加密算法加密
- *
- *  @param string 需要加密字符串
- *
- *  @return 加密后字符串
- */
-
-+ (NSData*)encryptAESData:(NSString*)string;
-
-/**
- *  将带密码的data转成string
- *
- *  @param data 数据
- *
- *  @return 加密数据字符串
- */
-
-+ (NSString*)decryptAESData:(NSData*)data;
 //自己写的加密算法
 +(NSString*)encryptPhoneNum:(NSString*)phoneNum;
 #pragma mark - MD5加密
@@ -395,14 +370,6 @@
  *  @param loadAction    加载更多事件
  */
 +(void)collectView:(UICollectionView*)collectionView  target:(id)target refreshAction:(SEL)refreshAction loadAction:(SEL)loadAction;
-/**
- *  是否已注册
- *
- *  @param observer observer
- *
- *  @return
- */
-+(BOOL)isHasObserver:(NSString*)observer;
 
 /**
  *  UILabel自适应宽度和高度
@@ -516,4 +483,56 @@
  *  @param views 子view数组
  */
 + (void)addChildViewToView:(UIView *) view childViews:(NSArray *) views;
+
+/**
+ *  解析xml字符串，将各个属性值保存在字典中
+ *
+ *  @param xmlString 待解析xml字符串
+ *
+ *  @return 返回保存后的属性值字典
+ */
++ (NSDictionary *)convertXMLStringElementToDictory:(NSString *) xmlString;
+
+/**
+ *  将字典转换为易宝业务所需xml 字符串
+ *
+ *  @param dic 字典对象
+ *
+ *  @return xml字符串
+ */
++ (NSString * )convertDictoryToYeePayXMLString:(NSDictionary*)dic;
+
+/**
+ *  将字典数据转换为特定格式
+ *
+ *  @param format  格式
+ *  @param dicData 待字典对象
+ *
+ *  @return 转换后特定格式字符串
+ */
++ (NSString *)convertDictoryToFormat:(NSString*)format dicData:(NSDictionary*)dicData;
+
+/**
+ *  生成订单编号
+ *
+ *  @return 返回编号
+ */
++ (NSString *)generateTradeNo;
+
+/**
+ *  生成用户编号
+ *
+ *  @return 
+ */
++ (NSString *)generateUserPlatformNo;
+
+/**
+ *  根据项目id生产固定投标编号
+ *
+ *  @param projectId 项目id
+ *
+ *  @return 投标编号
+ */
++ (NSString *)generateTenderNo:(NSString *)projectId;
+
 @end

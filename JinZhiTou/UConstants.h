@@ -98,6 +98,7 @@
 
 //字符串格式化
 #define STRING(FORMAT,VALUE) [NSString stringWithFormat:FORMAT,VALUE]
+#define STRING_3(FORMAT,VALUE1,VALUE2,VALUE3) [NSString stringWithFormat:FORMAT,VALUE1,VALUE2,VALUE3]
 
 // 字体大小(常规/粗体)
 #define BOLDSYSTEMFONT(FONTSIZE)[UIFont boldSystemFontOfSize:FONTSIZE]

@@ -41,6 +41,7 @@
     
     self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, POS_Y(self.navView), WIDTH(self.view), HEIGHT(self.view)-POS_Y(self.navView))];
     self.webView.delegate = self;
+    self.webView.dataDetectorTypes  = UIDataDetectorTypeAll;
     [self.view addSubview:self.webView];
     
      [self loadUrl];
@@ -117,9 +118,57 @@
     
     self.startLoading = YES;
     self.isTransparent = YES;
+    
+}
+
+-(void)openMyAlbum
+
+{
+    
+    UIImagePickerController *vc = [[UIImagePickerController alloc]init];
+    
+    vc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 
+
+-(void)openMyCamera
+
+{
+    [_webView stringByEvaluatingJavaScriptFromString:@"test();"];
+    
+    UIImagePickerController *vc = [[UIImagePickerController alloc]init];
+    
+    vc.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
+
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSString *urlstr = request.URL.absoluteString;
+    
+    NSRange range = [urlstr rangeOfString:@"ios://"];
+    
+    if(range.length!=0)
+    {
+        
+        NSString *method = [urlstr substringFromIndex:(range.location+range.length)];
+        
+        SEL selctor = NSSelectorFromString(method);
+        
+        [self performSelector:selctor withObject:nil];
+        
+        return NO;
+    }
+    
+    return YES;
+}
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
@@ -129,6 +178,8 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     self.startLoading =NO;
+    NSString * string =  [webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
+    NSLog(@"返回内容:%@",string);
     [self.webView.scrollView setContentSize:CGSizeMake(WIDTH(self.webView.scrollView), self.webView.scrollView.contentSize.height + 80)];
 }
 

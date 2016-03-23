@@ -23,7 +23,6 @@
     int currentPage;
     
     NSString* atTopId;
-    UIWebView * webView;
     NSString * phoneNumber;
     
     NSMutableArray * _images;  //测试用

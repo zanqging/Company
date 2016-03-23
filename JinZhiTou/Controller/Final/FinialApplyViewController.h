@@ -11,4 +11,5 @@
 @interface FinialApplyViewController : RootViewController
 @property(assign,nonatomic)NSInteger projectId;
 @property(retain,nonatomic)NSString* titleStr;
+@property(retain,nonatomic)NSDictionary* dic;
 @end

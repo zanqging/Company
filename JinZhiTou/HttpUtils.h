@@ -39,6 +39,22 @@
                         type:(NSInteger)type
                     delegate:(id)delegate
                          sel:(SEL)sel;
+
+/**
+ *
+ *  用于进行易宝定制返回代理方法
+ *  @param urlStr   请求网络地址
+ *  @param postDic  传入字典参数
+ *  @param type     请求类型，0:同步请求，1:异步请求
+ *  @param delegate 代理
+ *  @param sel      网络请求成功后执行方法
+ */
+-(void)getDataFromYeePayAPIWithOps:(NSString*)urlStr
+                   postParam:(NSDictionary*)postDic
+                        type:(NSInteger)type
+                    delegate:(id)delegate
+                         sel:(SEL)sel;
+
 /**
  *
  *  用于进行无参数传递网络请求
