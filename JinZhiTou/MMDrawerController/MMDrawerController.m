@@ -713,6 +713,8 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     [self.view setBackgroundColor:[UIColor blackColor]];
     
 	[self setupGestureRecognizers];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pushController:) name:@"pushController" object:nil];
 }
 
 
@@ -745,8 +747,6 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     else if(self.openSide == MMDrawerSideRight) {
         [self.rightDrawerViewController endAppearanceTransition];
     }
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pushController:) name:@"pushController" object:nil];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -759,7 +759,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
         [self.rightDrawerViewController beginAppearanceTransition:NO animated:animated];
     }
     
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"pushController" object:nil];
+    //[[NSNotificationCenter defaultCenter]removeObserver:self name:@"pushController" object:nil];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{

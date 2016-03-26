@@ -101,6 +101,11 @@
     [self  loadProjectDetail];
 }
 
+-(void)setDic:(NSDictionary *)dic
+{
+    self->_dic = dic;
+}
+
 -(void)myMovieFinishedCallback:(NSNotification*)aNotification
 {
     NSLog(@"%@",aNotification.userInfo);
@@ -548,7 +553,8 @@
         NSString* code = [jsonDic valueForKey:@"code"];
         if ([code intValue] == 0 || [code intValue] == 2) {
             dataDic = [jsonDic valueForKey:@"data"];
-            self.dic = [NSMutableDictionary dictionaryWithDictionary:dataDic];
+            [self.dic setValuesForKeysWithDictionary:dataDic];
+            
             NSDictionary* stageDic = [dataDic valueForKey:@"stage"];
             int index;
             if ([[stageDic valueForKey:@"flag"] intValue]!=1) {

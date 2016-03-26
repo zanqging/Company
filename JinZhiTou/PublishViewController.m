@@ -204,6 +204,7 @@
     self.browser.displaySelectionButtons = displaySelectionButtons;
     self.browser.alwaysShowControls = displaySelectionButtons;
     self.browser.zoomPhotosToFill = YES;
+    self.browser.maxSelected = 9;
     self.browser.enableGrid = enableGrid;
     self.browser.startOnGrid = startOnGrid;
     self.browser.enableSwipeToDismiss = NO;
@@ -368,8 +369,8 @@
         }
     }
     
-    if (count<=9) {
-        if (count<9) {
+    if (count<=self.browser.maxSelected) {
+        if (count<self.browser.maxSelected) {
             photoBrowser.limit  =NO;
         }else{
             photoBrowser.limit  =YES;

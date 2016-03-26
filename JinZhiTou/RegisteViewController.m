@@ -8,6 +8,7 @@
 
 #import "RegisteViewController.h"
 #import "APService.h"
+#import "loginViewController.h"
 #import "MMDrawerController.h"
 #import "PrivacyViewController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -409,6 +410,13 @@
                  
              }];
             [self.navigationController pushViewController:self.drawerController animated:YES];
+            
+            for ( UIViewController * controller in self.navigationController.childViewControllers) {
+                if ([controller isKindOfClass:loginViewController.class]) {
+                    [controller removeFromParentViewController];
+                    [self removeFromParentViewController];
+                }
+            }
         }else{
             NSString* msg =[jsonDic valueForKey:@"msg"];
              [[DialogUtil sharedInstance]showDlg:self.view textOnly:msg];

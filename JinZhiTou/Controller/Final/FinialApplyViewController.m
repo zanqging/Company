@@ -49,6 +49,10 @@
     currentTag=20002;
 }
 
+-(void)setDic:(NSDictionary *)dic
+{
+    self->_dic = dic;
+}
 -(void)addView
 {
     scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, POS_Y(self.navView), WIDTH(self.view), HEIGHT(self.view)-POS_Y(self.navView))];

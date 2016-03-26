@@ -556,8 +556,8 @@
                  }
                  
              }];
-            [self.navigationController pushViewController:self.drawerController animated:YES];
             [[DialogUtil sharedInstance]showDlg:self.view textOnly:[jsonDic valueForKey:@"msg"]];
+            [self.navigationController pushViewController:self.drawerController animated:YES];
             [self removeFromParentViewController];
             
         }else{

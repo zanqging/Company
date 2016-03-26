@@ -44,10 +44,10 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     self.view = contentView;
     
     self.cropView = [[PECropView alloc] initWithFrame:contentView.bounds];
-    CGFloat ratio =1.0f;
+    //CGFloat ratio =self.image.size.width / self.image.size.height;
     CGRect cropRect = self.cropView.cropRect;
-    CGFloat width = 100;
-    cropRect.size = CGSizeMake(width, width * ratio);
+    CGFloat width = self.image.size.width;
+    cropRect.size = CGSizeMake(width, self.image.size.height);
     self.cropView.cropRect = cropRect;
     [contentView addSubview:self.cropView];
 }

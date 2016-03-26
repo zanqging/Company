@@ -60,16 +60,17 @@
     
     labelContent.textColor = WriteColor;
     labelContent.font = SYSTEMFONT(18);
-    labelContent.text = @"¥ 200000.00\n恭喜！已支付成功！";
     labelContent.textAlignment = NSTextAlignmentCenter;
     
-    self.titleLabel.text = @"逸景营地";
     self.titleLabel.font = SYSTEMFONT(15);
     self.subTitleLabel.font = SYSTEMFONT(12);
-    self.imgView.image = IMAGENAMED(@"test");
-    self.subTitleLabel.text = @"逸景营地投资有限公司";
     self.titleLabel.textColor = WriteColor;
     self.subTitleLabel.textColor = WriteColor;
+    
+    labelContent.text = STRING(@"¥ %@\n恭喜！已支付成功！", DICVFK(self.dataDic, @"mount"));
+    self.titleLabel.text = DICVFK(self.dataDic, @"abbrevcompany");
+    self.subTitleLabel.text = DICVFK(self.dataDic, @"company");
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:DICVFK(self.dataDic, @"img")] placeholderImage:IMAGENAMED(@"test")];
     
     [btnAction setImage:IMAGENAMED(@"paySuccessSure") forState:UIControlStateNormal];
     [btnAction addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -127,8 +128,6 @@
 -(void)setDataDic:(NSMutableDictionary *)dataDic
 {
     [super setDataDic:dataDic];
-    
-    
 }
 
 -(void)btnAction:(id)sender

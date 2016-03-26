@@ -784,6 +784,114 @@
 		459AC0C41CA62337002837CB /* libxml2.2.tbd in Sources */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
 		459AC0C51CA62344002837CB /* libxml2.2.tbd in Sources */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
 		459AC0C61CA62350002837CB /* libxml2.2.tbd in Resources */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
+		459AC1041CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CA1CA626B7002837CB /* ASIAuthenticationDialog.m */; };
+		459AC1051CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CA1CA626B7002837CB /* ASIAuthenticationDialog.m */; };
+		459AC1061CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CA1CA626B7002837CB /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1071CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CA1CA626B7002837CB /* ASIAuthenticationDialog.m */; };
+		459AC1081CA626B7002837CB /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CD1CA626B7002837CB /* ASIDataCompressor.m */; };
+		459AC1091CA626B7002837CB /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CD1CA626B7002837CB /* ASIDataCompressor.m */; };
+		459AC10A1CA626B7002837CB /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CD1CA626B7002837CB /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC10B1CA626B7002837CB /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CD1CA626B7002837CB /* ASIDataCompressor.m */; };
+		459AC10C1CA626B7002837CB /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CF1CA626B7002837CB /* ASIDataDecompressor.m */; };
+		459AC10D1CA626B7002837CB /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CF1CA626B7002837CB /* ASIDataDecompressor.m */; };
+		459AC10E1CA626B7002837CB /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CF1CA626B7002837CB /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC10F1CA626B7002837CB /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0CF1CA626B7002837CB /* ASIDataDecompressor.m */; };
+		459AC1101CA626B7002837CB /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D11CA626B7002837CB /* ASIDownloadCache.m */; };
+		459AC1111CA626B7002837CB /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D11CA626B7002837CB /* ASIDownloadCache.m */; };
+		459AC1121CA626B7002837CB /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D11CA626B7002837CB /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1131CA626B7002837CB /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D11CA626B7002837CB /* ASIDownloadCache.m */; };
+		459AC1141CA626B7002837CB /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D31CA626B7002837CB /* ASIFormDataRequest.m */; };
+		459AC1151CA626B7002837CB /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D31CA626B7002837CB /* ASIFormDataRequest.m */; };
+		459AC1161CA626B7002837CB /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D31CA626B7002837CB /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1171CA626B7002837CB /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D31CA626B7002837CB /* ASIFormDataRequest.m */; };
+		459AC1181CA626B7002837CB /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D51CA626B7002837CB /* ASIHTTPRequest.m */; };
+		459AC1191CA626B7002837CB /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D51CA626B7002837CB /* ASIHTTPRequest.m */; };
+		459AC11A1CA626B7002837CB /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D51CA626B7002837CB /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC11B1CA626B7002837CB /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D51CA626B7002837CB /* ASIHTTPRequest.m */; };
+		459AC11C1CA626B8002837CB /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D91CA626B7002837CB /* ASIInputStream.m */; };
+		459AC11D1CA626B8002837CB /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D91CA626B7002837CB /* ASIInputStream.m */; };
+		459AC11E1CA626B8002837CB /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D91CA626B7002837CB /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC11F1CA626B8002837CB /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0D91CA626B7002837CB /* ASIInputStream.m */; };
+		459AC1201CA626B8002837CB /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DB1CA626B7002837CB /* ASINetworkQueue.m */; };
+		459AC1211CA626B8002837CB /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DB1CA626B7002837CB /* ASINetworkQueue.m */; };
+		459AC1221CA626B8002837CB /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DB1CA626B7002837CB /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1231CA626B8002837CB /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DB1CA626B7002837CB /* ASINetworkQueue.m */; };
+		459AC1241CA626B8002837CB /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DF1CA626B7002837CB /* ASIWebPageRequest.m */; };
+		459AC1251CA626B8002837CB /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DF1CA626B7002837CB /* ASIWebPageRequest.m */; };
+		459AC1261CA626B8002837CB /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DF1CA626B7002837CB /* ASIWebPageRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1271CA626B8002837CB /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0DF1CA626B7002837CB /* ASIWebPageRequest.m */; };
+		459AC1281CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E21CA626B7002837CB /* ASICloudFilesCDNRequest.m */; };
+		459AC1291CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E21CA626B7002837CB /* ASICloudFilesCDNRequest.m */; };
+		459AC12A1CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E21CA626B7002837CB /* ASICloudFilesCDNRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC12B1CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E21CA626B7002837CB /* ASICloudFilesCDNRequest.m */; };
+		459AC12C1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E41CA626B7002837CB /* ASICloudFilesContainer.m */; };
+		459AC12D1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E41CA626B7002837CB /* ASICloudFilesContainer.m */; };
+		459AC12E1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E41CA626B7002837CB /* ASICloudFilesContainer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC12F1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E41CA626B7002837CB /* ASICloudFilesContainer.m */; };
+		459AC1301CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E61CA626B7002837CB /* ASICloudFilesContainerRequest.m */; };
+		459AC1311CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E61CA626B7002837CB /* ASICloudFilesContainerRequest.m */; };
+		459AC1321CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E61CA626B7002837CB /* ASICloudFilesContainerRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1331CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E61CA626B7002837CB /* ASICloudFilesContainerRequest.m */; };
+		459AC1341CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E81CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.m */; };
+		459AC1351CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E81CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.m */; };
+		459AC1361CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E81CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1371CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0E81CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.m */; };
+		459AC1381CA626B8002837CB /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EA1CA626B7002837CB /* ASICloudFilesObject.m */; };
+		459AC1391CA626B8002837CB /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EA1CA626B7002837CB /* ASICloudFilesObject.m */; };
+		459AC13A1CA626B8002837CB /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EA1CA626B7002837CB /* ASICloudFilesObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC13B1CA626B8002837CB /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EA1CA626B7002837CB /* ASICloudFilesObject.m */; };
+		459AC13C1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EC1CA626B7002837CB /* ASICloudFilesObjectRequest.m */; };
+		459AC13D1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EC1CA626B7002837CB /* ASICloudFilesObjectRequest.m */; };
+		459AC13E1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EC1CA626B7002837CB /* ASICloudFilesObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC13F1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EC1CA626B7002837CB /* ASICloudFilesObjectRequest.m */; };
+		459AC1401CA626B8002837CB /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EE1CA626B7002837CB /* ASICloudFilesRequest.m */; };
+		459AC1411CA626B8002837CB /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EE1CA626B7002837CB /* ASICloudFilesRequest.m */; };
+		459AC1421CA626B8002837CB /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EE1CA626B7002837CB /* ASICloudFilesRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1431CA626B8002837CB /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0EE1CA626B7002837CB /* ASICloudFilesRequest.m */; };
+		459AC1441CA626B8002837CB /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F21CA626B7002837CB /* ASIS3Bucket.m */; };
+		459AC1451CA626B8002837CB /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F21CA626B7002837CB /* ASIS3Bucket.m */; };
+		459AC1461CA626B8002837CB /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F21CA626B7002837CB /* ASIS3Bucket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1471CA626B8002837CB /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F21CA626B7002837CB /* ASIS3Bucket.m */; };
+		459AC1481CA626B8002837CB /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F41CA626B7002837CB /* ASIS3BucketObject.m */; };
+		459AC1491CA626B8002837CB /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F41CA626B7002837CB /* ASIS3BucketObject.m */; };
+		459AC14A1CA626B8002837CB /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F41CA626B7002837CB /* ASIS3BucketObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC14B1CA626B8002837CB /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F41CA626B7002837CB /* ASIS3BucketObject.m */; };
+		459AC14C1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F61CA626B7002837CB /* ASIS3BucketRequest.m */; };
+		459AC14D1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F61CA626B7002837CB /* ASIS3BucketRequest.m */; };
+		459AC14E1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F61CA626B7002837CB /* ASIS3BucketRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC14F1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F61CA626B7002837CB /* ASIS3BucketRequest.m */; };
+		459AC1501CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F81CA626B7002837CB /* ASIS3ObjectRequest.m */; };
+		459AC1511CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F81CA626B7002837CB /* ASIS3ObjectRequest.m */; };
+		459AC1521CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F81CA626B7002837CB /* ASIS3ObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1531CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0F81CA626B7002837CB /* ASIS3ObjectRequest.m */; };
+		459AC1541CA626B8002837CB /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FA1CA626B7002837CB /* ASIS3Request.m */; };
+		459AC1551CA626B8002837CB /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FA1CA626B7002837CB /* ASIS3Request.m */; };
+		459AC1561CA626B8002837CB /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FA1CA626B7002837CB /* ASIS3Request.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC1571CA626B8002837CB /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FA1CA626B7002837CB /* ASIS3Request.m */; };
+		459AC1581CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FC1CA626B7002837CB /* ASIS3ServiceRequest.m */; };
+		459AC1591CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FC1CA626B7002837CB /* ASIS3ServiceRequest.m */; };
+		459AC15A1CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FC1CA626B7002837CB /* ASIS3ServiceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		459AC15B1CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC0FC1CA626B7002837CB /* ASIS3ServiceRequest.m */; };
+		459AC15C1CA626B8002837CB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FD1CA626B7002837CB /* LICENSE */; };
+		459AC15D1CA626B8002837CB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FD1CA626B7002837CB /* LICENSE */; };
+		459AC15E1CA626B8002837CB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FD1CA626B7002837CB /* LICENSE */; };
+		459AC15F1CA626B8002837CB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FD1CA626B7002837CB /* LICENSE */; };
+		459AC1601CA626B8002837CB /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FE1CA626B7002837CB /* README.textile */; };
+		459AC1611CA626B8002837CB /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FE1CA626B7002837CB /* README.textile */; };
+		459AC1621CA626B8002837CB /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FE1CA626B7002837CB /* README.textile */; };
+		459AC1631CA626B8002837CB /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 459AC0FE1CA626B7002837CB /* README.textile */; };
+		459AC1641CA626B8002837CB /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 459AC1001CA626B7002837CB /* LICENCE.txt */; };
+		459AC1651CA626B8002837CB /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 459AC1001CA626B7002837CB /* LICENCE.txt */; };
+		459AC1661CA626B8002837CB /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 459AC1001CA626B7002837CB /* LICENCE.txt */; };
+		459AC1671CA626B8002837CB /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 459AC1001CA626B7002837CB /* LICENCE.txt */; };
+		459AC1681CA626B8002837CB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1021CA626B7002837CB /* Reachability.m */; };
+		459AC1691CA626B8002837CB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1021CA626B7002837CB /* Reachability.m */; };
+		459AC16A1CA626B8002837CB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1021CA626B7002837CB /* Reachability.m */; };
+		459AC16B1CA626B8002837CB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1021CA626B7002837CB /* Reachability.m */; };
+		459AC16C1CA626B8002837CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1031CA626B7002837CB /* README.md */; };
+		459AC16D1CA626B8002837CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1031CA626B7002837CB /* README.md */; };
+		459AC16E1CA626B8002837CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1031CA626B7002837CB /* README.md */; };
+		459AC16F1CA626B8002837CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 459AC1031CA626B7002837CB /* README.md */; };
 		459AC9441B6F442E0050E817 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC9431B6F442E0050E817 /* loginViewController.m */; };
 		459AC9471B6F4F050050E817 /* RegisteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC9461B6F4F050050E817 /* RegisteViewController.m */; };
 		459B6F151C4C891500B3A503 /* JHTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B6F141C4C891500B3A503 /* JHTickerView.m */; };
@@ -1111,7 +1219,7 @@
 		45EE832D1C5F341400EA3F0D /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450140031B943024000F8A97 /* MMDrawerController.m */; };
 		45EE832E1C5F341400EA3F0D /* UserAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 453271871B7490740044F8C1 /* UserAreaTableViewCell.m */; };
 		45EE832F1C5F341400EA3F0D /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45326F021B7358DB0044F8C1 /* UserInfo.m */; };
-		45EE83301C5F341400EA3F0D /* UserBasicInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 453271721B748EEB0044F8C1 /* UserBasicInfoTableViewCell.m */; };
+		45EE83301C5F341400EA3F0D /* UserBasicInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 453271721B748EEB0044F8C1 /* UserBasicInfoTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		45EE83311C5F341400EA3F0D /* CycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45423A8B1C3F8C7000A72857 /* CycleViewController.m */; };
 		45EE83321C5F341400EA3F0D /* ShareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45423A951C3F8C7000A72857 /* ShareTableViewCell.m */; };
 		45EE83331C5F341400EA3F0D /* SearchTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 454BF2E51B8EAC8600F1FEE5 /* SearchTableViewHeader.m */; };
@@ -1833,8 +1941,6 @@
 		958B4A481CA0DAC3002D0DB8 /* PurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */; };
 		958B4A491CA0DAC3002D0DB8 /* PurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */; };
 		958B4A4A1CA0DAC3002D0DB8 /* PurseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958B4A461CA0DAC3002D0DB8 /* PurseViewController.m */; };
-		9595950C1C83E170000FF9FA /* libPods-ASIHTTPRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959595081C83E170000FF9FA /* libPods-ASIHTTPRequest.a */; };
-		9595950D1C83E170000FF9FA /* libPods-Reachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959595091C83E170000FF9FA /* libPods-Reachability.a */; };
 		959595361C83F995000FF9FA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 959595161C83F994000FF9FA /* MKAnnotationView+WebCache.m */; };
 		959595371C83F995000FF9FA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 959595161C83F994000FF9FA /* MKAnnotationView+WebCache.m */; };
 		959595381C83F995000FF9FA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 959595161C83F994000FF9FA /* MKAnnotationView+WebCache.m */; };
@@ -2560,6 +2666,61 @@
 		4599DB781C51E68B007AC3CD /* JDStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarView.m; sourceTree = "<group>"; };
 		459AC0BD1CA61D3F002837CB /* libASIHTTPRequest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libASIHTTPRequest.a; path = "../../../../../Library/Developer/Xcode/DerivedData/JinZhiTou-hknkaqseakvqomfpxmshclvwwbyz/Build/Products/Debug-iphoneos/libASIHTTPRequest.a"; sourceTree = "<group>"; };
 		459AC0BE1CA61D3F002837CB /* libReachability.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReachability.a; path = "../../../../../Library/Developer/Xcode/DerivedData/JinZhiTou-hknkaqseakvqomfpxmshclvwwbyz/Build/Products/Debug-iphoneos/libReachability.a"; sourceTree = "<group>"; };
+		459AC0C91CA626B7002837CB /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		459AC0CA1CA626B7002837CB /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		459AC0CB1CA626B7002837CB /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		459AC0CC1CA626B7002837CB /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		459AC0CD1CA626B7002837CB /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		459AC0CE1CA626B7002837CB /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		459AC0CF1CA626B7002837CB /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		459AC0D01CA626B7002837CB /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		459AC0D11CA626B7002837CB /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		459AC0D21CA626B7002837CB /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		459AC0D31CA626B7002837CB /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		459AC0D41CA626B7002837CB /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		459AC0D51CA626B7002837CB /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		459AC0D61CA626B7002837CB /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		459AC0D71CA626B7002837CB /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		459AC0D81CA626B7002837CB /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		459AC0D91CA626B7002837CB /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		459AC0DA1CA626B7002837CB /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		459AC0DB1CA626B7002837CB /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		459AC0DC1CA626B7002837CB /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		459AC0DE1CA626B7002837CB /* ASIWebPageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIWebPageRequest.h; sourceTree = "<group>"; };
+		459AC0DF1CA626B7002837CB /* ASIWebPageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIWebPageRequest.m; sourceTree = "<group>"; };
+		459AC0E11CA626B7002837CB /* ASICloudFilesCDNRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICloudFilesCDNRequest.h; sourceTree = "<group>"; };
+		459AC0E21CA626B7002837CB /* ASICloudFilesCDNRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASICloudFilesCDNRequest.m; sourceTree = "<group>"; };
+		459AC0E31CA626B7002837CB /* ASICloudFilesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICloudFilesContainer.h; sourceTree = "<group>"; };
+		459AC0E41CA626B7002837CB /* ASICloudFilesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASICloudFilesContainer.m; sourceTree = "<group>"; };
+		459AC0E51CA626B7002837CB /* ASICloudFilesContainerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICloudFilesContainerRequest.h; sourceTree = "<group>"; };
+		459AC0E61CA626B7002837CB /* ASICloudFilesContainerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASICloudFilesContainerRequest.m; sourceTree = "<group>"; };
+		459AC0E71CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICloudFilesContainerXMLParserDelegate.h; sourceTree = "<group>"; };
+		459AC0E81CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASICloudFilesContainerXMLParserDelegate.m; sourceTree = "<group>"; };
+		459AC0E91CA626B7002837CB /* ASICloudFilesObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICloudFilesObject.h; sourceTree = "<group>"; };
+		459AC0EA1CA626B7002837CB /* ASICloudFilesObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASICloudFilesObject.m; sourceTree = "<group>"; };
+		459AC0EB1CA626B7002837CB /* ASICloudFilesObjectRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICloudFilesObjectRequest.h; sourceTree = "<group>"; };
+		459AC0EC1CA626B7002837CB /* ASICloudFilesObjectRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASICloudFilesObjectRequest.m; sourceTree = "<group>"; };
+		459AC0ED1CA626B7002837CB /* ASICloudFilesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICloudFilesRequest.h; sourceTree = "<group>"; };
+		459AC0EE1CA626B7002837CB /* ASICloudFilesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASICloudFilesRequest.m; sourceTree = "<group>"; };
+		459AC0F01CA626B7002837CB /* ASINSXMLParserCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINSXMLParserCompat.h; sourceTree = "<group>"; };
+		459AC0F11CA626B7002837CB /* ASIS3Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3Bucket.h; sourceTree = "<group>"; };
+		459AC0F21CA626B7002837CB /* ASIS3Bucket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3Bucket.m; sourceTree = "<group>"; };
+		459AC0F31CA626B7002837CB /* ASIS3BucketObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3BucketObject.h; sourceTree = "<group>"; };
+		459AC0F41CA626B7002837CB /* ASIS3BucketObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3BucketObject.m; sourceTree = "<group>"; };
+		459AC0F51CA626B7002837CB /* ASIS3BucketRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3BucketRequest.h; sourceTree = "<group>"; };
+		459AC0F61CA626B7002837CB /* ASIS3BucketRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3BucketRequest.m; sourceTree = "<group>"; };
+		459AC0F71CA626B7002837CB /* ASIS3ObjectRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3ObjectRequest.h; sourceTree = "<group>"; };
+		459AC0F81CA626B7002837CB /* ASIS3ObjectRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3ObjectRequest.m; sourceTree = "<group>"; };
+		459AC0F91CA626B7002837CB /* ASIS3Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3Request.h; sourceTree = "<group>"; };
+		459AC0FA1CA626B7002837CB /* ASIS3Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3Request.m; sourceTree = "<group>"; };
+		459AC0FB1CA626B7002837CB /* ASIS3ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3ServiceRequest.h; sourceTree = "<group>"; };
+		459AC0FC1CA626B7002837CB /* ASIS3ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3ServiceRequest.m; sourceTree = "<group>"; };
+		459AC0FD1CA626B7002837CB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		459AC0FE1CA626B7002837CB /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		459AC1001CA626B7002837CB /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
+		459AC1011CA626B7002837CB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		459AC1021CA626B7002837CB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		459AC1031CA626B7002837CB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		459AC9421B6F442E0050E817 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginViewController.h; path = Controller/Login/loginViewController.h; sourceTree = "<group>"; };
 		459AC9431B6F442E0050E817 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loginViewController.m; path = Controller/Login/loginViewController.m; sourceTree = "<group>"; };
 		459AC9451B6F4F050050E817 /* RegisteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteViewController.h; sourceTree = "<group>"; };
@@ -2921,9 +3082,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9537FFA11C93C7EF00D043F5 /* libxml2.2.tbd in Frameworks */,
-				9595950C1C83E170000FF9FA /* libPods-ASIHTTPRequest.a in Frameworks */,
 				95A910541C925EBE00B707EB /* libPushSDK-1.8.5.a in Frameworks */,
-				9595950D1C83E170000FF9FA /* libPods-Reachability.a in Frameworks */,
 				95A9105E1C925ED600B707EB /* libMobClickLibrary.a in Frameworks */,
 				45EE838C1C5F341400EA3F0D /* CoreGraphics.framework in Frameworks */,
 				45EE838D1C5F341400EA3F0D /* CFNetwork.framework in Frameworks */,
@@ -3836,6 +3995,7 @@
 				458B39D41C532C11007FE2B8 /* SliderView */,
 				45F93B261B637311004526F5 /* MJRefresh */,
 				45D49D771B82336F00EC529F /* ZHpickView */,
+				459AC0FF1CA626B7002837CB /* Reachability */,
 				459B6F121C4C88F800B3A503 /* JHTickerView */,
 				95E59D081C8D1E4F008C10AA /* SDAutoLayout */,
 				959595141C83F994000FF9FA /* SDWebImage */,
@@ -3846,8 +4006,9 @@
 				453B57F41C4735B9005CCE7E /* ZFPregressView */,
 				45495C451B60E77A007A17FD /* CycleBannerView */,
 				451ED59D1C48960A00A135D7 /* SlidePageContoller */,
-				4543EB0F1BD08E320041DCBD /* DACircularProgress */,
+				459AC0C71CA626B7002837CB /* ASIHTTPRequest */,
 				45B435CC1BD1E87D0031B799 /* DAKeyboardControl */,
+				4543EB0F1BD08E320041DCBD /* DACircularProgress */,
 				4581154A1B7F8EAB006EEBBC /* JKCountDownButton */,
 				4599DB721C51E68B007AC3CD /* JDStatusBarNotification */,
 				4511CC021BA2B6E300A9D00A /* ALMoviePlayerController */,
@@ -4001,6 +4162,107 @@
 				4599DB781C51E68B007AC3CD /* JDStatusBarView.m */,
 			);
 			path = JDStatusBarNotification;
+			sourceTree = "<group>";
+		};
+		459AC0C71CA626B7002837CB /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				459AC0C81CA626B7002837CB /* Classes */,
+				459AC0FD1CA626B7002837CB /* LICENSE */,
+				459AC0FE1CA626B7002837CB /* README.textile */,
+			);
+			path = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		459AC0C81CA626B7002837CB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				459AC0C91CA626B7002837CB /* ASIAuthenticationDialog.h */,
+				459AC0CA1CA626B7002837CB /* ASIAuthenticationDialog.m */,
+				459AC0CB1CA626B7002837CB /* ASICacheDelegate.h */,
+				459AC0CC1CA626B7002837CB /* ASIDataCompressor.h */,
+				459AC0CD1CA626B7002837CB /* ASIDataCompressor.m */,
+				459AC0CE1CA626B7002837CB /* ASIDataDecompressor.h */,
+				459AC0CF1CA626B7002837CB /* ASIDataDecompressor.m */,
+				459AC0D01CA626B7002837CB /* ASIDownloadCache.h */,
+				459AC0D11CA626B7002837CB /* ASIDownloadCache.m */,
+				459AC0D21CA626B7002837CB /* ASIFormDataRequest.h */,
+				459AC0D31CA626B7002837CB /* ASIFormDataRequest.m */,
+				459AC0D41CA626B7002837CB /* ASIHTTPRequest.h */,
+				459AC0D51CA626B7002837CB /* ASIHTTPRequest.m */,
+				459AC0D61CA626B7002837CB /* ASIHTTPRequestConfig.h */,
+				459AC0D71CA626B7002837CB /* ASIHTTPRequestDelegate.h */,
+				459AC0D81CA626B7002837CB /* ASIInputStream.h */,
+				459AC0D91CA626B7002837CB /* ASIInputStream.m */,
+				459AC0DA1CA626B7002837CB /* ASINetworkQueue.h */,
+				459AC0DB1CA626B7002837CB /* ASINetworkQueue.m */,
+				459AC0DC1CA626B7002837CB /* ASIProgressDelegate.h */,
+				459AC0DD1CA626B7002837CB /* ASIWebPageRequest */,
+				459AC0E01CA626B7002837CB /* CloudFiles */,
+				459AC0EF1CA626B7002837CB /* S3 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		459AC0DD1CA626B7002837CB /* ASIWebPageRequest */ = {
+			isa = PBXGroup;
+			children = (
+				459AC0DE1CA626B7002837CB /* ASIWebPageRequest.h */,
+				459AC0DF1CA626B7002837CB /* ASIWebPageRequest.m */,
+			);
+			path = ASIWebPageRequest;
+			sourceTree = "<group>";
+		};
+		459AC0E01CA626B7002837CB /* CloudFiles */ = {
+			isa = PBXGroup;
+			children = (
+				459AC0E11CA626B7002837CB /* ASICloudFilesCDNRequest.h */,
+				459AC0E21CA626B7002837CB /* ASICloudFilesCDNRequest.m */,
+				459AC0E31CA626B7002837CB /* ASICloudFilesContainer.h */,
+				459AC0E41CA626B7002837CB /* ASICloudFilesContainer.m */,
+				459AC0E51CA626B7002837CB /* ASICloudFilesContainerRequest.h */,
+				459AC0E61CA626B7002837CB /* ASICloudFilesContainerRequest.m */,
+				459AC0E71CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.h */,
+				459AC0E81CA626B7002837CB /* ASICloudFilesContainerXMLParserDelegate.m */,
+				459AC0E91CA626B7002837CB /* ASICloudFilesObject.h */,
+				459AC0EA1CA626B7002837CB /* ASICloudFilesObject.m */,
+				459AC0EB1CA626B7002837CB /* ASICloudFilesObjectRequest.h */,
+				459AC0EC1CA626B7002837CB /* ASICloudFilesObjectRequest.m */,
+				459AC0ED1CA626B7002837CB /* ASICloudFilesRequest.h */,
+				459AC0EE1CA626B7002837CB /* ASICloudFilesRequest.m */,
+			);
+			path = CloudFiles;
+			sourceTree = "<group>";
+		};
+		459AC0EF1CA626B7002837CB /* S3 */ = {
+			isa = PBXGroup;
+			children = (
+				459AC0F01CA626B7002837CB /* ASINSXMLParserCompat.h */,
+				459AC0F11CA626B7002837CB /* ASIS3Bucket.h */,
+				459AC0F21CA626B7002837CB /* ASIS3Bucket.m */,
+				459AC0F31CA626B7002837CB /* ASIS3BucketObject.h */,
+				459AC0F41CA626B7002837CB /* ASIS3BucketObject.m */,
+				459AC0F51CA626B7002837CB /* ASIS3BucketRequest.h */,
+				459AC0F61CA626B7002837CB /* ASIS3BucketRequest.m */,
+				459AC0F71CA626B7002837CB /* ASIS3ObjectRequest.h */,
+				459AC0F81CA626B7002837CB /* ASIS3ObjectRequest.m */,
+				459AC0F91CA626B7002837CB /* ASIS3Request.h */,
+				459AC0FA1CA626B7002837CB /* ASIS3Request.m */,
+				459AC0FB1CA626B7002837CB /* ASIS3ServiceRequest.h */,
+				459AC0FC1CA626B7002837CB /* ASIS3ServiceRequest.m */,
+			);
+			path = S3;
+			sourceTree = "<group>";
+		};
+		459AC0FF1CA626B7002837CB /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				459AC1001CA626B7002837CB /* LICENCE.txt */,
+				459AC1011CA626B7002837CB /* Reachability.h */,
+				459AC1021CA626B7002837CB /* Reachability.m */,
+				459AC1031CA626B7002837CB /* README.md */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		459AC93E1B6F38D90050E817 /* Login */ = {
@@ -4814,6 +5076,7 @@
 				454289A91C448FE000513DC0 /* movieForwardSelected.png in Resources */,
 				45E863A11C48E8FA00051C3A /* shangchuan.png in Resources */,
 				451ED5901C48874500A135D7 /* platform_notice.png in Resources */,
+				459AC15D1CA626B8002837CB /* LICENSE in Resources */,
 				45954D081C4F659700137D7D /* case.png in Resources */,
 				95E5DF8C1C92A0D200D12E15 /* test.html in Resources */,
 				45E863A41C48ECEB00051C3A /* touxiangshangchuan.png in Resources */,
@@ -4845,6 +5108,7 @@
 				454289C01C448FE000513DC0 /* movieBackwardSelected@2x.png in Resources */,
 				45FAE7431C5069E500ED6516 /* rongzi.png in Resources */,
 				454289C11C448FE000513DC0 /* NavBarIconSearch_white@2x.png in Resources */,
+				459AC1611CA626B8002837CB /* README.textile in Resources */,
 				454289C21C448FE000513DC0 /* PlayButtonOverlayLarge@2x.png in Resources */,
 				45DD73A51C57575800CAA976 /* Images.xcassets in Resources */,
 				454289C31C448FE000513DC0 /* moviePause.png in Resources */,
@@ -4862,6 +5126,7 @@
 				454289CF1C448FE000513DC0 /* movieBackward@2x.png in Resources */,
 				454289D01C448FE000513DC0 /* Main.storyboard in Resources */,
 				454289D11C448FE000513DC0 /* movieBackwardSelected.png in Resources */,
+				459AC1651CA626B8002837CB /* LICENCE.txt in Resources */,
 				454289D21C448FE000513DC0 /* ImageSelectedSmallOn.png in Resources */,
 				454289D31C448FE000513DC0 /* ImageSelectedSmallOn@3x.png in Resources */,
 				454289D41C448FE000513DC0 /* ImageSelectedOn@2x.png in Resources */,
@@ -4892,6 +5157,7 @@
 				45954D0D1C4F659700137D7D /* plan.png in Resources */,
 				45FAE7481C50735C00ED6516 /* contact.png in Resources */,
 				4543EB891BD0ABB80041DCBD /* ImageSelectedOn@3x.png in Resources */,
+				459AC1601CA626B8002837CB /* README.textile in Resources */,
 				95A910611C92607100B707EB /* 金指投发布 copy2-Info.plist in Resources */,
 				4511CC2B1BA2B6E300A9D00A /* movieFullscreen@2x.png in Resources */,
 				451ED5921C48874C00A135D7 /* annocumment@2x.png in Resources */,
@@ -4928,6 +5194,7 @@
 				4543EB991BD0ABB80041DCBD /* UIBarButtonItemArrowRight.png in Resources */,
 				4543EB831BD0ABB80041DCBD /* ImageError@3x.png in Resources */,
 				4543EB8E1BD0ABB80041DCBD /* ImageSelectedSmallOn@2x.png in Resources */,
+				459AC15C1CA626B8002837CB /* LICENSE in Resources */,
 				4511CC2F1BA2B6E300A9D00A /* moviePlay@2x.png in Resources */,
 				4543EB931BD0ABB80041DCBD /* PlayButtonOverlayLargeTap.png in Resources */,
 				4543EB921BD0ABB80041DCBD /* PlayButtonOverlayLarge@3x.png in Resources */,
@@ -4936,6 +5203,7 @@
 				456ED3921BFC91C90067685A /* empty.png in Resources */,
 				45FAE7451C50704F00ED6516 /* goroadshow@3x.png in Resources */,
 				45F93B611B637311004526F5 /* MJRefresh.bundle in Resources */,
+				459AC1641CA626B8002837CB /* LICENCE.txt in Resources */,
 				451B52BF1BA66E3500388E5C /* NavBarIconSearchBar_blue@2x.png in Resources */,
 				4543EB941BD0ABB80041DCBD /* PlayButtonOverlayLargeTap@2x.png in Resources */,
 				95BB7DFF1C940DE40044FD5D /* test.xml in Resources */,
@@ -5002,6 +5270,7 @@
 				45EE83A81C5F341400EA3F0D /* movieFullscreen@2x.png in Resources */,
 				45EE83A91C5F341400EA3F0D /* annocumment@2x.png in Resources */,
 				45EE83AA1C5F341400EA3F0D /* moviePause@2x.png in Resources */,
+				459AC1661CA626B8002837CB /* LICENCE.txt in Resources */,
 				45EE83AB1C5F341400EA3F0D /* wechat.png in Resources */,
 				45EE83AC1C5F341400EA3F0D /* UIBarButtonItemArrowLeft.png in Resources */,
 				45EE83AD1C5F341400EA3F0D /* cycle.png in Resources */,
@@ -5031,6 +5300,7 @@
 				95E5DF8D1C92A0D200D12E15 /* test.html in Resources */,
 				45EE83C51C5F341400EA3F0D /* touxiangshangchuan.png in Resources */,
 				45EE83C61C5F341400EA3F0D /* movieForward@2x.png in Resources */,
+				459AC1621CA626B8002837CB /* README.textile in Resources */,
 				45EE83C71C5F341400EA3F0D /* UIBarButtonItemArrowRight.png in Resources */,
 				45EE83C81C5F341400EA3F0D /* ImageError@3x.png in Resources */,
 				45EE83C91C5F341400EA3F0D /* ImageSelectedSmallOn@2x.png in Resources */,
@@ -5054,6 +5324,7 @@
 				45EE83DC1C5F341400EA3F0D /* passed.png in Resources */,
 				45EE83DE1C5F341400EA3F0D /* video.png in Resources */,
 				45EE83DF1C5F341400EA3F0D /* login.png in Resources */,
+				459AC15E1CA626B8002837CB /* LICENSE in Resources */,
 				45EE83E01C5F341400EA3F0D /* project.png in Resources */,
 				45EE83E11C5F341400EA3F0D /* movieBackwardSelected@2x.png in Resources */,
 				45EE83E21C5F341400EA3F0D /* rongzi.png in Resources */,
@@ -5133,6 +5404,7 @@
 				45EE85B11C5F36B900EA3F0D /* movieForwardSelected.png in Resources */,
 				45EE85B21C5F36B900EA3F0D /* shangchuan.png in Resources */,
 				45EE85B31C5F36B900EA3F0D /* platform_notice.png in Resources */,
+				459AC15F1CA626B8002837CB /* LICENSE in Resources */,
 				45EE85B41C5F36B900EA3F0D /* case.png in Resources */,
 				95E5DF8E1C92A0D200D12E15 /* test.html in Resources */,
 				45EE85B51C5F36B900EA3F0D /* touxiangshangchuan.png in Resources */,
@@ -5164,6 +5436,7 @@
 				45EE85D11C5F36B900EA3F0D /* movieBackwardSelected@2x.png in Resources */,
 				45EE85D21C5F36B900EA3F0D /* rongzi.png in Resources */,
 				45EE85D31C5F36B900EA3F0D /* NavBarIconSearch_white@2x.png in Resources */,
+				459AC1631CA626B8002837CB /* README.textile in Resources */,
 				45EE85D41C5F36B900EA3F0D /* PlayButtonOverlayLarge@2x.png in Resources */,
 				45EE85D51C5F36B900EA3F0D /* Images.xcassets in Resources */,
 				45EE85D61C5F36B900EA3F0D /* moviePause.png in Resources */,
@@ -5181,6 +5454,7 @@
 				45EE85E21C5F36B900EA3F0D /* movieBackward@2x.png in Resources */,
 				45EE85E31C5F36B900EA3F0D /* Main.storyboard in Resources */,
 				45EE85E41C5F36B900EA3F0D /* movieBackwardSelected.png in Resources */,
+				459AC1671CA626B8002837CB /* LICENCE.txt in Resources */,
 				45EE85E51C5F36B900EA3F0D /* ImageSelectedSmallOn.png in Resources */,
 				45EE85E61C5F36B900EA3F0D /* ImageSelectedSmallOn@3x.png in Resources */,
 				45EE85E71C5F36B900EA3F0D /* ImageSelectedOn@2x.png in Resources */,
@@ -5259,6 +5533,7 @@
 				459AC0C51CA62344002837CB /* libxml2.2.tbd in Sources */,
 				4542881F1C448FE000513DC0 /* TypeShow.m in Sources */,
 				454288201C448FE000513DC0 /* MMDrawerVisualState.m in Sources */,
+				459AC1411CA626B8002837CB /* ASICloudFilesRequest.m in Sources */,
 				454288211C448FE000513DC0 /* QNResponseInfo.m in Sources */,
 				454288221C448FE000513DC0 /* ProjectShareView.m in Sources */,
 				454288231C448FE000513DC0 /* ModifyViewController.m in Sources */,
@@ -5311,6 +5586,7 @@
 				454288521C448FE000513DC0 /* FinalViewController.m in Sources */,
 				454288531C448FE000513DC0 /* JKCountDownButton.m in Sources */,
 				454288541C448FE000513DC0 /* SignViewController.m in Sources */,
+				459AC1151CA626B7002837CB /* ASIFormDataRequest.m in Sources */,
 				454288551C448FE000513DC0 /* INSSearchBar.m in Sources */,
 				454288561C448FE000513DC0 /* IphoneScreen.m in Sources */,
 				454288571C448FE000513DC0 /* UserCollecteTableViewCell.m in Sources */,
@@ -5331,6 +5607,7 @@
 				454288631C448FE000513DC0 /* UIImage+Resize.m in Sources */,
 				454288641C448FE000513DC0 /* DetailViewController.m in Sources */,
 				454288651C448FE000513DC0 /* MJRefreshBackFooter.m in Sources */,
+				459AC16D1CA626B8002837CB /* README.md in Sources */,
 				454288661C448FE000513DC0 /* UserInfoHeader.m in Sources */,
 				9548E3CE1C8EC5960076DC4E /* TradePasswdEnterView.m in Sources */,
 				45DE17381C55FB5C009080AC /* ProjectTableViewCell.m in Sources */,
@@ -5343,6 +5620,7 @@
 				4542886D1C448FE000513DC0 /* SDPhotoBrowser.m in Sources */,
 				4542886E1C448FE000513DC0 /* UserTraceViewController.m in Sources */,
 				4542886F1C448FE000513DC0 /* Jinzht.xcdatamodeld in Sources */,
+				459AC14D1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */,
 				454288701C448FE000513DC0 /* AFNetworkReachabilityManager.m in Sources */,
 				454288711C448FE000513DC0 /* AFURLRequestSerialization.m in Sources */,
 				454288721C448FE000513DC0 /* UIViewController+MMDrawerController.m in Sources */,
@@ -5374,6 +5652,7 @@
 				454288871C448FE000513DC0 /* ZHTableViewController.m in Sources */,
 				95D791261C8AA5BD00323FCD /* InvestViewController.m in Sources */,
 				454288881C448FE000513DC0 /* Comment+CoreDataProperties.m in Sources */,
+				459AC1351CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				454288891C448FE000513DC0 /* MBProgressHUD.m in Sources */,
 				4542888A1C448FE000513DC0 /* DialogView.m in Sources */,
 				4542888B1C448FE000513DC0 /* MJRefreshStateHeader.m in Sources */,
@@ -5383,9 +5662,11 @@
 				454288901C448FE000513DC0 /* MWGridViewController.m in Sources */,
 				9548E3BE1C8E7E580076DC4E /* TradePasswdView.m in Sources */,
 				454288911C448FE000513DC0 /* ALButton.m in Sources */,
+				459AC1091CA626B7002837CB /* ASIDataCompressor.m in Sources */,
 				454288921C448FE000513DC0 /* ChineseInclude.m in Sources */,
 				454288941C448FE000513DC0 /* QNFormUpload.m in Sources */,
 				454288951C448FE000513DC0 /* MWTapDetectingView.m in Sources */,
+				459AC1111CA626B7002837CB /* ASIDownloadCache.m in Sources */,
 				4599DB7A1C51E68B007AC3CD /* JDStatusBarNotification.m in Sources */,
 				454288961C448FE000513DC0 /* CreditTableViewCell.m in Sources */,
 				45888B8D1C511B2900A35476 /* NewsTag.m in Sources */,
@@ -5412,6 +5693,7 @@
 				454288AB1C448FE000513DC0 /* ModifyPositionViewController.m in Sources */,
 				9568B5481C965A3600760D24 /* YeePayViewController.m in Sources */,
 				454288AD1C448FE000513DC0 /* QNResumeUpload.m in Sources */,
+				459AC1451CA626B8002837CB /* ASIS3Bucket.m in Sources */,
 				454288AE1C448FE000513DC0 /* Likers.m in Sources */,
 				454288AF1C448FE000513DC0 /* UploadingView.m in Sources */,
 				454288B11C448FE000513DC0 /* SlideViewStartPage.m in Sources */,
@@ -5431,6 +5713,7 @@
 				454288C01C448FE000513DC0 /* ModifyCompanyViewController.m in Sources */,
 				454288C11C448FE000513DC0 /* VoteViewController.m in Sources */,
 				454288C21C448FE000513DC0 /* StartPageViewController.m in Sources */,
+				459AC1051CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */,
 				454288C31C448FE000513DC0 /* FinialSubmmitViewController.m in Sources */,
 				454288C41C448FE000513DC0 /* MJRefreshComponent.m in Sources */,
 				454288C51C448FE000513DC0 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -5461,6 +5744,7 @@
 				454288E21C448FE000513DC0 /* QNConfiguration.m in Sources */,
 				454288E31C448FE000513DC0 /* UserInfoSettingViewController.m in Sources */,
 				454288E41C448FE000513DC0 /* UIImage+Cut.m in Sources */,
+				459AC13D1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */,
 				454288E51C448FE000513DC0 /* SBJsonWriter.m in Sources */,
 				454288E61C448FE000513DC0 /* UserInfoConfigView.m in Sources */,
 				454288E71C448FE000513DC0 /* DemoVC9HeaderView.m in Sources */,
@@ -5470,16 +5754,19 @@
 				454288EB1C448FE000513DC0 /* ALMoviePlayerControls.m in Sources */,
 				454288EC1C448FE000513DC0 /* Banner.m in Sources */,
 				9595953F1C83F995000FF9FA /* SDImageCache.m in Sources */,
+				459AC1291CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */,
 				9595955F1C83F995000FF9FA /* UIImage+GIF.m in Sources */,
 				454288ED1C448FE000513DC0 /* AnnounceView.m in Sources */,
 				454288EF1C448FE000513DC0 /* FinalKindTableViewCell.m in Sources */,
 				95D791381C8ACE6200323FCD /* InvestItemDataView.m in Sources */,
 				4599DB7C1C51E68B007AC3CD /* JDStatusBarStyle.m in Sources */,
+				459AC1551CA626B8002837CB /* ASIS3Request.m in Sources */,
 				45954D021C4F277D00137D7D /* NewThreeSlidePageController.m in Sources */,
 				454288F01C448FE000513DC0 /* CycleModel.m in Sources */,
 				454288F11C448FE000513DC0 /* BannerViewController.m in Sources */,
 				454288F31C448FE000513DC0 /* QNUpToken.m in Sources */,
 				454288F41C448FE000513DC0 /* AboutUsViewController.m in Sources */,
+				459AC1191CA626B7002837CB /* ASIHTTPRequest.m in Sources */,
 				95A910491C925CC300B707EB /* UIImage+Crop.m in Sources */,
 				454288F51C448FE000513DC0 /* WeiboTableViewCell.m in Sources */,
 				454288F61C448FE000513DC0 /* JastorRuntimeHelper.m in Sources */,
@@ -5524,7 +5811,9 @@
 				4542891B1C448FE000513DC0 /* NavView.m in Sources */,
 				4542891C1C448FE000513DC0 /* InteractionViewController.m in Sources */,
 				4575D7041C4DE46B00CE598E /* UIView+RSAdditions.m in Sources */,
+				459AC1251CA626B8002837CB /* ASIWebPageRequest.m in Sources */,
 				4575D6FB1C4DE45D00CE598E /* AGTableViewRowAction.m in Sources */,
+				459AC1511CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */,
 				95E59D121C8D1E4F008C10AA /* UIView+SDAutoLayout.m in Sources */,
 				4542891D1C448FE000513DC0 /* FinalCompanyTableViewCell.m in Sources */,
 				4542891E1C448FE000513DC0 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -5555,6 +5844,7 @@
 				454289371C448FE000513DC0 /* main.m in Sources */,
 				454289381C448FE000513DC0 /* QNAsyncRun.m in Sources */,
 				9595954B1C83F995000FF9FA /* SDWebImageDownloader.m in Sources */,
+				459AC1491CA626B8002837CB /* ASIS3BucketObject.m in Sources */,
 				454289391C448FE000513DC0 /* HanyuPinyinOutputFormat.m in Sources */,
 				4542893A1C448FE000513DC0 /* SwitchSelect.m in Sources */,
 				4542893B1C448FE000513DC0 /* CustomImagePickerController.m in Sources */,
@@ -5566,11 +5856,14 @@
 				459B6F291C4CD6AF00B3A503 /* PreProjectDetailViewController.m in Sources */,
 				454289411C448FE000513DC0 /* QNCrc32.m in Sources */,
 				454289421C448FE000513DC0 /* UserTypeTableViewCell.m in Sources */,
+				459AC12D1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */,
 				454289431C448FE000513DC0 /* ReplyTableViewCell.m in Sources */,
 				454289441C448FE000513DC0 /* IndustoryLabel.m in Sources */,
 				454289451C448FE000513DC0 /* MJRefreshAutoStateFooter.m in Sources */,
 				454289461C448FE000513DC0 /* FunctionTabBarItem.m in Sources */,
 				454289471C448FE000513DC0 /* LoadingView.m in Sources */,
+				459AC11D1CA626B8002837CB /* ASIInputStream.m in Sources */,
+				459AC10D1CA626B7002837CB /* ASIDataDecompressor.m in Sources */,
 				4542894A1C448FE000513DC0 /* FinialAuthTraceViewController.m in Sources */,
 				4542894B1C448FE000513DC0 /* DialogUtil.m in Sources */,
 				459B6F161C4C891500B3A503 /* JHTickerView.m in Sources */,
@@ -5580,12 +5873,15 @@
 				454289501C448FE000513DC0 /* BoxModel.m in Sources */,
 				454289511C448FE000513DC0 /* PhotoAdd.m in Sources */,
 				454289521C448FE000513DC0 /* FinialSuccessViewController.m in Sources */,
+				459AC1591CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */,
 				454289531C448FE000513DC0 /* UserInfoConfigController.m in Sources */,
 				454289551C448FE000513DC0 /* ShowCommentViewController.m in Sources */,
+				459AC1311CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */,
 				45888B8B1C511B2900A35476 /* NewFinance+CoreDataProperties.m in Sources */,
 				454289561C448FE000513DC0 /* FinalContentTableViewCell.m in Sources */,
 				454289571C448FE000513DC0 /* WeiboData.m in Sources */,
 				454289581C448FE000513DC0 /* SBJsonParser.m in Sources */,
+				459AC1691CA626B8002837CB /* Reachability.m in Sources */,
 				95A9104D1C925CC300B707EB /* UIReplyLabel.m in Sources */,
 				4592A5A41C57ADC700D73168 /* FinialPlanTableViewCell.m in Sources */,
 				454289591C448FE000513DC0 /* MJRefreshHeader.m in Sources */,
@@ -5612,12 +5908,14 @@
 				9595954F1C83F995000FF9FA /* SDWebImageDownloaderOperation.m in Sources */,
 				4542896F1C448FE000513DC0 /* RootViewController.m in Sources */,
 				959595571C83F995000FF9FA /* SDWebImagePrefetcher.m in Sources */,
+				459AC1391CA626B8002837CB /* ASICloudFilesObject.m in Sources */,
 				95D791321C8AAA0700323FCD /* InvestHeaderItemView.m in Sources */,
 				454289701C448FE000513DC0 /* FinalPersonTableViewCell.m in Sources */,
 				454289711C448FE000513DC0 /* QNSessionManager.m in Sources */,
 				454289721C448FE000513DC0 /* UserFinialViewController.m in Sources */,
 				454289731C448FE000513DC0 /* Cycle+CoreDataProperties.m in Sources */,
 				454289741C448FE000513DC0 /* AFHTTPSessionManager.m in Sources */,
+				459AC1211CA626B8002837CB /* ASINetworkQueue.m in Sources */,
 				454289751C448FE000513DC0 /* PinyinFormatter.m in Sources */,
 				454289761C448FE000513DC0 /* TDUtil.m in Sources */,
 				457060421C50C50E00D14DD2 /* Platform.m in Sources */,
@@ -5635,6 +5933,7 @@
 				45D49D761B8228AB00EC529F /* ModifyViewController.m in Sources */,
 				450D7E6C1B913E1D001781C4 /* WeiboViewControlle.m in Sources */,
 				45A2AD911B70FD4D00751F78 /* CompanyViewController.m in Sources */,
+				459AC1241CA626B8002837CB /* ASIWebPageRequest.m in Sources */,
 				4543EB141BD08E320041DCBD /* DACircularProgressView.m in Sources */,
 				45161DE11C461F0700AC115A /* ComFinanceViewController.m in Sources */,
 				959595521C83F995000FF9FA /* SDWebImageManager.m in Sources */,
@@ -5652,6 +5951,7 @@
 				45A2AD941B7108EF00751F78 /* FinialAuthViewController.m in Sources */,
 				45A2ADAD1B7208E300751F78 /* RoadShowApplyViewController.m in Sources */,
 				45E189E41B79E0500082225E /* ReplyMessageTableViewCell.m in Sources */,
+				459AC1341CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				453441361BE0B6AC00802410 /* ShareNewsView.m in Sources */,
 				4544008C1C3906C00094696A /* Banner+CoreDataProperties.m in Sources */,
 				45E812091B675F40009F840D /* RoadShowFooter.m in Sources */,
@@ -5667,6 +5967,7 @@
 				4543EADF1BD08DCB0041DCBD /* ActionHeader.m in Sources */,
 				45495C0C1B60DA6E007A17FD /* HttpUtils.m in Sources */,
 				4599DB7D1C51E68B007AC3CD /* JDStatusBarView.m in Sources */,
+				459AC1541CA626B8002837CB /* ASIS3Request.m in Sources */,
 				4543EB061BD08E100041DCBD /* MWCaptionView.m in Sources */,
 				95D7912B1C8AA87300323FCD /* InvestHeaderView.m in Sources */,
 				4543EB0D1BD08E100041DCBD /* MWZoomingScrollView.m in Sources */,
@@ -5690,6 +5991,7 @@
 				457E04281B7060E500BC4161 /* ForgetPassViewController.m in Sources */,
 				45F93B5B1B637311004526F5 /* MJRefreshBackGifFooter.m in Sources */,
 				458115631B8034DA006EEBBC /* ProjectFinanceDetailViewController.m in Sources */,
+				459AC1281CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */,
 				45778FAD1C3B620000FF8691 /* Likers+CoreDataProperties.m in Sources */,
 				45326EF41B7326110044F8C1 /* UserInfoViewController.m in Sources */,
 				45A2ADA71B71FEEB00751F78 /* FinialApplyViewController.m in Sources */,
@@ -5714,8 +6016,10 @@
 				45423AC11C3F8D2300A72857 /* SDPhotoBrowser.m in Sources */,
 				452381111BAFE21E00C1144A /* UserTraceViewController.m in Sources */,
 				453F5A911C3521E8009F9963 /* Jinzht.xcdatamodeld in Sources */,
+				459AC1101CA626B7002837CB /* ASIDownloadCache.m in Sources */,
 				4517CDBC1B78C7ED00EFBB6A /* AFNetworkReachabilityManager.m in Sources */,
 				4517CDBF1B78C7ED00EFBB6A /* AFURLRequestSerialization.m in Sources */,
+				459AC14C1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */,
 				4501400B1B943024000F8A97 /* UIViewController+MMDrawerController.m in Sources */,
 				45FCD01F1B75DD4D009AD6E3 /* NSString+SBJSON.m in Sources */,
 				45495BCD1B60DA02007A17FD /* PECropViewController.m in Sources */,
@@ -5737,6 +6041,7 @@
 				45A2ADB31B72811200751F78 /* AuthTraceTableViewCell.m in Sources */,
 				451CF01D1A54C78B00EEC164 /* CycleCommentView.m in Sources */,
 				45011ABB1C4A2A64002B6F3A /* PersonalFinanceAuthViewController.m in Sources */,
+				459AC1681CA626B8002837CB /* Reachability.m in Sources */,
 				45A2AD9A1B7109F100751F78 /* CompanyFinial.m in Sources */,
 				4572FE2E1C3D0C520059FE3F /* LikersModel.m in Sources */,
 				45F829471B6B62470044F6F0 /* FinialPersonTableViewController.m in Sources */,
@@ -5748,6 +6053,7 @@
 				45F09C661B86297B0065D873 /* MBProgressHUD.m in Sources */,
 				45EF9CE61B7B22F80052E927 /* DialogView.m in Sources */,
 				45F93B601B637311004526F5 /* MJRefreshStateHeader.m in Sources */,
+				459AC1141CA626B7002837CB /* ASIFormDataRequest.m in Sources */,
 				45631F7B1B5A3A7E009FA35D /* SphereMenu.m in Sources */,
 				459AC9471B6F4F050050E817 /* RegisteViewController.m in Sources */,
 				4572FE241C3D0B810059FE3F /* CommentModel.m in Sources */,
@@ -5766,6 +6072,7 @@
 				451ACAB71B7C5D390045DD5E /* ShareView.m in Sources */,
 				45495C211B60DC24007A17FD /* PinyinHelper.m in Sources */,
 				9595956E1C83F995000FF9FA /* UIImageView+WebCache.m in Sources */,
+				459AC13C1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */,
 				4543EB151BD08E320041DCBD /* DALabeledCircularProgressView.m in Sources */,
 				45F93B561B637311004526F5 /* MJRefreshFooter.m in Sources */,
 				4565A2081B9D5A3E00FA040A /* NewFinialTableViewCell.m in Sources */,
@@ -5790,17 +6097,21 @@
 				45DEACF11B437879001EDA5D /* AppDelegate.m in Sources */,
 				45423A961C3F8C7000A72857 /* Demo9Model.m in Sources */,
 				45495BCF1B60DA02007A17FD /* UIImage+Alpha.m in Sources */,
+				459AC1081CA626B7002837CB /* ASIDataCompressor.m in Sources */,
 				45778FBF1C3B620000FF8691 /* Pic+CoreDataProperties.m in Sources */,
 				45E812121B678E84009F840D /* LineLayout.m in Sources */,
 				453B57F71C4735D3005CCE7E /* ZFProgressView.m in Sources */,
 				45158BA31BF96A920095CB91 /* FinalingTableViewCell.m in Sources */,
 				4517CDBE1B78C7ED00EFBB6A /* AFURLConnectionOperation.m in Sources */,
+				459AC1481CA626B8002837CB /* ASIS3BucketObject.m in Sources */,
 				4501400E1B943DF9000F8A97 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				4517CDC11B78C7ED00EFBB6A /* AFURLSessionManager.m in Sources */,
 				45F93B5E1B637311004526F5 /* MJRefreshGifHeader.m in Sources */,
 				45F90B131B709C67005E8D15 /* NewFinialViewController.m in Sources */,
 				45984A441BE8C159003D5F50 /* ModifyCompanyViewController.m in Sources */,
+				459AC1041CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */,
 				45FD86CD1B6A14A900823451 /* VoteViewController.m in Sources */,
+				459AC1181CA626B7002837CB /* ASIHTTPRequest.m in Sources */,
 				450876281B8F6414006EFC1A /* StartPageViewController.m in Sources */,
 				45F829501B6D38730044F6F0 /* FinialSubmmitViewController.m in Sources */,
 				45F93B551B637311004526F5 /* MJRefreshComponent.m in Sources */,
@@ -5821,6 +6132,7 @@
 				458115491B7F7539006EEBBC /* THProgressView.m in Sources */,
 				45F09C861B862ABA0065D873 /* BedgesView.m in Sources */,
 				4515381B1C3E422300C2F08F /* WMFooldView.m in Sources */,
+				459AC16C1CA626B8002837CB /* README.md in Sources */,
 				4543EAEE1BD08DDE0041DCBD /* UserLookForViewController.m in Sources */,
 				45DED8931BA021D800B4D393 /* IndustoryTableViewCell.m in Sources */,
 				453271821B7490450044F8C1 /* UserCompanyTableViewCell.m in Sources */,
@@ -5832,6 +6144,7 @@
 				452609B31BDF0963006776B2 /* QNConfiguration.m in Sources */,
 				4532718E1B74A5360044F8C1 /* UserInfoSettingViewController.m in Sources */,
 				45495BD01B60DA02007A17FD /* UIImage+Cut.m in Sources */,
+				459AC10C1CA626B7002837CB /* ASIDataDecompressor.m in Sources */,
 				45FCD02C1B75E15A009AD6E3 /* SBJsonWriter.m in Sources */,
 				45F8A40F1BED9321002177C9 /* UserInfoConfigView.m in Sources */,
 				45423A9F1C3F8C7000A72857 /* DemoVC9HeaderView.m in Sources */,
@@ -5871,8 +6184,10 @@
 				4575D7011C4DE46B00CE598E /* UIView+AutoLayout.m in Sources */,
 				45E8120F1B678D62009F840D /* TeamShowViewController.m in Sources */,
 				4515BBDF1BE9D92700B4D402 /* RoadShowHomeHeaderView.m in Sources */,
+				459AC1441CA626B8002837CB /* ASIS3Bucket.m in Sources */,
 				45495BD31B60DA02007A17FD /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				450D7E6B1B913E1D001781C4 /* WeiboCell.m in Sources */,
+				459AC11C1CA626B8002837CB /* ASIInputStream.m in Sources */,
 				451538271C3E422300C2F08F /* WMScrollView.m in Sources */,
 				4517CDB91B78C7ED00EFBB6A /* AFHTTPRequestOperation.m in Sources */,
 				45D27B8E1BC631ED00ECD9D7 /* SwipeableCell.m in Sources */,
@@ -5896,6 +6211,8 @@
 				45E2DDC21B687778008F2942 /* InteractionViewController.m in Sources */,
 				4575D7031C4DE46B00CE598E /* UIView+RSAdditions.m in Sources */,
 				4575D6FA1C4DE45D00CE598E /* AGTableViewRowAction.m in Sources */,
+				459AC1381CA626B8002837CB /* ASICloudFilesObject.m in Sources */,
+				459AC1301CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */,
 				95E59D111C8D1E4F008C10AA /* UIView+SDAutoLayout.m in Sources */,
 				45158BA91BF97CD30095CB91 /* FinalCompanyTableViewCell.m in Sources */,
 				45F93B591B637311004526F5 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -5917,6 +6234,7 @@
 				45F93B531B637311004526F5 /* MJRefreshAutoFooter.m in Sources */,
 				45E189C21B7909CF0082225E /* MenuView.m in Sources */,
 				45326F131B74432C0044F8C1 /* NSString+MD5.m in Sources */,
+				459AC1201CA626B8002837CB /* ASINetworkQueue.m in Sources */,
 				4511CC1E1BA2B6E300A9D00A /* ALMoviePlayerController.m in Sources */,
 				456ED38F1BFC3C220067685A /* ResetPasswordViewController.m in Sources */,
 				4543EAE31BD08DCB0041DCBD /* ViewController_bak.m in Sources */,
@@ -5947,7 +6265,9 @@
 				459B6F151C4C891500B3A503 /* JHTickerView.m in Sources */,
 				451538241C3E422300C2F08F /* WMProgressView.m in Sources */,
 				45D27B921BC66BF700ECD9D7 /* ReplyView.m in Sources */,
+				459AC1401CA626B8002837CB /* ASICloudFilesRequest.m in Sources */,
 				45367D801BD8B6BC00039253 /* CycleHeader.m in Sources */,
+				459AC1501CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */,
 				450876371B8F656A006EFC1A /* BoxModel.m in Sources */,
 				45A2ADA01B71A08B00751F78 /* PhotoAdd.m in Sources */,
 				453E23E21B7E2CA30023BB00 /* FinialSuccessViewController.m in Sources */,
@@ -5983,11 +6303,13 @@
 				9595954E1C83F995000FF9FA /* SDWebImageDownloaderOperation.m in Sources */,
 				45CF4EC01BE863210098C1F6 /* RootViewController.m in Sources */,
 				959595561C83F995000FF9FA /* SDWebImagePrefetcher.m in Sources */,
+				459AC12C1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */,
 				95D791311C8AAA0700323FCD /* InvestHeaderItemView.m in Sources */,
 				45158BA61BF97BF80095CB91 /* FinalPersonTableViewCell.m in Sources */,
 				452609B01BDF0963006776B2 /* QNSessionManager.m in Sources */,
 				4532719D1B751CAD0044F8C1 /* UserFinialViewController.m in Sources */,
 				45778FB31C3B620000FF8691 /* Cycle+CoreDataProperties.m in Sources */,
+				459AC1581CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */,
 				4517CDBB1B78C7ED00EFBB6A /* AFHTTPSessionManager.m in Sources */,
 				45495C141B60DA91007A17FD /* PinyinFormatter.m in Sources */,
 				45326F091B74424F0044F8C1 /* TDUtil.m in Sources */,
@@ -6006,6 +6328,7 @@
 				45EE82201C5F341400EA3F0D /* ModifyViewController.m in Sources */,
 				45EE82221C5F341400EA3F0D /* WeiboViewControlle.m in Sources */,
 				45EE82231C5F341400EA3F0D /* CompanyViewController.m in Sources */,
+				459AC1261CA626B8002837CB /* ASIWebPageRequest.m in Sources */,
 				45EE82241C5F341400EA3F0D /* DACircularProgressView.m in Sources */,
 				45EE82261C5F341400EA3F0D /* ComFinanceViewController.m in Sources */,
 				959595541C83F995000FF9FA /* SDWebImageManager.m in Sources */,
@@ -6023,6 +6346,7 @@
 				45EE82321C5F341400EA3F0D /* FinialAuthViewController.m in Sources */,
 				45EE82331C5F341400EA3F0D /* RoadShowApplyViewController.m in Sources */,
 				45EE82341C5F341400EA3F0D /* ReplyMessageTableViewCell.m in Sources */,
+				459AC1361CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				45EE82351C5F341400EA3F0D /* ShareNewsView.m in Sources */,
 				45EE82361C5F341400EA3F0D /* Banner+CoreDataProperties.m in Sources */,
 				45EE82371C5F341400EA3F0D /* RoadShowFooter.m in Sources */,
@@ -6038,6 +6362,7 @@
 				45EE82431C5F341400EA3F0D /* ActionHeader.m in Sources */,
 				45EE82441C5F341400EA3F0D /* HttpUtils.m in Sources */,
 				45EE82451C5F341400EA3F0D /* JDStatusBarView.m in Sources */,
+				459AC1561CA626B8002837CB /* ASIS3Request.m in Sources */,
 				45EE82461C5F341400EA3F0D /* MWCaptionView.m in Sources */,
 				95D7912D1C8AA87300323FCD /* InvestHeaderView.m in Sources */,
 				45EE82471C5F341400EA3F0D /* MWZoomingScrollView.m in Sources */,
@@ -6061,6 +6386,7 @@
 				45EE825A1C5F341400EA3F0D /* ForgetPassViewController.m in Sources */,
 				45EE825B1C5F341400EA3F0D /* MJRefreshBackGifFooter.m in Sources */,
 				45EE825C1C5F341400EA3F0D /* ProjectFinanceDetailViewController.m in Sources */,
+				459AC12A1CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */,
 				45EE825D1C5F341400EA3F0D /* Likers+CoreDataProperties.m in Sources */,
 				45EE825E1C5F341400EA3F0D /* UserInfoViewController.m in Sources */,
 				45EE825F1C5F341400EA3F0D /* FinialApplyViewController.m in Sources */,
@@ -6085,8 +6411,10 @@
 				45EE826E1C5F341400EA3F0D /* SDPhotoBrowser.m in Sources */,
 				45EE826F1C5F341400EA3F0D /* UserTraceViewController.m in Sources */,
 				45EE82701C5F341400EA3F0D /* Jinzht.xcdatamodeld in Sources */,
+				459AC1121CA626B7002837CB /* ASIDownloadCache.m in Sources */,
 				45EE82711C5F341400EA3F0D /* AFNetworkReachabilityManager.m in Sources */,
 				45EE82721C5F341400EA3F0D /* AFURLRequestSerialization.m in Sources */,
+				459AC14E1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */,
 				45EE82731C5F341400EA3F0D /* UIViewController+MMDrawerController.m in Sources */,
 				45EE82741C5F341400EA3F0D /* NSString+SBJSON.m in Sources */,
 				45EE82761C5F341400EA3F0D /* PECropViewController.m in Sources */,
@@ -6108,6 +6436,7 @@
 				45EE82841C5F341400EA3F0D /* AuthTraceTableViewCell.m in Sources */,
 				45EE82851C5F341400EA3F0D /* CycleCommentView.m in Sources */,
 				45EE82861C5F341400EA3F0D /* PersonalFinanceAuthViewController.m in Sources */,
+				459AC16A1CA626B8002837CB /* Reachability.m in Sources */,
 				45EE82871C5F341400EA3F0D /* CompanyFinial.m in Sources */,
 				45EE82881C5F341400EA3F0D /* LikersModel.m in Sources */,
 				45EE82891C5F341400EA3F0D /* FinialPersonTableViewController.m in Sources */,
@@ -6119,6 +6448,7 @@
 				45EE828D1C5F341400EA3F0D /* MBProgressHUD.m in Sources */,
 				45EE828E1C5F341400EA3F0D /* DialogView.m in Sources */,
 				45EE828F1C5F341400EA3F0D /* MJRefreshStateHeader.m in Sources */,
+				459AC1161CA626B7002837CB /* ASIFormDataRequest.m in Sources */,
 				45EE82901C5F341400EA3F0D /* SphereMenu.m in Sources */,
 				45EE82911C5F341400EA3F0D /* RegisteViewController.m in Sources */,
 				45EE82921C5F341400EA3F0D /* CommentModel.m in Sources */,
@@ -6137,6 +6467,7 @@
 				45EE829F1C5F341400EA3F0D /* ShareView.m in Sources */,
 				45EE82A01C5F341400EA3F0D /* PinyinHelper.m in Sources */,
 				959595701C83F995000FF9FA /* UIImageView+WebCache.m in Sources */,
+				459AC13E1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */,
 				45EE82A11C5F341400EA3F0D /* DALabeledCircularProgressView.m in Sources */,
 				45EE82A21C5F341400EA3F0D /* MJRefreshFooter.m in Sources */,
 				45EE82A31C5F341400EA3F0D /* NewFinialTableViewCell.m in Sources */,
@@ -6161,17 +6492,21 @@
 				45EE82B61C5F341400EA3F0D /* AppDelegate.m in Sources */,
 				45EE82B71C5F341400EA3F0D /* Demo9Model.m in Sources */,
 				45EE82B81C5F341400EA3F0D /* UIImage+Alpha.m in Sources */,
+				459AC10A1CA626B7002837CB /* ASIDataCompressor.m in Sources */,
 				45EE82BA1C5F341400EA3F0D /* Pic+CoreDataProperties.m in Sources */,
 				45EE82BB1C5F341400EA3F0D /* LineLayout.m in Sources */,
 				45EE82BC1C5F341400EA3F0D /* ZFProgressView.m in Sources */,
 				45EE82BD1C5F341400EA3F0D /* FinalingTableViewCell.m in Sources */,
 				45EE82BE1C5F341400EA3F0D /* AFURLConnectionOperation.m in Sources */,
+				459AC14A1CA626B8002837CB /* ASIS3BucketObject.m in Sources */,
 				45EE82BF1C5F341400EA3F0D /* MMExampleDrawerVisualStateManager.m in Sources */,
 				45EE82C01C5F341400EA3F0D /* AFURLSessionManager.m in Sources */,
 				45EE82C11C5F341400EA3F0D /* MJRefreshGifHeader.m in Sources */,
 				45EE82C31C5F341400EA3F0D /* NewFinialViewController.m in Sources */,
 				45EE82C41C5F341400EA3F0D /* ModifyCompanyViewController.m in Sources */,
+				459AC1061CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */,
 				45EE82C51C5F341400EA3F0D /* VoteViewController.m in Sources */,
+				459AC11A1CA626B7002837CB /* ASIHTTPRequest.m in Sources */,
 				45EE82C61C5F341400EA3F0D /* StartPageViewController.m in Sources */,
 				45EE82C71C5F341400EA3F0D /* FinialSubmmitViewController.m in Sources */,
 				45EE82C81C5F341400EA3F0D /* MJRefreshComponent.m in Sources */,
@@ -6192,6 +6527,7 @@
 				45EE82DA1C5F341400EA3F0D /* THProgressView.m in Sources */,
 				45EE82DB1C5F341400EA3F0D /* BedgesView.m in Sources */,
 				45EE82DC1C5F341400EA3F0D /* WMFooldView.m in Sources */,
+				459AC16E1CA626B8002837CB /* README.md in Sources */,
 				45EE82DD1C5F341400EA3F0D /* UserLookForViewController.m in Sources */,
 				45EE82DE1C5F341400EA3F0D /* IndustoryTableViewCell.m in Sources */,
 				45EE82E01C5F341400EA3F0D /* UserCompanyTableViewCell.m in Sources */,
@@ -6203,6 +6539,7 @@
 				45EE82E61C5F341400EA3F0D /* QNConfiguration.m in Sources */,
 				45EE82E71C5F341400EA3F0D /* UserInfoSettingViewController.m in Sources */,
 				45EE82E81C5F341400EA3F0D /* UIImage+Cut.m in Sources */,
+				459AC10E1CA626B7002837CB /* ASIDataDecompressor.m in Sources */,
 				45EE82E91C5F341400EA3F0D /* SBJsonWriter.m in Sources */,
 				45EE82EA1C5F341400EA3F0D /* UserInfoConfigView.m in Sources */,
 				45EE82EB1C5F341400EA3F0D /* DemoVC9HeaderView.m in Sources */,
@@ -6242,8 +6579,10 @@
 				45EE830C1C5F341400EA3F0D /* UIView+AutoLayout.m in Sources */,
 				45EE830D1C5F341400EA3F0D /* TeamShowViewController.m in Sources */,
 				45EE830E1C5F341400EA3F0D /* RoadShowHomeHeaderView.m in Sources */,
+				459AC1461CA626B8002837CB /* ASIS3Bucket.m in Sources */,
 				45EE830F1C5F341400EA3F0D /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				45EE83101C5F341400EA3F0D /* WeiboCell.m in Sources */,
+				459AC11E1CA626B8002837CB /* ASIInputStream.m in Sources */,
 				45EE83111C5F341400EA3F0D /* WMScrollView.m in Sources */,
 				45EE83131C5F341400EA3F0D /* AFHTTPRequestOperation.m in Sources */,
 				45EE83141C5F341400EA3F0D /* SwipeableCell.m in Sources */,
@@ -6267,6 +6606,8 @@
 				45EE83261C5F341400EA3F0D /* InteractionViewController.m in Sources */,
 				45EE83271C5F341400EA3F0D /* UIView+RSAdditions.m in Sources */,
 				45EE83281C5F341400EA3F0D /* AGTableViewRowAction.m in Sources */,
+				459AC13A1CA626B8002837CB /* ASICloudFilesObject.m in Sources */,
+				459AC1321CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */,
 				95E59D131C8D1E4F008C10AA /* UIView+SDAutoLayout.m in Sources */,
 				45EE83291C5F341400EA3F0D /* FinalCompanyTableViewCell.m in Sources */,
 				45EE832A1C5F341400EA3F0D /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -6288,6 +6629,7 @@
 				45EE833A1C5F341400EA3F0D /* MJRefreshAutoFooter.m in Sources */,
 				45EE833C1C5F341400EA3F0D /* MenuView.m in Sources */,
 				45EE833D1C5F341400EA3F0D /* NSString+MD5.m in Sources */,
+				459AC1221CA626B8002837CB /* ASINetworkQueue.m in Sources */,
 				45EE833F1C5F341400EA3F0D /* ALMoviePlayerController.m in Sources */,
 				45EE83401C5F341400EA3F0D /* ResetPasswordViewController.m in Sources */,
 				45EE83411C5F341400EA3F0D /* ViewController_bak.m in Sources */,
@@ -6318,7 +6660,9 @@
 				45EE835C1C5F341400EA3F0D /* JHTickerView.m in Sources */,
 				45EE835D1C5F341400EA3F0D /* WMProgressView.m in Sources */,
 				45EE835E1C5F341400EA3F0D /* ReplyView.m in Sources */,
+				459AC1421CA626B8002837CB /* ASICloudFilesRequest.m in Sources */,
 				45EE83601C5F341400EA3F0D /* CycleHeader.m in Sources */,
+				459AC1521CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */,
 				45EE83611C5F341400EA3F0D /* BoxModel.m in Sources */,
 				45EE83621C5F341400EA3F0D /* PhotoAdd.m in Sources */,
 				45EE83631C5F341400EA3F0D /* FinialSuccessViewController.m in Sources */,
@@ -6354,11 +6698,13 @@
 				959595501C83F995000FF9FA /* SDWebImageDownloaderOperation.m in Sources */,
 				45EE83821C5F341400EA3F0D /* RootViewController.m in Sources */,
 				959595581C83F995000FF9FA /* SDWebImagePrefetcher.m in Sources */,
+				459AC12E1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */,
 				95D791331C8AAA0700323FCD /* InvestHeaderItemView.m in Sources */,
 				45EE83831C5F341400EA3F0D /* FinalPersonTableViewCell.m in Sources */,
 				45EE83841C5F341400EA3F0D /* QNSessionManager.m in Sources */,
 				45EE83851C5F341400EA3F0D /* UserFinialViewController.m in Sources */,
 				45EE83861C5F341400EA3F0D /* Cycle+CoreDataProperties.m in Sources */,
+				459AC15A1CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */,
 				45EE83871C5F341400EA3F0D /* AFHTTPSessionManager.m in Sources */,
 				45EE83881C5F341400EA3F0D /* PinyinFormatter.m in Sources */,
 				45EE83891C5F341400EA3F0D /* TDUtil.m in Sources */,
@@ -6373,6 +6719,7 @@
 				459AC0C41CA62337002837CB /* libxml2.2.tbd in Sources */,
 				45EE840C1C5F36B900EA3F0D /* TypeShow.m in Sources */,
 				45EE840D1C5F36B900EA3F0D /* MMDrawerVisualState.m in Sources */,
+				459AC1431CA626B8002837CB /* ASICloudFilesRequest.m in Sources */,
 				45EE840E1C5F36B900EA3F0D /* QNResponseInfo.m in Sources */,
 				45EE840F1C5F36B900EA3F0D /* ProjectShareView.m in Sources */,
 				45EE84101C5F36B900EA3F0D /* ModifyViewController.m in Sources */,
@@ -6425,6 +6772,7 @@
 				45EE84411C5F36B900EA3F0D /* FinalViewController.m in Sources */,
 				45EE84421C5F36B900EA3F0D /* JKCountDownButton.m in Sources */,
 				45EE84431C5F36B900EA3F0D /* SignViewController.m in Sources */,
+				459AC1171CA626B7002837CB /* ASIFormDataRequest.m in Sources */,
 				45EE84441C5F36B900EA3F0D /* INSSearchBar.m in Sources */,
 				45EE84451C5F36B900EA3F0D /* IphoneScreen.m in Sources */,
 				45EE84461C5F36B900EA3F0D /* UserCollecteTableViewCell.m in Sources */,
@@ -6445,6 +6793,7 @@
 				45EE84531C5F36B900EA3F0D /* UIImage+Resize.m in Sources */,
 				45EE84541C5F36B900EA3F0D /* DetailViewController.m in Sources */,
 				45EE84551C5F36B900EA3F0D /* MJRefreshBackFooter.m in Sources */,
+				459AC16F1CA626B8002837CB /* README.md in Sources */,
 				45EE84561C5F36B900EA3F0D /* UserInfoHeader.m in Sources */,
 				9548E3D01C8EC5960076DC4E /* TradePasswdEnterView.m in Sources */,
 				45EE84571C5F36B900EA3F0D /* ProjectTableViewCell.m in Sources */,
@@ -6457,6 +6806,7 @@
 				45EE845E1C5F36B900EA3F0D /* SDPhotoBrowser.m in Sources */,
 				45EE845F1C5F36B900EA3F0D /* UserTraceViewController.m in Sources */,
 				45EE84601C5F36B900EA3F0D /* Jinzht.xcdatamodeld in Sources */,
+				459AC14F1CA626B8002837CB /* ASIS3BucketRequest.m in Sources */,
 				45EE84611C5F36B900EA3F0D /* AFNetworkReachabilityManager.m in Sources */,
 				45EE84621C5F36B900EA3F0D /* AFURLRequestSerialization.m in Sources */,
 				45EE84631C5F36B900EA3F0D /* UIViewController+MMDrawerController.m in Sources */,
@@ -6488,6 +6838,7 @@
 				45EE847B1C5F36B900EA3F0D /* ZHTableViewController.m in Sources */,
 				95D791281C8AA5BD00323FCD /* InvestViewController.m in Sources */,
 				45EE847C1C5F36B900EA3F0D /* Comment+CoreDataProperties.m in Sources */,
+				459AC1371CA626B8002837CB /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
 				45EE847D1C5F36B900EA3F0D /* MBProgressHUD.m in Sources */,
 				45EE847E1C5F36B900EA3F0D /* DialogView.m in Sources */,
 				45EE847F1C5F36B900EA3F0D /* MJRefreshStateHeader.m in Sources */,
@@ -6497,9 +6848,11 @@
 				45EE84831C5F36B900EA3F0D /* MWGridViewController.m in Sources */,
 				9548E3C01C8E7E580076DC4E /* TradePasswdView.m in Sources */,
 				45EE84841C5F36B900EA3F0D /* ALButton.m in Sources */,
+				459AC10B1CA626B7002837CB /* ASIDataCompressor.m in Sources */,
 				45EE84851C5F36B900EA3F0D /* ChineseInclude.m in Sources */,
 				45EE84871C5F36B900EA3F0D /* QNFormUpload.m in Sources */,
 				45EE84881C5F36B900EA3F0D /* MWTapDetectingView.m in Sources */,
+				459AC1131CA626B7002837CB /* ASIDownloadCache.m in Sources */,
 				45EE84891C5F36B900EA3F0D /* JDStatusBarNotification.m in Sources */,
 				45EE848A1C5F36B900EA3F0D /* CreditTableViewCell.m in Sources */,
 				45EE848B1C5F36B900EA3F0D /* NewsTag.m in Sources */,
@@ -6526,6 +6879,7 @@
 				45EE849F1C5F36B900EA3F0D /* ModifyPositionViewController.m in Sources */,
 				9568B54A1C965A3600760D24 /* YeePayViewController.m in Sources */,
 				45EE84A11C5F36B900EA3F0D /* QNResumeUpload.m in Sources */,
+				459AC1471CA626B8002837CB /* ASIS3Bucket.m in Sources */,
 				45EE84A21C5F36B900EA3F0D /* Likers.m in Sources */,
 				45EE84A31C5F36B900EA3F0D /* UploadingView.m in Sources */,
 				45EE84A41C5F36B900EA3F0D /* SlideViewStartPage.m in Sources */,
@@ -6545,6 +6899,7 @@
 				45EE84B41C5F36B900EA3F0D /* ModifyCompanyViewController.m in Sources */,
 				45EE84B51C5F36B900EA3F0D /* VoteViewController.m in Sources */,
 				45EE84B61C5F36B900EA3F0D /* StartPageViewController.m in Sources */,
+				459AC1071CA626B7002837CB /* ASIAuthenticationDialog.m in Sources */,
 				45EE84B71C5F36B900EA3F0D /* FinialSubmmitViewController.m in Sources */,
 				45EE84B81C5F36B900EA3F0D /* MJRefreshComponent.m in Sources */,
 				45EE84B91C5F36B900EA3F0D /* MJRefreshBackNormalFooter.m in Sources */,
@@ -6575,6 +6930,7 @@
 				45EE84D61C5F36B900EA3F0D /* QNConfiguration.m in Sources */,
 				45EE84D71C5F36B900EA3F0D /* UserInfoSettingViewController.m in Sources */,
 				45EE84D81C5F36B900EA3F0D /* UIImage+Cut.m in Sources */,
+				459AC13F1CA626B8002837CB /* ASICloudFilesObjectRequest.m in Sources */,
 				45EE84D91C5F36B900EA3F0D /* SBJsonWriter.m in Sources */,
 				45EE84DA1C5F36B900EA3F0D /* UserInfoConfigView.m in Sources */,
 				45EE84DB1C5F36B900EA3F0D /* DemoVC9HeaderView.m in Sources */,
@@ -6584,16 +6940,19 @@
 				45EE84DF1C5F36B900EA3F0D /* ALMoviePlayerControls.m in Sources */,
 				45EE84E01C5F36B900EA3F0D /* Banner.m in Sources */,
 				959595411C83F995000FF9FA /* SDImageCache.m in Sources */,
+				459AC12B1CA626B8002837CB /* ASICloudFilesCDNRequest.m in Sources */,
 				959595611C83F995000FF9FA /* UIImage+GIF.m in Sources */,
 				45EE84E11C5F36B900EA3F0D /* AnnounceView.m in Sources */,
 				45EE84E31C5F36B900EA3F0D /* FinalKindTableViewCell.m in Sources */,
 				95D7913A1C8ACE6200323FCD /* InvestItemDataView.m in Sources */,
 				45EE84E41C5F36B900EA3F0D /* JDStatusBarStyle.m in Sources */,
+				459AC1571CA626B8002837CB /* ASIS3Request.m in Sources */,
 				45EE84E51C5F36B900EA3F0D /* NewThreeSlidePageController.m in Sources */,
 				45EE84E61C5F36B900EA3F0D /* CycleModel.m in Sources */,
 				45EE84E71C5F36B900EA3F0D /* BannerViewController.m in Sources */,
 				45EE84E91C5F36B900EA3F0D /* QNUpToken.m in Sources */,
 				45EE84EA1C5F36B900EA3F0D /* AboutUsViewController.m in Sources */,
+				459AC11B1CA626B7002837CB /* ASIHTTPRequest.m in Sources */,
 				95A9104B1C925CC300B707EB /* UIImage+Crop.m in Sources */,
 				45EE84EB1C5F36B900EA3F0D /* WeiboTableViewCell.m in Sources */,
 				45EE84EC1C5F36B900EA3F0D /* JastorRuntimeHelper.m in Sources */,
@@ -6638,7 +6997,9 @@
 				45EE85151C5F36B900EA3F0D /* NavView.m in Sources */,
 				45EE85161C5F36B900EA3F0D /* InteractionViewController.m in Sources */,
 				45EE85171C5F36B900EA3F0D /* UIView+RSAdditions.m in Sources */,
+				459AC1271CA626B8002837CB /* ASIWebPageRequest.m in Sources */,
 				45EE85181C5F36B900EA3F0D /* AGTableViewRowAction.m in Sources */,
+				459AC1531CA626B8002837CB /* ASIS3ObjectRequest.m in Sources */,
 				95E59D141C8D1E4F008C10AA /* UIView+SDAutoLayout.m in Sources */,
 				45EE85191C5F36B900EA3F0D /* FinalCompanyTableViewCell.m in Sources */,
 				45EE851A1C5F36B900EA3F0D /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -6669,6 +7030,7 @@
 				45EE85351C5F36B900EA3F0D /* main.m in Sources */,
 				45EE85361C5F36B900EA3F0D /* QNAsyncRun.m in Sources */,
 				9595954D1C83F995000FF9FA /* SDWebImageDownloader.m in Sources */,
+				459AC14B1CA626B8002837CB /* ASIS3BucketObject.m in Sources */,
 				45EE85371C5F36B900EA3F0D /* HanyuPinyinOutputFormat.m in Sources */,
 				45EE85381C5F36B900EA3F0D /* SwitchSelect.m in Sources */,
 				45EE85391C5F36B900EA3F0D /* CustomImagePickerController.m in Sources */,
@@ -6680,11 +7042,14 @@
 				45EE853F1C5F36B900EA3F0D /* PreProjectDetailViewController.m in Sources */,
 				45EE85421C5F36B900EA3F0D /* QNCrc32.m in Sources */,
 				45EE85431C5F36B900EA3F0D /* UserTypeTableViewCell.m in Sources */,
+				459AC12F1CA626B8002837CB /* ASICloudFilesContainer.m in Sources */,
 				45EE85441C5F36B900EA3F0D /* ReplyTableViewCell.m in Sources */,
 				45EE85451C5F36B900EA3F0D /* IndustoryLabel.m in Sources */,
 				45EE85461C5F36B900EA3F0D /* MJRefreshAutoStateFooter.m in Sources */,
 				45EE85471C5F36B900EA3F0D /* FunctionTabBarItem.m in Sources */,
 				45EE85481C5F36B900EA3F0D /* LoadingView.m in Sources */,
+				459AC11F1CA626B8002837CB /* ASIInputStream.m in Sources */,
+				459AC10F1CA626B7002837CB /* ASIDataDecompressor.m in Sources */,
 				45EE854A1C5F36B900EA3F0D /* FinialAuthTraceViewController.m in Sources */,
 				45EE854B1C5F36B900EA3F0D /* DialogUtil.m in Sources */,
 				45EE854C1C5F36B900EA3F0D /* JHTickerView.m in Sources */,
@@ -6694,12 +7059,15 @@
 				45EE85511C5F36B900EA3F0D /* BoxModel.m in Sources */,
 				45EE85521C5F36B900EA3F0D /* PhotoAdd.m in Sources */,
 				45EE85531C5F36B900EA3F0D /* FinialSuccessViewController.m in Sources */,
+				459AC15B1CA626B8002837CB /* ASIS3ServiceRequest.m in Sources */,
 				45EE85541C5F36B900EA3F0D /* UserInfoConfigController.m in Sources */,
 				45EE85561C5F36B900EA3F0D /* ShowCommentViewController.m in Sources */,
+				459AC1331CA626B8002837CB /* ASICloudFilesContainerRequest.m in Sources */,
 				45EE85571C5F36B900EA3F0D /* NewFinance+CoreDataProperties.m in Sources */,
 				45EE85581C5F36B900EA3F0D /* FinalContentTableViewCell.m in Sources */,
 				45EE85591C5F36B900EA3F0D /* WeiboData.m in Sources */,
 				45EE855A1C5F36B900EA3F0D /* SBJsonParser.m in Sources */,
+				459AC16B1CA626B8002837CB /* Reachability.m in Sources */,
 				95A9104F1C925CC300B707EB /* UIReplyLabel.m in Sources */,
 				45EE855B1C5F36B900EA3F0D /* FinialPlanTableViewCell.m in Sources */,
 				45EE855C1C5F36B900EA3F0D /* MJRefreshHeader.m in Sources */,
@@ -6726,12 +7094,14 @@
 				959595511C83F995000FF9FA /* SDWebImageDownloaderOperation.m in Sources */,
 				45EE85721C5F36B900EA3F0D /* RootViewController.m in Sources */,
 				959595591C83F995000FF9FA /* SDWebImagePrefetcher.m in Sources */,
+				459AC13B1CA626B8002837CB /* ASICloudFilesObject.m in Sources */,
 				95D791341C8AAA0700323FCD /* InvestHeaderItemView.m in Sources */,
 				45EE85731C5F36B900EA3F0D /* FinalPersonTableViewCell.m in Sources */,
 				45EE85741C5F36B900EA3F0D /* QNSessionManager.m in Sources */,
 				45EE85751C5F36B900EA3F0D /* UserFinialViewController.m in Sources */,
 				45EE85761C5F36B900EA3F0D /* Cycle+CoreDataProperties.m in Sources */,
 				45EE85771C5F36B900EA3F0D /* AFHTTPSessionManager.m in Sources */,
+				459AC1231CA626B8002837CB /* ASINetworkQueue.m in Sources */,
 				45EE85781C5F36B900EA3F0D /* PinyinFormatter.m in Sources */,
 				45EE85791C5F36B900EA3F0D /* TDUtil.m in Sources */,
 				45EE857A1C5F36B900EA3F0D /* Platform.m in Sources */,
@@ -6951,8 +7321,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lu Liu (WKWLHQSAU5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -6970,10 +7340,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinzht.pro2.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4afc32e1-8f87-447c-b125-0261705d63dc";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -6982,8 +7352,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7000,10 +7370,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinzht.pro2.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "919d7a94-dc26-4bb1-9a31-bbbbf852e495";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

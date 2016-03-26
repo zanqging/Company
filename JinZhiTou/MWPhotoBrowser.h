@@ -57,6 +57,7 @@
 
 //extension
 @property(assign,nonatomic)BOOL limit;
+@property(assign,nonatomic)int maxSelected; //最大数量
 
 // Customise image selection icons as they are the only icons with a colour tint
 // Icon should be located in the app's main bundle

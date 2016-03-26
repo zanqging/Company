@@ -10,6 +10,7 @@
 #import "MWGridCell.h"
 #import "MWCommon.h"
 #import "DialogUtil.h"
+#import "UConstants.h"
 #import "MWPhotoBrowserPrivate.h"
 #import "UIImage+MWPhotoBrowser.h"
 
@@ -169,7 +170,7 @@
             _selectedButton.selected = !_selectedButton.selected;
             [_gridController.browser setPhotoSelected:_selectedButton.selected atIndex:_index];
         }else{
-            [[DialogUtil sharedInstance]showDlg:[UIApplication sharedApplication].windows[0] textOnly:@"最多只能选择9张图片"];
+            [[DialogUtil sharedInstance]showDlg:[UIApplication sharedApplication].windows[0] textOnly:STRING(@"最多只能选择%d张图片", _gridController.browser.maxSelected)];
         }
     }
 }
