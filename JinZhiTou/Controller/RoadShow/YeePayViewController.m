@@ -166,25 +166,28 @@
     NSLog(@"%@",dicData);
     NSString * str = [TDUtil generateUserPlatformNo];
     
+    float mount = [DICVFK(self.dic, @"mount") floatValue];
+    float profit = [DICVFK(self.dic, @"profit") floatValue];
+    
+    float mount_profit = mount * profit;
+    
     NSMutableDictionary * dic = [NSMutableDictionary new];
-//    NSMutableDictionary * dicItem = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"amount",@"MEMBER",@"targetUserType",str,@"targetPlatformUserNo",@"TENDER",@"bizType", nil];
     
-     NSMutableDictionary * dicItem = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"amount",@"MEMBER",@"targetUserType",str,@"targetPlatformUserNo",@"TENDER",@"bizType", nil];
-    NSMutableDictionary * dicItem2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"1",@"amount",@"MERCHANT",@"targetUserType",YeePayPlatformID,@"targetPlatformUserNo",@"TENDER",@"bizType", nil];
+    NSMutableDictionary * dicItem = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%.2f",mount - mount_profit],@"amount",@"MEMBER",@"targetUserType",DICVFK(self.dic, @"brrow_user_no"),@"targetPlatformUserNo",@"TENDER",@"bizType", nil];
+    NSMutableDictionary * dicItem2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:STRING(@"%.2f", mount_profit),@"amount",@"MERCHANT",@"targetUserType",YeePayPlatformID,@"targetPlatformUserNo",@"TENDER",@"bizType", nil];
     
-    [dic setObject:@"1" forKey:@"amount"];
+    [dic setObject:STRING(@"%.2f", mount) forKey:@"amount"];
     [dic setObject:str forKey:@"platformUserNo"];
     [dic setObject:@"MEMBER" forKey:@"userType"];
     [dic setObject:@"TENDER" forKey:@"bizType"];
-    //            [dic setObject:@"2019-03-15 21:00:00" forKey:@"expired"];
     [dic setObject:[NSArray arrayWithObjects:dicItem,dicItem2,nil] forKey:@"details"];
-//    [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[TDUtil generateTenderNo:DICVFK(self.dic, @"id")],@"tenderOrderNo",@"逸景营地众筹项目",@"tenderName",@"5000000",@"tenderAmount",@"随便投",@"tenderDescription",str,@"borrowerPlatformUserNo",@"10000000",@"tenderSumLimit", nil] forKey:@"extend"];
-     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[TDUtil generateTenderNo:DICVFK(self.dic, @"id")],@"tenderOrderNo",@"逸景营地众筹项目",@"tenderName",@"5000000",@"tenderAmount",@"随便投",@"tenderDescription",str,@"borrowerPlatformUserNo",@"10000000",@"tenderSumLimit", nil] forKey:@"extend"];
+    
+     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[TDUtil generateTenderNo:DICVFK(self.dic, @"id")],@"tenderOrderNo",DICVFK(self.dic, @"company"),@"tenderName",STRING(@"%.2f", [DICVFK(self.dic, @"planfinance") floatValue]*10000),@"tenderAmount",DICVFK(self.dic, @"company"),@"tenderDescription",DICVFK(self.dic, @"brrow_user_no"),@"borrowerPlatformUserNo", nil] forKey:@"extend"];
     [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
     [dic setObject:@"ios://tenderConfirm" forKey:@"callbackUrl"];
     [dic setObject:@"http://www.jinzht.com" forKey:@"notifyUrl"];
     
-    
+
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
     
     [self sign:signString];
@@ -196,8 +199,9 @@
     self.startLoading = YES;
     NSString* url = [INVEST stringByAppendingFormat:@"%@/%@/",DICVFK(self.dic, @"id"),DICVFK(self.dic, @"currentSelect")];
     NSMutableDictionary* dic = [[NSMutableDictionary alloc]init];
+    float mount = [DICVFK(self.dic, @"mount") floatValue]/10000.00;
     
-    [dic setValue:DICVFK(self.dic, @"mount") forKey:@"amount"];
+    [dic setValue:STRING(@"%.2f", mount) forKey:@"amount"];
     [dic setValue:[TDUtil generateTradeNo] forKey:@"investCode"];
     [dic setValue:[NSString stringWithFormat:@"%@",DICVFK(self.dic, @"currentSelect")] forKey:@"flag"];
     [self.httpUtil getDataFromAPIWithOps:url postParam:dic type:0 delegate:self sel:@selector(requestFinialSubmmmit:)];
@@ -351,6 +355,7 @@
         if ([code intValue] == 0) {
             
             PaySuccessViewController * controller = [[PaySuccessViewController alloc]init];
+            controller.dataDic = [NSMutableDictionary dictionaryWithDictionary:self.dic];
             [self.navigationController pushViewController:controller animated:YES];
             self.startLoading = NO;
             return;

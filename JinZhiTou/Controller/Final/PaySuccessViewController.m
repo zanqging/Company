@@ -29,10 +29,10 @@
 {
     //1.init
     contentView = [UIScrollView new];
-    UIButton * btnAction = [UIButton new];
-    UILabel * labelContent = [UILabel new];
-    UIImageView * imgView = [UIImageView new];
-    UIImageView * imgSuccessView = [UIImageView new];
+    btnAction = [UIButton new];
+    labelContent = [UILabel new];
+    imgView = [UIImageView new];
+    imgSuccessView = [UIImageView new];
     
     self.titleLabel = [UILabel new];
     self.imgView = [UIImageView new];
@@ -121,6 +121,13 @@
     .leftSpaceToView(contentView, 25)
     .rightSpaceToView(contentView, 25)
     .heightIs(40);
+    
+}
+
+-(void)setDataDic:(NSMutableDictionary *)dataDic
+{
+    [super setDataDic:dataDic];
+    
     
 }
 

@@ -776,6 +776,14 @@
 		4599DB7C1C51E68B007AC3CD /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4599DB761C51E68B007AC3CD /* JDStatusBarStyle.m */; };
 		4599DB7D1C51E68B007AC3CD /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4599DB781C51E68B007AC3CD /* JDStatusBarView.m */; };
 		4599DB7E1C51E68B007AC3CD /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4599DB781C51E68B007AC3CD /* JDStatusBarView.m */; };
+		459AC0BF1CA61D3F002837CB /* libASIHTTPRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459AC0BD1CA61D3F002837CB /* libASIHTTPRequest.a */; };
+		459AC0C01CA61D3F002837CB /* libReachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459AC0BE1CA61D3F002837CB /* libReachability.a */; };
+		459AC0C11CA61E4F002837CB /* libASIHTTPRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459AC0BD1CA61D3F002837CB /* libASIHTTPRequest.a */; };
+		459AC0C21CA61E4F002837CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2DD7B96FC8E303F0A259D5 /* libPods.a */; };
+		459AC0C31CA61E4F002837CB /* libReachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459AC0BE1CA61D3F002837CB /* libReachability.a */; };
+		459AC0C41CA62337002837CB /* libxml2.2.tbd in Sources */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
+		459AC0C51CA62344002837CB /* libxml2.2.tbd in Sources */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
+		459AC0C61CA62350002837CB /* libxml2.2.tbd in Resources */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
 		459AC9441B6F442E0050E817 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC9431B6F442E0050E817 /* loginViewController.m */; };
 		459AC9471B6F4F050050E817 /* RegisteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459AC9461B6F4F050050E817 /* RegisteViewController.m */; };
 		459B6F151C4C891500B3A503 /* JHTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B6F141C4C891500B3A503 /* JHTickerView.m */; };
@@ -1800,10 +1808,10 @@
 		95372A331C8D67E400243ABD /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95372A311C8D67E400243ABD /* PaySuccessViewController.m */; };
 		95372A341C8D67E400243ABD /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95372A311C8D67E400243ABD /* PaySuccessViewController.m */; };
 		95372A351C8D67E400243ABD /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95372A311C8D67E400243ABD /* PaySuccessViewController.m */; };
-		9537FF9A1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; };
-		9537FF9B1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; };
+		9537FF9A1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9537FF9B1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9537FF9C1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9537FF9D1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; };
+		9537FF9D1C93C69900D043F5 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537FF991C93C69900D043F5 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9537FFA11C93C7EF00D043F5 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */; };
 		9548E3BD1C8E7E580076DC4E /* TradePasswdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3BC1C8E7E580076DC4E /* TradePasswdView.m */; };
 		9548E3BE1C8E7E580076DC4E /* TradePasswdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9548E3BC1C8E7E580076DC4E /* TradePasswdView.m */; };
@@ -2550,6 +2558,8 @@
 		4599DB761C51E68B007AC3CD /* JDStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarStyle.m; sourceTree = "<group>"; };
 		4599DB771C51E68B007AC3CD /* JDStatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarView.h; sourceTree = "<group>"; };
 		4599DB781C51E68B007AC3CD /* JDStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarView.m; sourceTree = "<group>"; };
+		459AC0BD1CA61D3F002837CB /* libASIHTTPRequest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libASIHTTPRequest.a; path = "../../../../../Library/Developer/Xcode/DerivedData/JinZhiTou-hknkaqseakvqomfpxmshclvwwbyz/Build/Products/Debug-iphoneos/libASIHTTPRequest.a"; sourceTree = "<group>"; };
+		459AC0BE1CA61D3F002837CB /* libReachability.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReachability.a; path = "../../../../../Library/Developer/Xcode/DerivedData/JinZhiTou-hknkaqseakvqomfpxmshclvwwbyz/Build/Products/Debug-iphoneos/libReachability.a"; sourceTree = "<group>"; };
 		459AC9421B6F442E0050E817 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginViewController.h; path = Controller/Login/loginViewController.h; sourceTree = "<group>"; };
 		459AC9431B6F442E0050E817 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loginViewController.m; path = Controller/Login/loginViewController.m; sourceTree = "<group>"; };
 		459AC9451B6F4F050050E817 /* RegisteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteViewController.h; sourceTree = "<group>"; };
@@ -2878,6 +2888,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459AC0BF1CA61D3F002837CB /* libASIHTTPRequest.a in Frameworks */,
+				459AC0C01CA61D3F002837CB /* libReachability.a in Frameworks */,
 				458115571B7FA52E006EEBBC /* CoreGraphics.framework in Frameworks */,
 				458115551B7FA51F006EEBBC /* CFNetwork.framework in Frameworks */,
 				458115531B7FA513006EEBBC /* CoreFoundation.framework in Frameworks */,
@@ -2940,6 +2952,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459AC0C11CA61E4F002837CB /* libASIHTTPRequest.a in Frameworks */,
+				459AC0C21CA61E4F002837CB /* libPods.a in Frameworks */,
+				459AC0C31CA61E4F002837CB /* libReachability.a in Frameworks */,
 				45EE857C1C5F36B900EA3F0D /* CoreGraphics.framework in Frameworks */,
 				45EE857D1C5F36B900EA3F0D /* CFNetwork.framework in Frameworks */,
 				45EE857E1C5F36B900EA3F0D /* CoreFoundation.framework in Frameworks */,
@@ -4622,6 +4637,8 @@
 		9B6D51C1E60D07C310DA1D02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				459AC0BD1CA61D3F002837CB /* libASIHTTPRequest.a */,
+				459AC0BE1CA61D3F002837CB /* libReachability.a */,
 				9537FFA01C93C7EF00D043F5 /* libxml2.2.tbd */,
 				9537FF9E1C93C6BA00D043F5 /* libxml2.tbd */,
 				FA2DD7B96FC8E303F0A259D5 /* libPods.a */,
@@ -4660,6 +4677,7 @@
 				45DEACE51B437879001EDA5D /* Frameworks */,
 				45DEACE61B437879001EDA5D /* Resources */,
 				4C573B7B8E9CF3C673E1C54F /* Copy Pods Resources */,
+				BD788AF1F13309F085E9D537 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4868,6 +4886,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459AC0C61CA62350002837CB /* libxml2.2.tbd in Resources */,
 				4543EB971BD0ABB80041DCBD /* UIBarButtonItemArrowLeft@2x.png in Resources */,
 				45D49D941B82336F00EC529F /* sex.plist in Resources */,
 				45954D0D1C4F659700137D7D /* plan.png in Resources */,
@@ -5215,6 +5234,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BD788AF1F13309F085E9D537 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -5222,6 +5256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459AC0C51CA62344002837CB /* libxml2.2.tbd in Sources */,
 				4542881F1C448FE000513DC0 /* TypeShow.m in Sources */,
 				454288201C448FE000513DC0 /* MMDrawerVisualState.m in Sources */,
 				454288211C448FE000513DC0 /* QNResponseInfo.m in Sources */,
@@ -6335,6 +6370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459AC0C41CA62337002837CB /* libxml2.2.tbd in Sources */,
 				45EE840C1C5F36B900EA3F0D /* TypeShow.m in Sources */,
 				45EE840D1C5F36B900EA3F0D /* MMDrawerVisualState.m in Sources */,
 				45EE840E1C5F36B900EA3F0D /* QNResponseInfo.m in Sources */,
@@ -6718,7 +6754,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "金指投发布 copy-Info.plist";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "$(SRCROOT)/../../MyProject2.1.1/MyProject2.1.1/MyProject2.1.1/金指投发布 copy2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -6730,6 +6767,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -6745,7 +6783,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "金指投发布 copy-Info.plist";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "$(SRCROOT)/../../MyProject2.1.1/MyProject2.1.1/MyProject2.1.1/金指投发布 copy2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -6757,6 +6796,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
@@ -6853,7 +6893,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -6870,9 +6910,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinzht.pro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4d968a7d-7d21-4423-864d-7dc311070046";
+				PROVISIONING_PROFILE = "75a4ff1b-ea29-4cfa-8f70-5dbf074a5c1c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -6882,7 +6923,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -6898,9 +6939,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinzht.pro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4d968a7d-7d21-4423-864d-7dc311070046";
+				PROVISIONING_PROFILE = "75a4ff1b-ea29-4cfa-8f70-5dbf074a5c1c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
@@ -6970,15 +7012,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "金指投2.1.1测试 copy-Info.plist";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "$(SRCROOT)/../../MyProject2.1.1/MyProject2.1.1/MyProject2.1.1/金指投2.1.1测试 copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -6987,9 +7030,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinzht.pro2.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4afc32e1-8f87-447c-b125-0261705d63dc";
+				PROVISIONING_PROFILE = "919d7a94-dc26-4bb1-9a31-bbbbf852e495";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -6998,14 +7042,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shaanxi gold investment enterprise management consulting Co., Ltd. (PT9XT89LQL)";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "金指投2.1.1测试 copy-Info.plist";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "$(SRCROOT)/../../MyProject2.1.1/MyProject2.1.1/MyProject2.1.1/金指投2.1.1测试 copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -7014,9 +7059,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinzht.pro2.1.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4afc32e1-8f87-447c-b125-0261705d63dc";
+				PROVISIONING_PROFILE = "919d7a94-dc26-4bb1-9a31-bbbbf852e495";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

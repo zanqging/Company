@@ -14,6 +14,8 @@
     UIScrollView * contentView;
     UIView * configView; //实名认证视图
     UIView * infoView; //认证信息视图
+    
+    NSDictionary * infoDic;
 }
 
 -(void)isCheckUserConfirmed;

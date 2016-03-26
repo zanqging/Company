@@ -51,13 +51,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JinZhiTou/Controller/Final/FinialApplyViewController.m"
-            timestampString = "480047982.881177"
+            filePath = "JinZhiTou/Controller/UserInfo/PurseViewController.m"
+            timestampString = "480478390.592817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-goConfirm"
+            startingLineNumber = "506"
+            endingLineNumber = "506"
+            landmarkName = "-requestInvestCheck:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JinZhiTou/Controller/UserInfo/PurseViewController.m"
+            timestampString = "480478390.592817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "511"
+            endingLineNumber = "511"
+            landmarkName = "-requestInvestCheck:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JinZhiTou/Controller/RoadShow/YeePayViewController.m"
+            timestampString = "480573484.600549"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "-finialConfirm:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

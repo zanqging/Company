@@ -149,8 +149,8 @@
 
 //服务器域名地址
 //#define SERVICE_URL @"http://115.28.110.243/phone4/"//服务器域名地址
-#define SERVICE_URL @"http://www.jinzht.com/phone5/"//服务器域名地址
-//#define SERVICE_URL @"http://www.jinzht.com:8000/phone/"//服务器域名地址
+//#define SERVICE_URL @"http://www.jinzht.com/phone5/"//服务器域名地址
+#define SERVICE_URL @"http://www.jinzht.com:8000/phone/"//服务器域名地址
 #define BUINESS_SERVER @"http://220.181.25.233:8081/member/bhawireless/" //易宝支付测试环境
 #define BUINESE_SERVERD @"http://220.181.25.233:8081/member/bhaexter/bhaController" //直连接口
 
@@ -482,7 +482,6 @@
 #define YeePaySignVerify @"signVerify/"
 #define YeePayToCpTransaction @"toCpTransaction"
 #define ACCOUNT_INFO @"ACCOUNT_INFO"
-#define UserAccountFormat @"jinzht_1100000"
 #define UserPlatFormNo @"jinzht_0_%@"
 #define ProjectTenderNo @"jinzht_project_%@"
 #define IsTendered   @"IsTendered/"

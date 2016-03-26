@@ -178,7 +178,11 @@
     UIView* view = [scrollView viewWithTag:30001];
     UITextField* textField = (UITextField*)[view viewWithTag:500001];
     NSString* mount =textField.text;
-    mount = [mount stringByReplacingOccurrencesOfString:@"万元" withString:@"0000"];
+    mount = [mount stringByReplacingOccurrencesOfString:@"万元" withString:@""];
+    float money = [mount floatValue];
+    
+    mount = [NSString stringWithFormat:@"%.2f",money * 10000];
+    
     
     [dic setObject:mount forKey:@"amount"];
     [dic setObject:str forKey:@"platformUserNo"];
@@ -323,6 +327,13 @@
         int code =[[dic valueForKey:@"code"] intValue];
         if (code == 0) {
             self.dataDic = DICVFK(dic, @"data");
+            
+            BOOL isActive = [DICVFK(self.dataDic, @"is_actived") boolValue];
+            if(!isActive)
+            {
+                UIButton * btnAction = [scrollView viewWithTag:30004];
+                [btnAction setTitle:@"立即支付" forState:UIControlStateNormal];
+            }
         }
         self.startLoading = NO;
     }

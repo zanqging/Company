@@ -25,7 +25,13 @@
     
     [self setup];
     
+    [self checkIsInvester];
 //    [self isCheckUserConfirmed];
+}
+
+-(void)checkIsInvester
+{
+    [self.httpUtil getDataFromAPIWithOps:ISINVESTOR postParam:nil type:0 delegate:self sel:@selector(requestInvestCheck:)];
 }
 
 -(void)setup
@@ -289,6 +295,10 @@
 
 -(void)isCheckUserConfirmed
 {
+    [configView removeFromSuperview];
+    [infoView removeFromSuperview];
+    
+    
     NSString * str = [TDUtil generateUserPlatformNo];
     
     NSMutableDictionary * dic = [NSMutableDictionary new];
@@ -308,24 +318,42 @@
 
 -(void)goConfirm
 {
-    NSUserDefaults * data = [NSUserDefaults standardUserDefaults];
-    NSString * str = [TDUtil generateUserPlatformNo];
+    NSString* auth = [infoDic valueForKey:@"auth"];
     
-    NSMutableDictionary * dic = [NSMutableDictionary new];
-    [dic setObject:str forKey:@"platformUserNo"];
-    [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
-    [dic setObject:@"G2_IDCARD" forKey:@"idCardType"];
-    [dic setObject:@"ios://verify:" forKey:@"callbackUrl"];
-    [dic setObject:DICVFK(self.dataDic, @"tel") forKey:@"mobile"];
-    [dic setObject:DICVFK(self.dataDic, @"name") forKey:@"realName"];
-    [dic setObject:DICVFK(self.dataDic, @"idno") forKey:@"idCardNo"];
-    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
-    [dic setObject:[data valueForKey:USER_STATIC_NICKNAME] forKey:@"nickName"];
+    if (![auth isKindOfClass:NSNull.class]) {
+        if (auth) {
+            if ([auth respondsToSelector:@selector(isEqualToString:)]) {
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"您还未进行投资人身份认证，请先认证",@"msg",@"取消",@"cancel",@"去认证",@"sure",@"0",@"type",self,@"vController", nil]];
+            }else{
+                if([auth boolValue]){
+                    NSUserDefaults * data = [NSUserDefaults standardUserDefaults];
+                    NSString * str = [TDUtil generateUserPlatformNo];
+                    
+                    NSMutableDictionary * dic = [NSMutableDictionary new];
+                    [dic setObject:str forKey:@"platformUserNo"];
+                    [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
+                    [dic setObject:@"G2_IDCARD" forKey:@"idCardType"];
+                    [dic setObject:@"ios://verify:" forKey:@"callbackUrl"];
+                    [dic setObject:DICVFK(self.dataDic, @"tel") forKey:@"mobile"];
+                    [dic setObject:DICVFK(self.dataDic, @"name") forKey:@"realName"];
+                    [dic setObject:DICVFK(self.dataDic, @"idno") forKey:@"idCardNo"];
+                    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+                    [dic setObject:[data valueForKey:USER_STATIC_NICKNAME] forKey:@"nickName"];
+                    
+                    
+                    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+                    
+                    [self sign:signString sel:@selector(requestSign:)];
+                }else if(![auth boolValue]){
+                    [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"您的投资人身份认证未审核通过，请先联系客服",@"msg",@"",@"cancel",@"确定",@"sure",@"4",@"type",self,@"vController", nil]];
+                }
+            }
+        }
+    }else{
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"您的投资人身份认证正在审核中，请耐心等待",@"msg",@"",@"cancel",@"确定",@"sure",@"4",@"type",self,@"vController", nil]];
+    }
     
-    
-    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
-    
-    [self sign:signString sel:@selector(requestSign:)];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"reloadData" object:nil];
     
 }
 
@@ -472,6 +500,35 @@
         return ;
     }
     self.isNetRequestError = YES;
+}
+
+/**
+ *  权限检测
+ *
+ *  @param request
+ */
+-(void)requestInvestCheck:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            infoDic =[jsonDic valueForKey:@"data"];
+        }else{
+            if ([code intValue]==1) {
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"alert" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[jsonDic valueForKey:@"msg"],@"msg",@"",@"cancel",@"确认",@"sure",@"4",@"type",self,@"vController", nil]];
+            }else if([code intValue]==-1){
+                //通知系统重新登录
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"login" object:nil];
+            }
+        }
+    }else{
+        [[DialogUtil sharedInstance] showDlg:self.view textOnly:[jsonDic valueForKey:@"msg"]];
+    }
+    self.startLoading=NO;
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request

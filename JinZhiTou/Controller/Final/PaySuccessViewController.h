@@ -11,6 +11,10 @@
 @interface PaySuccessViewController : RootViewController
 {
     UIScrollView * contentView;
+    UIButton * btnAction;
+    UILabel * labelContent;
+    UIImageView * imgView;
+    UIImageView * imgSuccessView;
 }
 @property(retain, nonatomic) UIImageView * imgView;
 @property(retain, nonatomic) UILabel * titleLabel; //标题
