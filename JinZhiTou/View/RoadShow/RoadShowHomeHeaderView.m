@@ -17,6 +17,7 @@
 #import "UIImageView+WebCache.h"
 #import <QuartzCore/QuartzCore.h>
 #import "RoadShowDetailViewController.h"
+#define checkNull(__X__)        (__X__) == [NSNull null] || (__X__) == nil
 @implementation RoadShowHomeHeaderView
 
 -(id)initWithFrame:(CGRect)frame withData:(NSDictionary *)data
@@ -223,7 +224,8 @@
             if (pageIndex <= instance.bannerArray.count) {
                 NSDictionary * dic = instance.bannerArray[pageIndex];
                 NSString* projectId = STRING(@"%@", DICVFK(dic, @"project"));
-                if (![TDUtil isValidString:projectId] && [projectId integerValue] != 0) {
+                NSLog(@"%@",projectId);
+                if ([projectId isEqualToString:@"<null>"]) {
                     //                NSString* urlStr =[dataArray[pageIndex] valueForKey:@"url"];
                     NSString* urlStr = DICVFK(dic, @"url");
                     if (urlStr && ![urlStr isEqualToString:@""]) {
@@ -239,7 +241,7 @@
                     }
                 }else{
                     RoadShowDetailViewController* controller = [[RoadShowDetailViewController alloc]init];
-                    controller.dic = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@",projectId],@"id", nil];
+                    controller.dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%@",projectId],@"id", nil];
                     controller.title =@"项目";
                     if ([instance.delegate respondsToSelector:@selector(roadShowHome:controller:type:)]) {
                         [instance.delegate roadShowHome:instance controller:controller type:0];

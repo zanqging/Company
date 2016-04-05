@@ -13,6 +13,7 @@
 #import "UConstants.h"
 #import "GDataXMLNode.h"
 #import "Reachability.h"
+#import "ASIFormDataRequest.h"
 @implementation TDUtil
 + (UIImage *)createImageWithColor:(UIColor *)color rect:(CGRect)rect
 {
@@ -1384,6 +1385,15 @@
     NSString * xmlString = @"";
     NSArray * keys = [dic allKeys];
     for (id key in keys) {
+//        if ([key isEqualToString:@"sign"]) {
+//            ASIFormDataRequest *formDataRequest = [ASIFormDataRequest requestWithURL:nil];
+////            formDataRequest.stringEncoding = NSUTF16StringEncoding;
+//            NSString * signData = [formDataRequest encodeURL:[dic valueForKey:key]];
+//            xmlString = [xmlString stringByAppendingFormat:@"%@=%@",key,signData];
+//        }else{
+//            xmlString = [xmlString stringByAppendingFormat:format,key,[dic valueForKey:key]];
+//        }
+    
         xmlString = [xmlString stringByAppendingFormat:format,key,[dic valueForKey:key]];
     }
     return xmlString;
@@ -1414,5 +1424,24 @@
 + (NSString *)generateTenderNo:(NSString *)projectId
 {
     return [NSString stringWithFormat:ProjectTenderNo, projectId];
+}
+
++ (NSString *)encodeToPercentEscapeString: (NSString *) input
+{
+    NSString*
+    outputStr = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(
+                                                                             
+                                                                             NULL, /* allocator */
+                                                                             
+                                                                             (__bridge CFStringRef)input,
+                                                                             
+                                                                             NULL, /* charactersToLeaveUnescaped */
+                                                                             
+                                                                             (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                             
+                                                                             kCFStringEncodingUTF8);
+    
+    return
+    outputStr;
 }
 @end

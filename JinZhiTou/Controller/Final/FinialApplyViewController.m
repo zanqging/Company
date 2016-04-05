@@ -162,7 +162,7 @@
     [dic setObject:DICVFK(self.dataDic, @"tel") forKey:@"mobile"];
     [dic setObject:DICVFK(self.dataDic, @"name") forKey:@"realName"];
     [dic setObject:DICVFK(self.dataDic, @"idno") forKey:@"idCardNo"];
-    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
     [dic setObject:[data valueForKey:USER_STATIC_NICKNAME] forKey:@"nickName"];
     
     
@@ -193,7 +193,7 @@
     [dic setObject:@"PLATFORM" forKey:@"feeMode"];
     [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
     [dic setObject:@"ios://finialConfirm" forKey:@"callbackUrl"];
-    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
     
     
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
@@ -218,6 +218,17 @@
         [[DialogUtil sharedInstance]showDlg:self.view textOnly:@"请输入投资金额"];
     }else{
         [self resignKeyboard];
+        
+        float minfound = [DICVFK(self.dic , @"minfund") floatValue];
+        if ([mount floatValue] < 0.01f) {
+            [[DialogUtil sharedInstance]showDlg:self.view textOnly:@"投资金额必须大于100元"];
+            return;
+        }
+        if ([mount floatValue] < minfound) {
+            [[DialogUtil sharedInstance]showDlg:self.view textOnly:STRING(@"投资金额必须大于%.2f万元", minfound)];
+            return ;
+        }
+        
         
         BOOL isActive = [DICVFK(self.dataDic, @"is_actived") boolValue];
         if (isActive) {
@@ -399,6 +410,7 @@
             NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
             YeePayViewController * controller = [[YeePayViewController alloc]init];
             controller.title = @"确认投资";
+            controller.state = PayStatusPayfor;
             controller.titleStr = @"易宝支付";
             controller.PostPramDic = dic;
             controller.dic = self.dic;
@@ -453,7 +465,7 @@
     {
         [self goInvest];
     }else{
-        
+        self.isNetRequestError = YES;
     }
     
 
@@ -475,13 +487,14 @@
             controller.titleStr = @"实名认证";
             controller.PostPramDic = dic;
             controller.dic = self.dic;
+            controller.state = PayStatusPayfor;
             [controller.dic setValue:STRING(@"%d", currentSelect) forKey:@"currentSelect"];
             controller.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,YeePayToRegister,nil)];
             [self.navigationController pushViewController:controller animated:YES];
-        }else if([code intValue] == 1){
-            
+            self.startLoading = NO;
+            return;
         }
-        self.startLoading  =NO;
+        self.isNetRequestError = YES;
     }
 }
 
@@ -489,6 +502,7 @@
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
     NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    self.isNetRequestError = YES;
     NSLog(@"返回:%@",jsonString);
 }
 

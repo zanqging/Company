@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+SDAutoLayout.h"
+#import "RootViewController.h"
 
-@interface TeamDetailViewController : UIViewController
-@property(retain,nonatomic)NSDictionary* dataDic;
+@interface TeamDetailViewController : RootViewController
 @end

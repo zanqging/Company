@@ -535,4 +535,6 @@
  */
 + (NSString *)generateTenderNo:(NSString *)projectId;
 
+
++ (NSString *)encodeToPercentEscapeString: (NSString *) input;
 @end

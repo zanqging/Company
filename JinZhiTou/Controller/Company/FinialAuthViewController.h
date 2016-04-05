@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWPhotoBrowser.h"
 #import "RootViewController.h"
 #import "UIView+SDAutoLayout.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "UITableView+SDAutoTableViewCellHeight.h"
-#import "CustomImagePickerController.h"
-@interface FinialAuthViewController : RootViewController
+@interface FinialAuthViewController : RootViewController<MWPhotoBrowserDelegate>
 {
     int selectedIndex;
 }
@@ -19,5 +20,14 @@
 @property(retain,nonatomic)NSString* titleStr;
 @property(retain,nonatomic)UITableView* tableView;
 @property(retain,nonatomic)NSMutableArray* dataArray;
-@property(retain,nonatomic)CustomImagePickerController* customPicker;
+
+@property(retain,nonatomic)NSMutableArray* imgSelectArray;
+@property(retain,nonatomic)NSMutableArray* imgSelectAssetArray;
+@property (nonatomic, strong) NSMutableArray *photos;
+@property (nonatomic, strong) NSMutableArray *thumbs;
+@property (nonatomic, strong) NSMutableArray *assets;
+@property(retain,nonatomic)MWPhotoBrowser *browser;
+@property(assign,nonatomic)BOOL isSelectPic;
+
+@property (nonatomic, strong) ALAssetsLibrary *ALAssetsLibrary;
 @end

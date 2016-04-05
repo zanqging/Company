@@ -141,7 +141,7 @@
     __block ThinkTankTableViewCell* cell = cellInstance;
     [cellInstance.imgView sd_setImageWithURL:url placeholderImage:IMAGENAMED(@"loading") completed:^(UIImage* image,NSError* error,SDImageCacheType cacheType,NSURL* imageUrl){
         if (image) {
-            cell.imgView.contentMode = UIViewContentModeScaleToFill;
+            cell.imgView.contentMode = UIViewContentModeScaleAspectFill;
         }
     }];
     cellInstance.title = [dic valueForKey:@"name"];

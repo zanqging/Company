@@ -53,6 +53,9 @@
 -(void)addConfigView
 {
     //1.init
+    if (infoView) {
+        infoView.alpha=0;
+    }
     configView = [UIView new];
     
     UIImageView * imgView = [UIImageView new];
@@ -105,6 +108,9 @@
 -(void)addInfoView
 {
     //1.init
+    if (configView) {
+        configView.alpha=0;
+    }
     infoView = [UIView new];
     
     UIImageView * imgView = [UIImageView new];
@@ -337,7 +343,7 @@
                     [dic setObject:DICVFK(self.dataDic, @"tel") forKey:@"mobile"];
                     [dic setObject:DICVFK(self.dataDic, @"name") forKey:@"realName"];
                     [dic setObject:DICVFK(self.dataDic, @"idno") forKey:@"idCardNo"];
-                    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+                    [dic setObject:notifyUrl forKey:@"notifyUrl"];
                     [dic setObject:[data valueForKey:USER_STATIC_NICKNAME] forKey:@"nickName"];
                     
                     
@@ -370,7 +376,7 @@
     [dic setObject:STRING(@"%.2f", mount) forKey:@"amount"];
     [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
     [dic setObject:@"ios://bindCardConfirm" forKey:@"callbackUrl"];
-    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
     
     
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
@@ -549,7 +555,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [self checkIsInvester];
     [self isCheckUserConfirmed];
 }
 @end

@@ -409,14 +409,14 @@
         controller = [self p_defaultController];
     }else if (index ==2){
         controller = [[PurseViewController alloc]init];
-    }else if (index ==5){
+    }else if (index ==6){
         controller = [[AboutUsViewController alloc]init];
     }else{
         controller= [storyBoard instantiateViewControllerWithIdentifier:name];
     }
     
     if (controller) {
-        if (index == 3) {
+        if (index == 4) {
             UserFinialViewController* finialController = (UserFinialViewController*)controller;
             finialController.navTitle = @"个人中心";
             [self.navigationController pushViewController:finialController animated:YES];
@@ -506,7 +506,6 @@
         }];
         
     }else{
-        
         [DialogUtil showDlgAlert:@"设备不支持发送短信"];
     }
 }

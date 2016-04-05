@@ -15,6 +15,7 @@
 #import "NSString+SBJSON.h"
 #import "ASIFormDataRequest.h"
 #import "MMDrawerController.h"
+#import "loginViewController.h"
 #import "UserInfoViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"
 @interface ForgetPassViewController ()<UITextFieldDelegate>
@@ -367,6 +368,12 @@
                  
              }];
             [self.navigationController pushViewController:self.drawerController animated:YES];
+            for ( UIViewController * controller in self.navigationController.childViewControllers) {
+                if ([controller isKindOfClass:loginViewController.class]) {
+                    [controller removeFromParentViewController];
+                    [self removeFromParentViewController];
+                }
+            }
         }else{
             NSString* msg =[jsonDic valueForKey:@"msg"];
             [[DialogUtil sharedInstance]showDlg:self.view textOnly:msg];

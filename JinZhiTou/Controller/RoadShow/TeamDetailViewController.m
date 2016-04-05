@@ -19,7 +19,6 @@
 #import "UIImageView+WebCache.h"
 @interface TeamDetailViewController ()<UIScrollViewDelegate,ASIHTTPRequestDelegate>
 {
-    NavView* navView;
     UITextView* textView;
     HttpUtils* httpUtils;
     LoadingView* loadingView;
@@ -33,41 +32,49 @@
     [super viewDidLoad];
     self.view.backgroundColor = ColorTheme;
     //设置标题
-    navView=[[NavView alloc]initWithFrame:CGRectMake(0,NAVVIEW_POSITION_Y,self.view.frame.size.width,NAVVIEW_HEIGHT)];
-    navView.imageView.alpha=1;
-    [navView setTitle:@"团队成员详情"];
-    navView.titleLable.textColor=WriteColor;
+    self.navView.imageView.alpha=1;
+    [self.navView setTitle:@"团队成员详情"];
+    self.navView.titleLable.textColor=WriteColor;
     
-    [navView.leftButton setImage:nil forState:UIControlStateNormal];
-    [navView.leftButton setTitle:@"核心团队" forState:UIControlStateNormal];
-    [navView.leftTouchView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(back:)]];
-    [self.view addSubview:navView];
+    [self.navView.leftButton setImage:nil forState:UIControlStateNormal];
+    [self.navView.leftButton setTitle:@"核心团队" forState:UIControlStateNormal];
+    [self.navView.leftTouchView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(back:)]];
     
-    UIImageView* imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, POS_Y(navView), WIDTH(self.view), 250)];
+    [self setup];
+    
+}
+
+-(void)setup{
+    UIView* backView = [UIView new];
+    backView.backgroundColor = WriteColor;
+    [self.view addSubview:backView];
+    
+    UIImageView* imageView = [UIImageView new];
     imageView.backgroundColor =BackColor;
     imageView.tag = 1001;
-//    imageView.alpha=0.5;
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view  addSubview:imageView];
     
-    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, POS_Y(navView), WIDTH(self.view), HEIGHT(self.view)-POS_Y(navView))];
+    scrollView = [UIScrollView new];
     scrollView.delegate=self;
-    scrollView.bounces = NO;
+    scrollView.bounces = YES;
     scrollView.backgroundColor=ClearColor;
     scrollView.contentInset=UIEdgeInsetsMake(150, 0, 0, 0);
     [self.view addSubview:scrollView];
     
-    UIImageView* v = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, WIDTH(scrollView), HEIGHT(self.view))];
+    UIView* v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH(scrollView), HEIGHT(self.view))];
     v.tag = 2001;
     v.backgroundColor = WriteColor;
     [scrollView addSubview:v];
     
+    
     //头像
-    imageView = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH(self.view)-90,-40, 70, 70)];
-    imageView.image=IMAGENAMED(@"coremember");
-    imageView.layer.cornerRadius=35;
-    imageView.layer.masksToBounds=YES;
-    imageView.tag = 1002;
-    [scrollView addSubview:imageView];
+    UIImageView* headerImgView = [UIImageView new];
+    headerImgView.image=IMAGENAMED(@"coremember");
+    headerImgView.layer.cornerRadius=35;
+    headerImgView.layer.masksToBounds=YES;
+    headerImgView.tag = 1002;
+    [v addSubview:headerImgView];
     
     //名称
     UILabel* lbl = [[UILabel alloc]initWithFrame:CGRectMake(0, POS_Y(imageView), WIDTH(scrollView), 30)];
@@ -76,36 +83,71 @@
     lbl.font = SYSTEMFONT(18);
     lbl.backgroundColor = WriteColor;
     [v addSubview:lbl];
-    
-    lbl = [[UILabel alloc]initWithFrame:CGRectMake(0, POS_Y(lbl), WIDTH(scrollView), 30)];
-    lbl.tag = 6002;
-    lbl.font = SYSTEMFONT(16);
-    lbl.backgroundColor = WriteColor;
-    lbl.textAlignment = NSTextAlignmentCenter;
-    [v addSubview:lbl];
-    
-//    UIButton* btnAction =[[UIButton alloc]initWithFrame:CGRectMake(POS_X(lbl), Y(lbl), 70, 30)];
-//    btnAction.layer.borderWidth = 1;
-//    btnAction.layer.cornerRadius=5;
-//    btnAction.layer.borderColor = ColorTheme.CGColor;
-//    btnAction.titleLabel.font = SYSTEMFONT(14);
-//    [btnAction addTarget:self action:@selector(doAction:) forControlEvents:UIControlEventTouchUpInside];
-//    [btnAction setTitle:@"+ 加好友" forState:UIControlStateNormal];
-//    [btnAction setTitleColor:ColorTheme forState:UIControlStateNormal];
-//    [v addSubview:btnAction];
+//
+    UILabel * lblTitle = [[UILabel alloc]initWithFrame:CGRectMake(0, POS_Y(lbl), WIDTH(scrollView), 30)];
+    lblTitle.tag = 6002;
+    lblTitle.font = SYSTEMFONT(16);
+    lblTitle.backgroundColor = WriteColor;
+    lblTitle.textAlignment = NSTextAlignmentCenter;
+    [v addSubview:lblTitle];
+//
     
     textView = [[UITextView alloc]initWithFrame:CGRectMake(10, POS_Y(lbl)+10, WIDTH(scrollView)-20, 350)];
     
     [v addSubview:textView];
     
-    [scrollView setContentSize:CGSizeMake(WIDTH(self.view), HEIGHT(self.view)+70)];
+    backView.sd_layout
+    .spaceToSuperView(UIEdgeInsetsMake(POS_Y(self.navView), 0, 0, 0));
+    
+    imageView.sd_layout
+    .leftEqualToView(self.view)
+    .rightEqualToView(self.view)
+    .topSpaceToView(self.navView, 0)
+    .heightIs(200);
+    
+    
+    scrollView.sd_layout
+    .spaceToSuperView(UIEdgeInsetsMake(POS_Y(self.navView), 0, 0, 0));
+    
+    v.sd_layout
+    .leftEqualToView(scrollView)
+    .rightEqualToView(scrollView)
+    .topSpaceToView(scrollView,0)
+    .heightRatioToView(scrollView, 0.9f);
+    
+    headerImgView.sd_layout
+    .heightIs(70)
+    .topSpaceToView(v, -30)
+    .widthEqualToHeight()
+    .rightSpaceToView(v, 30);
+    
+    
+    lbl.sd_layout
+    .leftEqualToView(v)
+    .rightEqualToView(v)
+    .topSpaceToView(headerImgView, 10)
+    .heightIs(30);
+    
+    lblTitle.sd_layout
+    .leftEqualToView(v)
+    .rightEqualToView(v)
+    .topSpaceToView(lbl, 10)
+    .heightIs(30);
+    
+    textView.sd_layout
+    .leftSpaceToView(v, 10)
+    .rightSpaceToView(v, 10)
+    .topSpaceToView(lblTitle,10)
+    .heightIs(300);
+    
+    [scrollView setupAutoContentSizeWithBottomView:textView bottomMargin:0];
     
     
 }
 
 -(void)setDataDic:(NSDictionary *)dataDic
 {
-    self->_dataDic = dataDic;
+    [super setDataDic:[NSMutableDictionary dictionaryWithDictionary:dataDic]];
     if (self.dataDic) {
         //头像背景
         UIImageView* imgView = (UIImageView*)[self.view viewWithTag:1001];
@@ -132,8 +174,10 @@
                                      NSParagraphStyleAttributeName:paragraphStyle
                                      };
         textView.attributedText = [[NSAttributedString alloc] initWithString:[self.dataDic valueForKey:@"profile"] attributes:attributes];
+        
 
     }
+    
 }
 
 

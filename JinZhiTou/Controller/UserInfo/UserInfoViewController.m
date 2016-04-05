@@ -9,13 +9,13 @@
 #import "UserInfoViewController.h"
 #import "ShareView.h"
 #import "UserInfoHeader.h"
-#import "PECropViewController.h"
 #import "UserInfoTableViewCell.h"
 #import "UserTraceViewController.h"
 #import "UserInfoSettingViewController.h"
-#import "CustomImagePickerController.h"
-@interface UserInfoViewController ()<UITableViewDataSource,UITableViewDelegate,CustomImagePickerControllerDelegate>
-@property(retain,nonatomic)CustomImagePickerController* customPicker;
+@interface UserInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    NSMutableArray *_selections;
+}
 @end
 
 @implementation UserInfoViewController
@@ -56,6 +56,9 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(upLoad:) name:@"upLoad" object:nil];
     //更新消息系统
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateStatus) name:@"updateMessageStatus" object:nil];
+    
+    self.isSelectPic = NO;
+    [self loadAssets];
 }
 
 -(void)updateStatus
@@ -65,7 +68,8 @@
 -(void)upLoad:(id)sender
 {
     [[DialogUtil sharedInstance]showDlg:self.view textOnly:@"上传头像"];
-    [self takePhoto:nil];
+    [self btnSelect:nil];
+
 }
 
 -(void)uploadUserPic:(NSInteger)id
@@ -213,86 +217,6 @@
     [window addSubview:shareView];
 }
 
-//*********************************************************照相机功能*****************************************************//
-
-
-//照相功能
-
--(void)takePhoto:(NSDictionary*)dic
-{
-    [self showPicker];
-}
-
-- (void)showPicker
-{
-    CustomImagePickerController* picker = [[CustomImagePickerController alloc] init];
-    
-    //创建返回按钮
-    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, NUMBERFORTY, NUMBERTHIRTY)];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    [leftButton setStyle:UIBarButtonItemStylePlain];
-    //创建设置按钮
-    btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, NUMBERFORTY, NUMBERTHIRTY)];
-    btn.tintColor=WriteColor;
-    btn.titleLabel.textColor=WriteColor;
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    
-    picker.navigationItem.leftBarButtonItem=leftButton;
-    picker.navigationItem.rightBarButtonItem=rightButton;
-    
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
-        [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    }else{
-        [picker setIsSingle:YES];
-        [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    }
-    picker.modalPresentationStyle = UIModalPresentationCurrentContext;
-    [picker setCustomDelegate:self];
-    self.customPicker=picker;
-    [self presentViewController:self.customPicker animated:YES completion:nil];
-}
-
-- (void)cameraPhoto:(UIImage *)imageCamera  //选择完图片
-{
-    [self openEditor:imageCamera];
-}
-
-- (void)openEditor:(UIImage*)imageCamera
-{
-    PECropViewController *controller = [[PECropViewController alloc] init];
-    controller.delegate = self;
-    controller.image = imageCamera;
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    
-    [self presentViewController:navigationController animated:YES completion:NULL];
-}
-
-- (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage
-{
-    [controller dismissViewControllerAnimated:YES completion:NULL];
-    //保存图片
-    [TDUtil saveCameraPicture:croppedImage fileName:USER_STATIC_HEADER_PIC];
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"changeUserPic" object:nil userInfo:[NSDictionary dictionaryWithObject:croppedImage forKey:@"img"]];
-    
-    //开始上传
-    [self uploadUserPic:0];
-}
-
-
--(void)cropViewControllerDidCancel:(PECropViewController *)controller
-{
-    [controller dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-//取消照相
--(void)cancelCamera
-{
-    
-}
-
 
 
 //*********************************************************照相机功能结束*****************************************************//
@@ -318,6 +242,364 @@
         [[DialogUtil sharedInstance]showDlg:self.view textOnly:[jsonDic valueForKey:@"msg"]];
     }
 }
+
+
+- (void)btnSelect:(id)sender {
+    self.isSelectPic  =YES;
+    
+    NSMutableArray *photos = [[NSMutableArray alloc] init];
+    NSMutableArray *thumbs = [[NSMutableArray alloc] init];
+    //    MWPhoto *photo;
+    BOOL displayActionButton = YES;
+    BOOL displaySelectionButtons = NO;
+    BOOL displayNavArrows = NO;
+    BOOL enableGrid = YES;
+    BOOL startOnGrid = YES;
+    BOOL autoPlayOnAppear = NO;
+    
+    
+    displayActionButton = NO;
+    displaySelectionButtons = YES;
+    startOnGrid = YES;
+    enableGrid = YES;
+    
+    @synchronized(_assets) {
+        NSMutableArray *copy = [_assets copy];
+        if (NSClassFromString(@"PHAsset")) {
+            // Photos library
+            UIScreen *screen = [UIScreen mainScreen];
+            CGFloat scale = screen.scale;
+            // Sizing is very rough... more thought required in a real implementation
+            CGFloat imageSize = MAX(screen.bounds.size.width, screen.bounds.size.height) * 1.5;
+            CGSize imageTargetSize = CGSizeMake(imageSize * scale, imageSize * scale);
+            CGSize thumbTargetSize = CGSizeMake(imageSize / 3.0 * scale, imageSize / 3.0 * scale);
+            for (PHAsset *asset in copy) {
+                [photos addObject:[MWPhoto photoWithAsset:asset targetSize:imageTargetSize]];
+                [thumbs addObject:[MWPhoto photoWithAsset:asset targetSize:thumbTargetSize]];
+            }
+        } else {
+            // Assets library
+            for (ALAsset *asset in copy) {
+                MWPhoto *photo = [MWPhoto photoWithURL:asset.defaultRepresentation.url];
+                [photos addObject:photo];
+                MWPhoto *thumb = [MWPhoto photoWithImage:[UIImage imageWithCGImage:asset.thumbnail]];
+                [thumbs addObject:thumb];
+                if ([asset valueForProperty:ALAssetPropertyType] == ALAssetTypeVideo) {
+                    photo.videoURL = asset.defaultRepresentation.url;
+                    thumb.isVideo = true;
+                }
+            }
+        }
+    }
+    
+    
+    self.photos = photos;
+    self.thumbs = thumbs;
+    // Create browser
+    if (!self.browser) {
+        self.browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    }
+    self.browser.displayActionButton = displayActionButton;
+    self.browser.displayNavArrows = displayNavArrows;
+    self.browser.displaySelectionButtons = displaySelectionButtons;
+    self.browser.alwaysShowControls = displaySelectionButtons;
+    self.browser.zoomPhotosToFill = YES;
+    self.browser.maxSelected = 1;
+    self.browser.enableGrid = enableGrid;
+    self.browser.startOnGrid = startOnGrid;
+    self.browser.enableSwipeToDismiss = NO;
+    self.browser.autoPlayOnAppear = autoPlayOnAppear;
+    [self.browser setCurrentPhotoIndex:0];
+    
+    //    browser.customImageSelectedIconName = @"ImageSelected.png";
+    //    browser.customImageSelectedSmallIconName = @"ImageSelectedSmall.png";
+    
+    // Reset selections
+    if (displaySelectionButtons) {
+        if(!_selections){
+            _selections = [NSMutableArray new];
+            for (int i = 0; i < photos.count; i++) {
+                [_selections addObject:[NSNumber numberWithBool:NO]];
+            }
+        }
+    }
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:self.browser];
+    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+
+-(void)getSelectImage:(NSArray *)imageArr
+{
+    self.imgSelectArray  = [NSMutableArray arrayWithArray:imageArr];
+    
+    UIImage * croppedImage = self.imgSelectArray.firstObject;
+    //保存图片
+    [TDUtil saveCameraPicture:croppedImage fileName:USER_STATIC_HEADER_PIC];
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"changeUserPic" object:nil userInfo:[NSDictionary dictionaryWithObject:croppedImage forKey:@"img"]];
+    
+    //开始上传
+    [self uploadUserPic:0];
+
+}
+
+-(void)showImage:(UITapGestureRecognizer*)sender
+{
+    UIImageView* imageView = (UIImageView*)(sender.view);
+    self.isSelectPic = NO;
+    
+    BOOL displayActionButton = YES;
+    BOOL displaySelectionButtons = NO;
+    BOOL displayNavArrows = NO;
+    BOOL enableGrid = YES;
+    BOOL startOnGrid = YES;
+    BOOL autoPlayOnAppear = NO;
+    
+    
+    displayActionButton = NO;
+    displaySelectionButtons = YES;
+    startOnGrid = YES;
+    enableGrid = YES;
+    
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.displayActionButton = displayActionButton;
+    browser.displayNavArrows = displayNavArrows;
+    browser.displaySelectionButtons = displaySelectionButtons;
+    browser.alwaysShowControls = displaySelectionButtons;
+    browser.zoomPhotosToFill = YES;
+    browser.enableGrid = NO;
+    browser.startOnGrid = NO;
+    browser.enableSwipeToDismiss = NO;
+    browser.autoPlayOnAppear = autoPlayOnAppear;
+    [browser setCurrentPhotoIndex:imageView.tag];
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nc animated:YES completion:nil];
+}
+#pragma mark - MWPhotoBrowserDelegate
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    if (self.isSelectPic) {
+        return _photos.count;
+    }else{
+        return self.imgSelectArray.count;
+    }
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (self.isSelectPic) {
+        if (index < _photos.count)
+            return [_photos objectAtIndex:index];
+        return nil;
+    }else{
+        return [self.imgSelectAssetArray objectAtIndex:index];
+    }
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser thumbPhotoAtIndex:(NSUInteger)index {
+    if (index < _thumbs.count)
+        return [_thumbs objectAtIndex:index];
+    return nil;
+}
+
+//- (MWCaptionView *)photoBrowser:(MWPhotoBrowser *)photoBrowser captionViewForPhotoAtIndex:(NSUInteger)index {
+//    MWPhoto *photo = [self.photos objectAtIndex:index];
+//    MWCaptionView *captionView = [[MWCaptionView alloc] initWithPhoto:photo];
+//    return [captionView autorelease];
+//}
+
+//- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser actionButtonPressedForPhotoAtIndex:(NSUInteger)index {
+//    NSLog(@"ACTION!");
+//}
+
+- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser didDisplayPhotoAtIndex:(NSUInteger)index {
+    NSLog(@"Did start viewing photo at index %lu", (unsigned long)index);
+}
+
+- (BOOL)photoBrowser:(MWPhotoBrowser *)photoBrowser isPhotoSelectedAtIndex:(NSUInteger)index {
+    if (_selections && _selections.count>0) {
+        return [[_selections objectAtIndex:index] boolValue];
+    }
+    return NO;
+}
+
+//- (NSString *)photoBrowser:(MWPhotoBrowser *)photoBrowser titleForPhotoAtIndex:(NSUInteger)index {
+//    return [NSString stringWithFormat:@"Photo %lu", (unsigned long)index+1];
+//}
+
+- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index selectedChanged:(BOOL)selected {
+    [_selections replaceObjectAtIndex:index withObject:[NSNumber numberWithBool:selected]];
+    int count = 0;
+    for (int i = 0; i < _selections.count; i++) {
+        if ([_selections[i] boolValue]) {
+            count ++;
+        }
+    }
+    
+    if (count<=self.browser.maxSelected) {
+        if (count<self.browser.maxSelected) {
+            photoBrowser.limit  =NO;
+        }else{
+            photoBrowser.limit  =YES;
+        }
+    }
+}
+
+- (void)photoBrowserDidFinishModalPresentation:(MWPhotoBrowser *)photoBrowser {
+    // If we subscribe to this method we must dismiss the view controller ourselves
+    NSLog(@"Did finish modal presentation");
+    NSMutableArray* array = [NSMutableArray new];
+    for (int i = 0; i < _selections.count; i++) {
+        if ([_selections[i] boolValue]) {
+            if (!self.imgSelectAssetArray) {
+                self.imgSelectAssetArray = [NSMutableArray new];
+            }
+            [self.imgSelectAssetArray addObject:[_photos objectAtIndex:i]];
+            UIImage* image;
+            if (NSClassFromString(@"PHAsset")) {
+                PHAsset* photo = [_assets objectAtIndex:i];
+                
+                // 在资源的集合中获取第一个集合，并获取其中的图片
+                PHCachingImageManager *imageManager = [[PHCachingImageManager alloc] init];
+                [imageManager requestImageForAsset:photo
+                                        targetSize:PHImageManagerMaximumSize
+                                       contentMode:PHImageContentModeDefault
+                                           options:nil
+                                     resultHandler:^(UIImage *result, NSDictionary *info) {
+                                         
+                                         // 得到一张 UIImage，展示到界面上
+                                         if (result) {
+                                             [array addObject:result];
+                                         }
+                                         
+                                         [self getSelectImage:array];
+                                     }];
+            }else{
+                ALAsset* asset = _assets[i];
+                image = [self fullResolutionImageFromALAsset:asset];
+                [array addObject:image];
+            }
+        }
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (UIImage *)fullResolutionImageFromALAsset:(ALAsset *)asset
+{
+    ALAssetRepresentation *assetRep = [asset defaultRepresentation];
+    CGImageRef imgRef = [assetRep fullResolutionImage];
+    UIImage *img = [UIImage imageWithCGImage:imgRef
+                                       scale:assetRep.scale
+                                 orientation:(UIImageOrientation)assetRep.orientation];
+    return img;
+}
+#pragma mark - Load Assets
+
+- (void)loadAssets {
+    if (NSClassFromString(@"PHAsset")) {
+        
+        // Check library permissions
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusNotDetermined) {
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                if (status == PHAuthorizationStatusAuthorized) {
+                    [self performLoadAssets];
+                }
+            }];
+        } else if (status == PHAuthorizationStatusAuthorized) {
+            [self performLoadAssets];
+        }
+        
+    } else {
+        
+        // Assets library
+        [self performLoadAssets];
+        
+    }
+}
+
+- (void)performLoadAssets {
+    
+    // Initialise
+    _assets = [NSMutableArray new];
+    
+    // Load
+    if (NSClassFromString(@"PHAsset")) {
+        
+        // Photos library iOS >= 8
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            PHFetchOptions *options = [PHFetchOptions new];
+            options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+            PHFetchResult *fetchResults = [PHAsset fetchAssetsWithOptions:options];
+            [fetchResults enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [_assets addObject:obj];
+            }];
+        });
+        
+    } else {
+        
+        // Assets Library iOS < 8
+        _ALAssetsLibrary = [[ALAssetsLibrary alloc] init];
+        
+        // Run in the background as it takes a while to get all assets from the library
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            NSMutableArray *assetGroups = [[NSMutableArray alloc] init];
+            NSMutableArray *assetURLDictionaries = [[NSMutableArray alloc] init];
+            
+            // Process assets
+            void (^assetEnumerator)(ALAsset *, NSUInteger, BOOL *) = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                if (result != nil) {
+                    NSString *assetType = [result valueForProperty:ALAssetPropertyType];
+                    if ([assetType isEqualToString:ALAssetTypePhoto] || [assetType isEqualToString:ALAssetTypeVideo]) {
+                        [assetURLDictionaries addObject:[result valueForProperty:ALAssetPropertyURLs]];
+                        NSURL *url = result.defaultRepresentation.url;
+                        [_ALAssetsLibrary assetForURL:url
+                                          resultBlock:^(ALAsset *asset) {
+                                              if (asset) {
+                                                  @synchronized(_assets) {
+                                                      [_assets addObject:asset];
+                                                  }
+                                              }
+                                          }
+                                         failureBlock:^(NSError *error){
+                                             NSLog(@"operation was not successfull!");
+                                         }];
+                        
+                    }
+                }
+            };
+            
+            // Process groups
+            void (^ assetGroupEnumerator) (ALAssetsGroup *, BOOL *) = ^(ALAssetsGroup *group, BOOL *stop) {
+                if (group != nil) {
+                    [group enumerateAssetsWithOptions:NSEnumerationReverse usingBlock:assetEnumerator];
+                    [assetGroups addObject:group];
+                }
+            };
+            
+            // Process!
+            [_ALAssetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAll
+                                            usingBlock:assetGroupEnumerator
+                                          failureBlock:^(NSError *error) {
+                                              NSLog(@"There is an error");
+                                          }];
+            
+        });
+        
+    }
+    
+}
+
+#pragma UploadPic
+//*********************************************************照相机功能*****************************************************//
+
+
+
 
 - (void) viewWillAppear: (BOOL)inAnimated {
     NSIndexPath *selected = [self.tableView indexPathForSelectedRow];

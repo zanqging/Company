@@ -101,7 +101,7 @@
     [self  loadProjectDetail];
 }
 
--(void)setDic:(NSDictionary *)dic
+-(void)setDic:(NSMutableDictionary *)dic
 {
     self->_dic = dic;
 }

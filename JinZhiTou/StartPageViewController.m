@@ -57,6 +57,8 @@
     wn_PageControl.numberOfPages = pageCount;   //设置分页控件总页面视图数量
     wn_PageControl.currentPage = 0;   //设置分页控件当前页面
     [wn_PageControl setAlpha:1];
+    [wn_PageControl setPageIndicatorTintColor:BlackColor];
+    [wn_PageControl setCurrentPageIndicatorTintColor:ColorCompanyTheme];
     [wn_PageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
     //添加分页控件到当前视图
     [self.view  addSubview:wn_PageControl];

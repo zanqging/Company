@@ -11,6 +11,7 @@
 @interface YeePayViewController : RootViewController
 @property(assign,nonatomic)int type;
 @property(retain,nonatomic)NSURL* url;
+@property(assign,nonatomic)bool canBack;
 @property(assign, nonatomic) PayStatus state;
 @property(retain,nonatomic)NSDictionary* dic;
 @property(retain,nonatomic)UIWebView* webView;

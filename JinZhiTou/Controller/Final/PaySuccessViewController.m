@@ -7,7 +7,7 @@
 //
 
 #import "PaySuccessViewController.h"
-
+#import "UserFinialViewController.h"
 @implementation PaySuccessViewController
 -(void)viewDidLoad
 {
@@ -132,7 +132,12 @@
 
 -(void)btnAction:(id)sender
 {
-    [self back:nil];
+    UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UserFinialViewController * controller =[storyBoard instantiateViewControllerWithIdentifier:@"Myfinial"];
+    controller.isBackHome = YES;
+    controller.navTitle  = @"首页";
+    controller.selectedIndex=1;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 -(void)back:(id)sender

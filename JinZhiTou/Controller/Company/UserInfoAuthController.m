@@ -79,7 +79,7 @@
     UIImageView* imgView =[[UIImageView alloc]initWithFrame:CGRectMake(20, 10, WIDTH(view)-40, HEIGHT(view)-20)];
     [imgView setImage:[TDUtil loadContent:STATIC_USER_DEFAULT_ID_PIC]];
     imgView.tag=50001;
-    imgView.contentMode = UIViewContentModeScaleToFill;
+    imgView.contentMode = UIViewContentModeScaleAspectFill;
     imgView.layer.cornerRadius = 5;
     imgView.layer.masksToBounds = YES;
     imgView.userInteractionEnabled = YES;
@@ -441,6 +441,10 @@
     if (dic!=nil) {
         NSString* code =[dic valueForKey:@"code"];
         if ([code integerValue]==0) {
+            NSDictionary * dicData = [dic valueForKey:@"data"];
+            NSUserDefaults * data = [NSUserDefaults standardUserDefaults];
+            [data setValue:DICVFK(dicData, @"position") forKey:USER_STATIC_POSITION];
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:@"showAuth" object:nil userInfo:[NSDictionary dictionaryWithObject:self forKey:@"viewController"]];
             [self dismissViewControllerAnimated:YES completion:nil];
         }

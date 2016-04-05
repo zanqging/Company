@@ -8,8 +8,10 @@
 
 #import "YeePayViewController.h"
 #import "ShareView.h"
+#import "DialogUtil.h"
 #import "ShareNewsView.h"
 #import "GDataXMLNode.h"
+#import "PurseViewController.h"
 #import "PaySuccessViewController.h"
 #import "FinialApplyViewController.h"
 @interface YeePayViewController ()<UIWebViewDelegate,UIAlertViewDelegate>
@@ -42,6 +44,7 @@
     self.webView.delegate = self;
     self.webView.dataDetectorTypes  = UIDataDetectorTypeAll;
     [self.view addSubview:self.webView];
+    self.canBack = YES;
     
      [self loadUrl];
     
@@ -49,7 +52,28 @@
 
 -(void)back:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+//    switch (self.state) {
+//        case PayStatusConfirm:
+//            [self.navigationController popViewControllerAnimated:YES];
+//            break;
+//        case PayStatusBindCard:
+//            [self.navigationController popViewControllerAnimated:YES];
+//            break;
+//        case PayStatusPayfor:
+////            [[DialogUtil sharedInstance]showDlg:self.view textOnly:@"业务进行中，无法返回!"];
+//            break;
+//        case PayStatusTransfer:
+////            [[DialogUtil sharedInstance]showDlg:self.view textOnly:@"业务进行中，无法返回!"];
+//            break;
+//            
+//        default:
+//            break;
+//    }
+    if (self.canBack) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [[DialogUtil sharedInstance]showDlg:self.view textOnly:@"业务进行中，无法返回!"];
+    }
 }
 
 -(void)setUrl:(NSURL *)url
@@ -70,12 +94,19 @@
 {
     if (!self.webView.loading) {
         NSString * postString = [TDUtil convertDictoryToFormat:@"%@=%@&" dicData:self.PostPramDic];
+        
+//        postString = [self encodeToPercentEscapeString:postString];
+        
+        NSLog(@"post前:%@",postString);
+        
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:self.url];
         [request setHTTPMethod: @"POST"];
         [request setHTTPBody: [postString dataUsingEncoding: NSUTF8StringEncoding]];
+        
         [self.webView loadRequest:request];
     }
 }
+
 
 -(void)setType:(int)type
 {
@@ -84,6 +115,16 @@
 
 -(void)bindCardConfirm:(NSDictionary*)dic
 {
+//    for(UIViewController * c in self.navigationController.childViewControllers)
+//    {
+//        if ([c isKindOfClass:PurseViewController.class]) {
+//            [c removeFromParentViewController];
+//            
+//            PurseViewController * controller = [[PurseViewController alloc]init];
+//            [self.navigationController pushViewController:controller animated:YES];
+//        }
+//    }
+    
     [self back:nil];
 }
 
@@ -124,7 +165,7 @@
     [dic setObject:STRING(@"%.2f", mount) forKey:@"amount"];
     [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
     [dic setObject:@"ios://bindCardConfirm" forKey:@"callbackUrl"];
-    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
     
     
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
@@ -145,7 +186,7 @@
     [dic setObject:STRING(@"%.2f", mount) forKey:@"amount"];
     [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
     [dic setObject:@"ios://finialConfirm" forKey:@"callbackUrl"];
-    [dic setObject:@"http//jinzht.com/admin/" forKey:@"notifyUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
     
     
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
@@ -164,6 +205,9 @@
 -(void)finialConfirm:(NSDictionary*)dicData
 {
     NSLog(@"%@",dicData);
+    if ([DICVFK(dicData, @"code") intValue]==1) {
+        self.canBack = NO;
+    }
     NSString * str = [TDUtil generateUserPlatformNo];
     
     float mount = [DICVFK(self.dic, @"mount") floatValue];
@@ -185,7 +229,7 @@
      [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[TDUtil generateTenderNo:DICVFK(self.dic, @"id")],@"tenderOrderNo",DICVFK(self.dic, @"company"),@"tenderName",STRING(@"%.2f", [DICVFK(self.dic, @"planfinance") floatValue]*10000),@"tenderAmount",DICVFK(self.dic, @"company"),@"tenderDescription",DICVFK(self.dic, @"brrow_user_no"),@"borrowerPlatformUserNo", nil] forKey:@"extend"];
     [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
     [dic setObject:@"ios://tenderConfirm" forKey:@"callbackUrl"];
-    [dic setObject:@"http://www.jinzht.com" forKey:@"notifyUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
     
 
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
@@ -304,7 +348,6 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
     //添加监听
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"shareNews" object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"shareNewContent" object:nil];
@@ -336,9 +379,11 @@
             self.titleStr = @"确认投资";
             self.PostPramDic = dic;
             self.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,YeePayToCpTransaction,nil)];
+            return;
         }else if([code intValue] == 1){
             
         }
+        self.isNetRequestError = YES;
         self.startLoading  =NO;
     }
 }
@@ -380,9 +425,10 @@
             NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
             self.PostPramDic = dic;
             self.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,YeePayMent,nil)];
-        }else if([code intValue] == 1){
-            
+            self.startLoading  =NO;
+            return;
         }
+        self.isNetRequestError = YES;
         self.startLoading  =NO;
     }
 }
@@ -400,9 +446,10 @@
             NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
             self.PostPramDic = dic;
             self.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,toBindBankCard,nil)];
-        }else if([code intValue] == 1){
-            
+            self.startLoading  =NO;
+            return;
         }
+        self.isNetRequestError = YES;
         self.startLoading  =NO;
     }
 }
