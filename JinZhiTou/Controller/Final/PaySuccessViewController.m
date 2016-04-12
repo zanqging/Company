@@ -66,8 +66,8 @@
     self.subTitleLabel.font = SYSTEMFONT(12);
     self.titleLabel.textColor = WriteColor;
     self.subTitleLabel.textColor = WriteColor;
-    
-    labelContent.text = STRING(@"¥ %@\n恭喜！已支付成功！", DICVFK(self.dataDic, @"mount"));
+    float mount = [DICVFK(self.dataDic, @"mount") floatValue]*10000;
+    labelContent.text = STRING(@"¥ %.2f\n恭喜！已支付成功！", mount);
     self.titleLabel.text = DICVFK(self.dataDic, @"abbrevcompany");
     self.subTitleLabel.text = DICVFK(self.dataDic, @"company");
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:DICVFK(self.dataDic, @"img")] placeholderImage:IMAGENAMED(@"test")];

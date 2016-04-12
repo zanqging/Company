@@ -1409,6 +1409,7 @@
     NSUserDefaults * data = [NSUserDefaults standardUserDefaults];
     NSString * userId = [data valueForKey:USER_STATIC_USER_ID];
     
+    
     return [NSString stringWithFormat:@"%@%@",dataTime,userId];
     
 }

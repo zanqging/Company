@@ -68,7 +68,15 @@
         if ([obj isKindOfClass:UIImage.class]) {
             [imageView setImage:(UIImage*)obj];
         }else{
-            [imageView sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:IMAGENAMED(@"loadingempty")];
+            
+            NSRange range;
+            range = [obj rangeOfString:@"jpg"];
+            if (range.location != NSNotFound) {
+                imageView.image = IMAGENAMED(obj);
+            }else{
+                [imageView sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:JPGIMAGE(@"loadingempty")];
+            }
+            
         }
         imageView.frame = CGRectMake(columnIndex * (itemW + margin), rowIndex * (itemH + margin), itemW, itemH);
         [self addSubview:imageView];
@@ -86,7 +94,7 @@
     self.height = h;
     
     self.fixedHeight = @(h);
-    self.fixedWith = @(w);
+    self.fixedWidth = @(w);
 }
 
 - (void)tapImageView:(UITapGestureRecognizer *)tap

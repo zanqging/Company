@@ -766,7 +766,7 @@
     if (self.amout) {
         UILabel* label = (UILabel*)[self viewWithTag:5003];
         if (label) {
-            label.text  = [NSString stringWithFormat:@"已获融资:%@万",self.amout];;
+            label.text  = [NSString stringWithFormat:@"已获融资:%.2f万",[self.amout floatValue]];
         }
         
         if (self.investAmout) {

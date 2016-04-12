@@ -579,7 +579,7 @@
 {
     [controller dismissViewControllerAnimated:YES completion:NULL];
     //保存图片
-    [TDUtil saveCameraPicture:croppedImage fileName:USER_STATIC_CYCLE_BG];
+    [TDUtil saveCameraPicture:croppedImage fileName:STATIC_USER_BACKGROUND_PIC];
     
     //    [[NSNotificationCenter defaultCenter]postNotificationName:@"changeUserPic" object:nil userInfo:[NSDictionary dictionaryWithObject:croppedImage forKey:@"img"]];
     //修改头部背景

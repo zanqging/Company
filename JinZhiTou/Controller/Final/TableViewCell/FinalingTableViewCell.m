@@ -121,7 +121,7 @@
 
 -(void)setHasFinanceAccount:(NSString *)hasFinanceAccount
 {
-    self->_hasFinanceAccount = [NSString stringWithFormat:@"%@万",hasFinanceAccount];
+    self->_hasFinanceAccount = [NSString stringWithFormat:@"%.2f万",[hasFinanceAccount floatValue]];
     if (self.hasFinanceAccount) {
         UILabel* label = (UILabel*)[view viewWithTag:1003];
         UILabel* valueLabel = [[UILabel alloc]initWithFrame:CGRectMake(POS_X(label), Y(label), 50, HEIGHT(label))];

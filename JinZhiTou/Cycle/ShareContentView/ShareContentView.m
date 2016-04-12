@@ -25,7 +25,7 @@
     labelContent.font = SYSTEMFONT(14);
     labelContent.textColor = FONT_COLOR_BLACK;
     labelContent.lineBreakMode = NSLineBreakByTruncatingTail;
-    labelContent.text=@"新三板，新三板，新三板，新三板，新三板，新三板，新三板，新三板，新三板，新三板，";
+    labelContent.text=@"";
     //添加视图
     [self addSubview:imgView];
     [self addSubview:labelContent];
@@ -34,7 +34,7 @@
     imgView.sd_layout
     .leftSpaceToView(self,5)
     .topSpaceToView(self,5)
-    .heightIs(40)
+    .heightIs(0)
     .widthEqualToHeight();
     
     
@@ -42,7 +42,8 @@
     .rightSpaceToView(self,5)
     .leftSpaceToView(imgView,5)
     .topSpaceToView(self,5)
-    .heightIs(40);
+    .heightIs(45);
+    
 //    .bottomSpaceToView(imgView,10);
     
     [self setupAutoHeightWithBottomView:imgView bottomMargin:5];
@@ -52,8 +53,13 @@
 {
     if (dic) {
         self->_dic  =dic;
-        [imgView sd_setImageWithURL:[NSURL URLWithString:[dic valueForKey:@"img"]] placeholderImage:IMAGENAMED(@"loading")];
+        if ([dic valueForKey:@"img"]) {
+            imgView.sd_layout
+            .heightIs(40);
+            [imgView sd_setImageWithURL:[NSURL URLWithString:[dic valueForKey:@"img"]] placeholderImage:IMAGENAMED(@"loading")];
+        }
         labelContent.text =[dic valueForKey:@"title"];
+        [self setupAutoHeightWithBottomView:imgView bottomMargin:5];
     }
 }
 @end

@@ -58,7 +58,6 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateStatus) name:@"updateMessageStatus" object:nil];
     
     self.isSelectPic = NO;
-    [self loadAssets];
 }
 
 -(void)updateStatus
@@ -68,6 +67,7 @@
 -(void)upLoad:(id)sender
 {
     [[DialogUtil sharedInstance]showDlg:self.view textOnly:@"上传头像"];
+    
     [self btnSelect:nil];
 
 }
@@ -604,6 +604,10 @@
 - (void) viewWillAppear: (BOOL)inAnimated {
     NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
     if(selected) [self.tableView deselectRowAtIndexPath:selected animated:YES];
+    
+    if (!_assets) {
+        [self loadAssets];
+    }
 }
 
 -(void)dealloc

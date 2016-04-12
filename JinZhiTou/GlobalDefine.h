@@ -149,13 +149,13 @@
 
 //服务器域名地址
 //#define SERVICE_URL @"http://115.28.110.243/phone4/"//服务器域名地址
-//#define SERVICE_URL @"http://www.jinzht.com/phone5/"//服务器域名地址
+#define SERVICE_URL @"http://www.jinzht.com/phone5/"//服务器域名地址
 
-#define SERVICE_URL @"http://www.jinzht.com:8000/phone/"//服务器域名地址
+//#define SERVICE_URL @"http://www.jinzht.com:8000/phone/"//服务器域名地址
 //#define BUINESS_SERVER @"http://220.181.25.233:8081/member/bhawireless/" //易宝支付测试环境
 //#define BUINESE_SERVERD @"http://220.181.25.233:8081/member/bhaexter/bhaController" //直连接口
 
-#define BUINESS_SERVER @"https://member.yeepay.com/member/bhawireless/" //易宝支付测试环境
+#define BUINESS_SERVER @"https://member.yeepay.com/member/bhawireless/" //易宝支付生产环境
 #define BUINESE_SERVERD @"https://member.yeepay.com/member/bhaexter/bhaController" //直连接口
 #define notifyUrl @"http://www.jinzht.com/phone5/notify/"
 
@@ -481,12 +481,14 @@
 //==============================2016年3月份易宝支付App研发接口==============================//
 //易宝支付签名
 #define YeePayMent @"toRecharge"
+#define toWithdraw @"toWithdraw"
 #define toBindBankCard @"toBindBankCard"
 #define YeePayToRegister @"toRegister"
 #define YeePayPlatformID @"10013200657"
 #define YeePaySignVerify @"signVerify/"
 #define YeePayToCpTransaction @"toCpTransaction"
 #define ACCOUNT_INFO @"ACCOUNT_INFO"
+#define COMPLETE_TRANSACTION @"COMPLETE_TRANSACTION"
 #define UserPlatFormNo @"jinzht_0000_%@"
 #define ProjectTenderNo @"jinzht_project_%@"
 #define IsTendered   @"IsTendered/"
@@ -579,5 +581,18 @@ typedef NS_ENUM(NSInteger, PayStatus) {
     PayStatusBindCard, /// 绑定银行卡
     PayStatusPayfor,    /// 充值
     PayStatusTransfer,  ///转账确认
+    PayToWithdraw,   //提现
+    PayUnBindBank, //解绑银行卡
+    
 };
+
+
+
+#define SDColor(r, g, b, a) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:a]
+
+#define Global_tintColor [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1]
+
+#define Global_mainBackgroundColor SDColor(248, 248, 248, 1)
+
+#define TimeLineCellHighlightedColor [UIColor colorWithRed:92/255.0 green:140/255.0 blue:193/255.0 alpha:1.0]
 #endif

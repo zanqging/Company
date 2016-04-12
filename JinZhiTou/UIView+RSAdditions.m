@@ -33,9 +33,11 @@
 }
 
 - (void)setLeft:(CGFloat)left {
-    CGRect frame = self.frame;
-    frame.origin.x = left;
-    self.frame = frame;
+    if (!isnan(left)) {
+        CGRect frame = self.frame;
+        frame.origin.x = left;
+        self.frame = frame;        
+    }
 }
 
 - (CGFloat)right {

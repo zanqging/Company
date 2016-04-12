@@ -20,7 +20,7 @@
         
         self.headerBackView  = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-20)];
         self.headerBackView.backgroundColor = BackColor;
-        self.headerBackView.image =[TDUtil loadContent:USER_STATIC_CYCLE_BG];
+//        self.headerBackView.image =[TDUtil loadContent:USER_STATIC_CYCLE_BG];
         self.headerBackView.layer.masksToBounds  =YES;
         self.headerBackView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:self.headerBackView];
@@ -79,11 +79,13 @@
             [self.headerBackView sd_setImageWithURL:[NSURL URLWithString:[data valueForKey:@"bg"]] placeholderImage:[TDUtil loadContent:USER_STATIC_CYCLE_BG] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if (image) {
                     [TDUtil saveCameraPicture:image fileName:USER_STATIC_CYCLE_BG];
+                    self.headerBackView.image = image;
                 }
             }];
             [self.headerView sd_setImageWithURL:[NSURL URLWithString:[data valueForKey:@"photo"]]placeholderImage:[TDUtil loadContent:USER_STATIC_HEADER_PIC] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if (image) {
                     [TDUtil saveCameraPicture:image fileName:USER_STATIC_HEADER_PIC];
+                    self.headerView.image = image;
                 }
             }];
             //移除重新加载数据

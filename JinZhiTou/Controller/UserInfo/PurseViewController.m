@@ -56,6 +56,10 @@
     if (infoView) {
         infoView.alpha=0;
     }
+    if (configView) {
+        configView.alpha=1;
+        return;
+    }
     configView = [UIView new];
     
     UIImageView * imgView = [UIImageView new];
@@ -70,12 +74,12 @@
     imgView.image = IMAGENAMED(@"empty");
     imgView.contentMode = UIViewContentModeScaleAspectFill;
     configButton.backgroundColor = [TDUtil colorWithHexString:@"#ff6700"];
-    [configButton setTitle:@"实名认证" forState:UIControlStateNormal];
+    [configButton setTitle:@"开通资金帐户" forState:UIControlStateNormal];
     [configButton setTitleColor:WriteColor forState:UIControlStateNormal];
     [configButton addTarget:self action:@selector(goConfirm) forControlEvents:UIControlEventTouchUpInside];
     [configButton.titleLabel setFont:SYSTEMFONT(18)];
     
-    messageLabel.text = @"您还没有进行实名认证";
+    messageLabel.text = @"您还没有没有开通资金帐户";
     messageLabel.textAlignment = NSTextAlignmentCenter;
     messageLabel.textColor = [TDUtil convertColorWithString:@"176176176"];
     //4. SDAutoLayout
@@ -111,8 +115,13 @@
     if (configView) {
         configView.alpha=0;
     }
-    infoView = [UIView new];
     
+    if (infoView) {
+        infoView.alpha = 1;
+        return;
+    }
+    
+    infoView = [UIView new];
     UIImageView * imgView = [UIImageView new];
     UILabel * titleLabel = [UILabel new];
     UILabel * cardLabel = [UILabel new];
@@ -135,7 +144,7 @@
     
     [TDUtil addChildViewToView:infoView childViews:[NSArray arrayWithObjects:imgView,titleLabel,cardLabel,leftLabel,leftNumberLabel,useageLabel,useageNumberLabel,freezeLabel,noLabel,telLabel,freezeNumberLabel,lineView,nil]];
     
-//    //3.set property
+    //3.set property
     infoView.backgroundColor = [TDUtil colorWithHexString:@"#00b8ec"];
     
     titleLabel.text = [BANK_LIST valueForKey:DICVFK(self.dataDic, @"bank")];
@@ -190,7 +199,6 @@
     
     lineView.backgroundColor = WriteColor;
     
-    
     bindButton.backgroundColor = [TDUtil colorWithHexString:@"#ff6700"];
     [bindButton setTitle:@"绑定银行卡" forState:UIControlStateNormal];
     [bindButton setTitleColor:WriteColor forState:UIControlStateNormal];
@@ -198,8 +206,24 @@
     [bindButton.titleLabel setFont:SYSTEMFONT(18)];
     
     if (DICVFK(self.dataDic, @"bank")) {
-        [bindButton setEnabled:NO];
-        [bindButton setAlpha:0];
+//        [bindButton setEnabled:NO];
+//        [bindButton setAlpha:0];
+        
+        //===========================临时工作===========================//
+//        [bindButton setTitle:@"提现" forState:UIControlStateNormal];
+        [bindButton setTitle:@"提现" forState:UIControlStateNormal];
+        [bindButton removeTarget:self action:@selector(bindCard) forControlEvents:UIControlEventTouchUpInside];
+        //提现
+        [bindButton addTarget:self action:@selector(toWithdrawConfirm) forControlEvents:UIControlEventTouchUpInside];
+        //自动投标授权
+//        [bindButton addTarget:self action:@selector(toAuthorizeAutoTransfer) forControlEvents:UIControlEventTouchUpInside];
+        
+        //确认转账
+//        [bindButton addTarget:self action:@selector(confirmTender) forControlEvents:UIControlEventTouchUpInside];
+        //余额转出
+//         [bindButton addTarget:self action:@selector(finialConfirm) forControlEvents:UIControlEventTouchUpInside];
+
+        //===========================临时工作===========================//
     }else{
         titleLabel.text = @"XXXX银行";
         cardLabel.text = @"还未绑定银行卡，请点击绑定";
@@ -207,8 +231,8 @@
         infoView.userInteractionEnabled = YES;
         [infoView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bindCard)]];
     }
-//
 
+    
     //4. SDAutoLayout
     infoView.sd_layout
     .topSpaceToView(contentView, 23.5)
@@ -301,9 +325,6 @@
 
 -(void)isCheckUserConfirmed
 {
-    [configView removeFromSuperview];
-    [infoView removeFromSuperview];
-    
     
     NSString * str = [TDUtil generateUserPlatformNo];
     
@@ -363,6 +384,74 @@
     
 }
 
+-(void)toWithdrawConfirm
+{
+    NSMutableDictionary * dic = [NSMutableDictionary new];
+    
+    [dic setObject:@"CONFIRM" forKey:@"mode"];
+    [dic setObject:@"PLATFORM" forKey:@"feeMode"];
+    [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
+    [dic setObject:@"ios://toWithdraw:" forKey:@"callbackUrl"];
+    [dic setObject:[TDUtil generateUserPlatformNo] forKey:@"platformUserNo"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
+    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+    [self sign:signString sel:@selector(requesttoWithdrawSign:)];
+
+}
+
+-(void)confirmTender
+{
+    NSString*filePath=[[NSBundle mainBundle] pathForResource:@"requestNo"ofType:@"txt"];
+    
+    NSString*str=[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+//    NSLog(@"%@",str);
+    NSArray * array = [str componentsSeparatedByString:@"\n"];
+//    NSLog(@"%@",array);
+    
+    for (NSString * s in array) {
+        NSMutableDictionary * dic = [NSMutableDictionary new];
+        
+        [dic setObject:@"CONFIRM" forKey:@"mode"];
+        [dic setObject:s forKey:@"requestNo"];
+        [dic setObject:notifyUrl forKey:@"notifyUrl"];
+        NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+        [self sign:signString sel:@selector(requestConfirmTenderSign:)];
+    }
+    
+}
+
+//模拟投标
+-(void)finialConfirm
+{
+    NSString * str = [TDUtil generateUserPlatformNo];
+    
+    float mount = [DICVFK(self.dataDic, @"availableAmount")  floatValue];
+    float profit = 0.0f;
+    
+    float mount_profit = mount * profit;
+    
+    NSMutableDictionary * dic = [NSMutableDictionary new];
+    
+    NSMutableDictionary * dicItem = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%.2f",mount - mount_profit],@"amount",@"MEMBER",@"targetUserType",@"jinzht_0000_645",@"targetPlatformUserNo",@"TENDER",@"bizType", nil];
+    NSMutableDictionary * dicItem2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:STRING(@"%.2f", mount_profit),@"amount",@"MERCHANT",@"targetUserType",YeePayPlatformID,@"targetPlatformUserNo",@"TENDER",@"bizType", nil];
+    
+    [dic setObject:STRING(@"%.2f", mount) forKey:@"amount"];
+    [dic setObject:str forKey:@"platformUserNo"];
+    [dic setObject:@"MEMBER" forKey:@"userType"];
+    [dic setObject:@"TENDER" forKey:@"bizType"];
+    [dic setObject:[NSArray arrayWithObjects:dicItem,dicItem2,nil] forKey:@"details"];
+    
+    [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[TDUtil generateTenderNo:@"24"],@"tenderOrderNo",@"重庆华合聚英企业管理咨询有限公司",@"tenderName",STRING(@"%.2f", 10000.0f),@"tenderAmount",@"重庆华合聚英企业管理咨询有限公司",@"tenderDescription",@"jinzht_0000_645",@"borrowerPlatformUserNo", nil] forKey:@"extend"];
+    [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
+    [dic setObject:@"ios://tenderConfirm" forKey:@"callbackUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
+    
+    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+    
+    [self sign:signString sel:@selector(requestTender:)];
+}
+
+
 -(void)bindCard
 {
     NSString * str = [TDUtil generateUserPlatformNo];
@@ -383,6 +472,28 @@
     
     [self sign:signString sel:@selector(requestSignBindCard:)];
 }
+
+
+/**
+ * 自动转帐授权
+ */
+-(void)toAuthorizeAutoTransfer
+{
+    NSString * str = [TDUtil generateUserPlatformNo];
+    
+    NSMutableDictionary * dic = [NSMutableDictionary new];
+    
+    [dic setObject:str forKey:@"platformUserNo"];
+    [dic setObject:[TDUtil generateTradeNo] forKey:@"requestNo"];
+    [dic setObject:@"ios://bindCardConfirm" forKey:@"callbackUrl"];
+    [dic setObject:notifyUrl forKey:@"notifyUrl"];
+    
+    
+    NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
+    
+    [self sign:signString sel:@selector(requestSignAuthorizeAutoTransfer:)];
+}
+
 
 -(void)sign:(NSString*)signString sel:(SEL)sel
 {
@@ -433,6 +544,28 @@
     
 }
 
+-(void)requestConfirmTender:(ASIHTTPRequest *)request{
+    NSString *xmlString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",xmlString);
+    NSDictionary * xmlDic = [TDUtil convertXMLStringElementToDictory:xmlString];
+    
+    if ([DICVFK(xmlDic, @"code") intValue]==101) {
+        
+        return;
+    }else if([DICVFK(xmlDic, @"code") intValue]==1)
+    {
+        self.dataDic = [NSMutableDictionary dictionaryWithDictionary:xmlDic];
+        NSLog(@"%@",self.dataDic);
+        
+        self.startLoading  =NO;
+        return;
+    }else{
+        
+    }
+    self.isNetRequestError = YES;
+    
+}
+
 -(void)requestSign:(ASIHTTPRequest *)request{
     NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
     NSLog(@"返回:%@",jsonString);
@@ -480,6 +613,50 @@
      self.isNetRequestError = YES;
 }
 
+
+-(void)requesttoWithdrawSign:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            NSDictionary * data = [jsonDic valueForKey:@"data"];
+            NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
+            YeePayViewController * controller = [[YeePayViewController alloc]init];
+            controller.dic = nil;
+            controller.PostPramDic = dic;
+            controller.title = @"项目详情";
+            controller.titleStr = @"提现";
+            controller.state = PayToWithdraw;
+            controller.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,toWithdraw,nil)];
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if([code intValue] == 1){
+            
+        }
+    }
+}
+
+-(void)requestConfirmTenderSign:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            NSDictionary * data = [jsonDic valueForKey:@"data"];
+            NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign",COMPLETE_TRANSACTION,@"service", nil];
+            [self.httpUtil getDataFromYeePayAPIWithOps:@"" postParam:dic type:0 delegate:self sel:@selector(requestConfirmTender:)];
+        }else if([code intValue] == 1){
+            
+        }
+    }
+}
+
 -(void)requestSignBindCard:(ASIHTTPRequest *)request{
     NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
     NSLog(@"返回:%@",jsonString);
@@ -508,6 +685,63 @@
     self.isNetRequestError = YES;
 }
 
+
+-(void)requestTender:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            NSDictionary * data = [jsonDic valueForKey:@"data"];
+            NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
+            YeePayViewController * controller = [[YeePayViewController alloc]init];
+            controller.dic = nil;
+            controller.PostPramDic = dic;
+            controller.title = @"项目详情";
+            controller.titleStr = @"投标";
+            controller.state = PayStatusBindCard;
+            controller.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,YeePayToCpTransaction,nil)];
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if([code intValue] == 1){
+            
+        }
+        self.startLoading  =NO;
+        return ;
+    }
+    self.isNetRequestError = YES;
+}
+
+
+-(void)requestSignAuthorizeAutoTransfer:(ASIHTTPRequest *)request{
+    NSString *jsonString = [TDUtil convertGBKDataToUTF8String:request.responseData];
+    NSLog(@"返回:%@",jsonString);
+    NSMutableDictionary* jsonDic = [jsonString JSONValue];
+    
+    if(jsonDic!=nil)
+    {
+        NSString* code = [jsonDic valueForKey:@"code"];
+        if ([code intValue] == 0) {
+            NSDictionary * data = [jsonDic valueForKey:@"data"];
+            NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[data valueForKey:@"req"],@"req",[data valueForKey:@"sign"],@"sign", nil];
+            YeePayViewController * controller = [[YeePayViewController alloc]init];
+            controller.dic = nil;
+            controller.PostPramDic = dic;
+            controller.title = @"项目详情";
+            controller.titleStr = @"自动转帐授权";
+            controller.state = PayStatusBindCard;
+            controller.url = [NSURL URLWithString:STRING_3(@"%@%@",BUINESS_SERVER,@"toAuthorizeAutoTransfer",nil)];
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if([code intValue] == 1){
+            
+        }
+        self.startLoading  =NO;
+        return ;
+    }
+    self.isNetRequestError = YES;
+}
 /**
  *  权限检测
  *
@@ -534,7 +768,7 @@
     }else{
         [[DialogUtil sharedInstance] showDlg:self.view textOnly:[jsonDic valueForKey:@"msg"]];
     }
-    self.startLoading=NO;
+//    self.startLoading=NO;
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request

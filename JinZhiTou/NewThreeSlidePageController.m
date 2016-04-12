@@ -912,7 +912,7 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
                 [self postFullyDisplayedNotificationWithCurrentIndex:0];
             }
             
-            
+            [self.tabBarItem setBadgeValue:nil];
             //移除重新加载数据监听
             [[NSNotificationCenter defaultCenter]removeObserver:self name:@"reloadData" object:nil];
         }else if ([code intValue] ==-1){

@@ -113,6 +113,22 @@
     self->_type = type;
 }
 
+/**
+ *  提现
+ *
+ *  @param dic 返回参数
+ */
+-(void)toWithdrawConfirm:(NSDictionary*)dic
+{
+    NSLog(@"%@",dic);
+    
+}
+
+/**
+ *  绑定银行卡回调
+ *
+ *  @param dic 返回参数
+ */
 -(void)bindCardConfirm:(NSDictionary*)dic
 {
 //    for(UIViewController * c in self.navigationController.childViewControllers)
@@ -128,6 +144,11 @@
     [self back:nil];
 }
 
+/**
+ *  注册易宝账号回调
+ *
+ *  @param dic 返回参数
+ */
 -(void)verify:(NSDictionary*)dic
 {
     NSLog(@"%@",dic);
@@ -152,6 +173,9 @@
     
 }
 
+/**
+ *  绑定银行卡
+ */
 -(void)bindCard
 {
     NSString * str = [TDUtil generateUserPlatformNo];
@@ -172,6 +196,7 @@
     
     [self sign:signString sel:@selector(requestSignBindCard:)];
 }
+
 
 -(void)goPayfor
 {
@@ -210,7 +235,7 @@
     }
     NSString * str = [TDUtil generateUserPlatformNo];
     
-    float mount = [DICVFK(self.dic, @"mount") floatValue];
+    float mount = [DICVFK(self.dic, @"mount") floatValue]*10000;
     float profit = [DICVFK(self.dic, @"profit") floatValue];
     
     float mount_profit = mount * profit;
@@ -231,7 +256,6 @@
     [dic setObject:@"ios://tenderConfirm" forKey:@"callbackUrl"];
     [dic setObject:notifyUrl forKey:@"notifyUrl"];
     
-
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
     
     [self sign:signString];
@@ -243,7 +267,7 @@
     self.startLoading = YES;
     NSString* url = [INVEST stringByAppendingFormat:@"%@/%@/",DICVFK(self.dic, @"id"),DICVFK(self.dic, @"currentSelect")];
     NSMutableDictionary* dic = [[NSMutableDictionary alloc]init];
-    float mount = [DICVFK(self.dic, @"mount") floatValue]/10000.00;
+    float mount = [DICVFK(self.dic, @"mount") floatValue];
     
     [dic setValue:STRING(@"%.2f", mount) forKey:@"amount"];
     [dic setValue:[TDUtil generateTradeNo] forKey:@"investCode"];
@@ -310,7 +334,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSString * str =  [webView stringByEvaluatingJavaScriptFromString:@"document.head.innerHTML"];
-    if ([str containsString:@"操作成功"]) {
+    if ([str containsString:@"操作成功"] || [str containsString:@"返回商户"]) {
         [_webView stringByEvaluatingJavaScriptFromString:@"submit();"];
     }else{
         NSString * string =  [webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];

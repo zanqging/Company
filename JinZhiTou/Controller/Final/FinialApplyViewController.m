@@ -147,6 +147,9 @@
     NSString * signString = [TDUtil convertDictoryToYeePayXMLString:dic];
     
     [self sign:signString sel:@selector(requestCheckUserSign:)];
+    
+    self.startLoading = YES;
+    self.isTransparent = YES;
 }
 
 -(void)goConfirm
